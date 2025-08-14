@@ -1,0 +1,279 @@
+[
+    {
+        "nodeId": 1,
+        "dialogue": "Hello, I'm Dr Alex, a virtual oncologist. Today, I'll be sharing information about clinical trials from the National Cancer Institute to help you decide if being in a clinical trial is right for you.",
+        "agent": "doctor",
+        "input": {
+            "allowed": true,
+            "nextNode": 2
+        },
+        "options": [
+            {
+                "optionText": "Nice to meet you Dr Alex.",
+                "nextNode": 2
+            }
+        ]
+    },
+    {
+        "nodeId": 2,
+        "dialogue": "And I'm Jordan, a virtual caregiver. I'm here to make sure that all the information you receive today is clear and easy to understand, so you feel confident and informed throughout our conversation.",    
+        "agent": "support",
+        "input": {
+            "allowed": true,
+            "nextNode": 3
+        },
+        "options": [
+            {
+                "optionText": "Nice to meet you too, Jordan.",
+                "nextNode": 3
+            }
+        ]
+    },
+    {
+        "nodeId": 3,
+        "dialogue": "Good to meet you! Now, to make sure we're presenting information in a way that's understandable to you, I'll ask Dr Alex 3 questions. Before Dr Alex answers, you'll choose how you prefer the information to be explained.",
+        "agent": "support",
+        "input": {
+            "allowed": false,
+            "nextNode": 4
+        },
+        "options": [
+            {
+                "optionText": "Okay, let's begin.",
+                "nextNode": 4
+            }
+        ]
+    },
+    {
+        "nodeId": 4,
+        "dialogue": "Alright. The first question is: What is a clinical trial? Dr Alex can explain in different ways. Original NCI, which is the original explanation from the National Cancer Institute. Less technical, which is everyday language. Or, More technical, which uses more scientific terms. Keep in mind all the explanations have the same information. Which do you prefer?",
+        "agent": "support",
+        "passOn": false,
+        "input": {
+            "allowed": false,
+            "nextNode": 5
+        },
+        "options": 
+        {
+            "questionList": "introQuestionsJSON",
+            "item": "0",
+            "question": "What is a clinical trial?",
+            "nextNode": 5
+        }
+    },
+    {
+        "nodeId": 5,
+        "dialogue": "",
+        "agent": "doctor",
+        "passOn": false,
+        "input": {
+            "allowed": false,
+            "nextNode": 6
+        },
+        "options": [
+            {
+                "optionText": "Thanks, continue.",
+                "nextNode": 7
+            }
+        ]
+    },
+    {
+        "nodeId": 7,
+        "dialogue": "Great! That helps Dr Alex and me tailor the information to you. Let's move on to the second question. What is informed consent? Select the explanation you prefer below. You'll notice I have a suggestion based on your previous preference.",
+        "agent": "support",
+        "input": {
+            "allowed": false,
+            "nextNode": 8
+        },
+        "options": 
+        {
+            "questionList": "introQuestionsJSON",
+            "item": "1",
+            "question": "What is informed consent?",
+            "nextNode": 8
+        }
+    },
+    {
+        "nodeId": 8,
+        "dialogue": "",
+        "agent": "doctor",
+        "passOn": false,
+        "input": {
+            "allowed": false,
+            "nextNode": 9
+        },
+        "options": [
+            {
+                "optionText": "Thanks, continue.",
+                "nextNode": 9
+            }
+        ]
+    },
+    {
+        "nodeId": 9,
+        "dialogue": "Thanks! Finally, what is an IRB?",
+        "agent": "support",
+        "passOn": false,
+        "options": 
+        {
+            "questionList": "introQuestionsJSON",
+            "item": "2",
+            "question": "What is an IRB?",
+            "nextNode": 10
+        },
+        "input": {
+            "allowed": false,
+            "nextNode": 10
+        }
+    },
+    {
+        "nodeId": 10,
+        "dialogue": "",
+        "agent": "doctor",
+        "input": {
+            "allowed": false,
+            "nextNode": 11
+        },
+        "options": [
+            {
+                "optionText": "Thanks, continue.",
+                "nextNode": 11
+            }
+        ]
+    },
+    {
+        "nodeId": 11,
+        "dialogue": "Okay, now it's time for you to ask questions to Dr Alex! Dr Alex will answer based on the preferences you've shared so far. However, at any point, you can ask me to change the explanation. Whenever you're ready, click Begin below.",
+        "agent": "support",
+        "passOn": false,
+        "input": {
+            "allowed": false,
+            "nextNode": 12
+        },
+        "options": [
+            {
+                "optionText": "Begin",
+                "nextNode": 12
+            }
+        ]
+    },
+    {
+        "nodeId": 12,
+        "dialogue": "I've generated some suggested questions based on your knowledge and attitudes about clinical trials from the pre-survey. You can ask these questions by clicking the buttons below. After asking Dr Alex 7 questions, you can continue to the post-survey. Let's get started! Click your first question below.",
+        "agent": "support",
+        "questionList": {
+            "questionJSON": "questionsJSON"
+        },
+        "showQuestions": {
+            "questionAdjustment": true
+        },
+        "passOn": false,
+        "input": {
+            "allowed": false,
+            "nextNode": 13
+        },
+        "options": 
+        {
+            "generate": true,
+            "nextNode": 13
+        }
+    },
+    {
+        "nodeId": 13,
+        "dialogue": "",
+        "agent": "doctor",
+        "showQuestions": {
+            "questionList": {
+                "questionJSON": "questionsJSON"
+            },
+            "waitToShowOptions": true
+        },
+        "passOn": true,
+        "input": {
+            "allowed": false,
+            "nextNode": 14
+        }
+    },
+    {
+        "nodeId": 14,
+        "dialogue": "Real quick -- as I mentioned, Dr Alex is answering based on your previous preferences. However, if you want to adjust your preferences, you can click on me to let us know!",
+        "agent": "support",
+        "showQuestions": {
+            "keepLastDialogue": true,
+            "questionAdjustment": true
+        },
+        "passOn": false,
+        "input": {
+            "allowed": false,
+            "nextNode": 15
+        },
+        "options": 
+        {
+            "generate": true,
+            "nextNode": 15
+        }
+    },
+    {
+        "nodeId": 15,
+        "dialogue": "",
+        "agent": "doctor",
+        "showQuestions": {
+            "questionList": {
+                "questionJSON": "questionsJSON"
+            },
+            "questionAdjustment": true
+        },
+        "passOn": false,
+        "input": {
+            "allowed": false,
+            "nextNode": 15
+        },
+        "options": 
+        {
+            "generate": true,
+            "nextNode": 15
+        }
+    },
+    {
+        "nodeId": 16,
+        "dialogue": "That's all Dr Alex and I have for you today! Thanks for chatting with us.",
+        "agent": "support",
+        "passOn": true,
+        "input": {
+            "allowed": false,
+            "nextNode": 17
+        },
+        "showQuestions": {
+            "waitToShowOptions": true
+        }
+    },
+    {
+        "nodeId": 17,
+        "dialogue": "Yes, it was a pleasure sharing information from the National Cancer Institute about clinical trials for your cancer journey.",
+        "agent": "doctor",
+        "passOn": true,
+        "input": {
+            "allowed": false,
+            "nextNode": 18
+        },
+        "showQuestions": {
+            "waitToShowOptions": true
+        }
+    },
+    {
+        "nodeId": 18,
+        "dialogue": "You can now click the button below to continue to the post-survey. We hope you enjoyed this intervention and have a good rest of your day!",
+        "agent": "support",
+        "passOn": false,
+        "input": {
+            "allowed": false,
+            "nextNode": 17
+        },
+        "options": [
+            {
+                "optionText": "Complete post-survey.",
+                "link": "https://ufl.qualtrics.com/jfe/form/SV_bf8HQ5xYXr6cMXc"
+            }
+        ]
+    }
+  ]

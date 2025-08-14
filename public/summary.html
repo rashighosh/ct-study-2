@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Learn About Clinical Research</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/css/summary.css">
+</head>
+
+<body>
+    <div id="load-area">
+        <div class="loading">
+            <p id="generate-note">Generating your conversation summary. When done, it will automatically download and you can continue.</p>
+            <div class="lds-ellipsis" id="lds-ellipsis"><div></div><div></div><div></div></div>
+            <div id="continue">
+                <button class="default" id="post-btn">Continue To Post Survey</button>
+            </div>
+        </div>
+    </div>
+        <div id="start">
+            
+            <span><h1>Alex&nbsp;</h1><h2>| Virtual Health Assistant</h2></span>
+            <hr/>
+            <h3>Learn About Clinical Research</h3>
+            <p id="intro">Thank you for talking to Alex. Before you continue to the post survey, <b>would you like a summary of your conversation</b> with Alex?</p>
+            <button class="default" id="download-btn">Yes, download a summary</button>
+            <button class="default" id="continue-btn">No, continue</button>
+        </div>
+        <script type="module" src="/js/summary.js"></script>
+</body>
+
+</html>

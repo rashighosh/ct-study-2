@@ -1,0 +1,41 @@
+[
+    {
+        "question": "What is a clinical trial?",
+        "explanations": {
+          "plain": "A clinical trial is a kind of research study that checks how well new treatments work for people.",
+          "original": "A clinical trial is a type of research study that tests how well new medical approaches work in people.",
+          "highhealth": "A clinical trial is a category of research study that evaluate the efficacy of novel medical interventions in people."
+        },
+        "explanationsBolded": {
+          "plain": "A clinical trial is a <b>kind</b> of research study that <b>checks</b> how well <b>new treatments</b> work for people.",
+          "original": "A clinical trial is a <b>type</b> of research study that <b>tests</b> how well <b>new medical approaches</b> work in people.",
+          "highhealth": "A clinical trial is a <b>category</b> of research study that <b>evaluates the efficacy</b> of <b>novel medical interventions</b> in people."
+        }
+    },
+    {
+    "question": "What is informed consent?",
+    "explanations": {
+        "plain": "Informed consent is where patients get key details about a clinical trial, including possible problems and ways it may help.",
+        "original": "Informed consent is a process in which patients are given important information, including possible risks and benefits, for a clinical trial.",
+        "highhealth": "Informed consent is a process in which patients receive crucial information, including potential adverse effects and therapeutic advantages, for a clinical trial."
+    },
+    "explanationsBolded": {
+        "plain": "Informed consent is where patients <b>get key details</b> about a clinical trial, including possible <b>problems and ways it may help</b>.",
+        "original": "Informed consent is a <b>process</b> in which patients are <b>given important information</b>, including possible <b>risks and benefits</b>, for a clinical trial.",
+        "highhealth": "Informed consent is a <b>process</b> in which patients <b>receive crucial information</b>, including potential <b>adverse effects and therapeutic advantages</b>, for a clinical trial."
+        }
+    },
+    {
+    "question": "What is an IRB?",
+    "explanations": {
+        "plain": "An IRB, or Institutional Review Board, is a team of experts like scientists, doctors, community leaders, and people who support patients, who look over and approve the careful plan for a clinical trial.",
+        "original": "An IRB, or Institutional Review Board, is a group of scientists, doctors, clergy, and patient advocates that reviews and approves the detailed plan for a clinical trial.",
+        "highhealth": "An IRB, or Institutional Review Board, is a committee consisting of scientific experts, medical professionals, ethicists, and advocates for patients that evaluates and approves the protocol for a clinical trial."
+        },
+    "explanationsBolded": {
+        "plain": "An IRB, or Institutional Review Board, is a <b>team of experts like scientists, doctors, community leaders, and people who support patients</b>, who <b>look over and approve</b> the <b>careful plan</b> for a clinical trial.",
+        "original": "An IRB, or Institutional Review Board, is a <b>group of scientists, doctors, clergy, and patient advocates</b> that <b>reviews and approves</b> the <b>detailed plan</b> for a clinical trial.",
+        "highhealth": "An IRB, or Institutional Review Board, is a <b>committee consisting of scientific experts, medical professionals, ethicists, and advocates for patients</b> that <b>evaluates and approves the protocol</b> for a clinical trial."
+        }
+    }
+]

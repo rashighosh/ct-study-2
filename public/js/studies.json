@@ -1,0 +1,1516 @@
+{
+    "NCT05375162": {
+        "protocolSection": {
+        "identificationModule": {
+        "nctId": "NCT05375162",
+        "orgStudyIdInfo": {
+            "id": "NU 20CC10"
+        },
+        "secondaryIdInfos": [
+            {
+            "id": "1R01CA262357-01",
+            "type": "NIH",
+            "link": "https://reporter.nih.gov/quickSearch/1R01CA262357-01"
+            }
+        ],
+        "organization": {
+            "fullName": "Northwestern University",
+            "class": "OTHER"
+        },
+        "briefTitle": "Optimization of a mHealth Physical Activity Promotion Intervention With Mindful Awareness for AYAO (OPT2MOVE)",
+        "officialTitle": "Optimization of a mHealth Physical Activity Promotion Intervention With Mindful Awareness for Adolescent and Young Adult Cancer Survivors"
+        },
+        "statusModule": {
+        "statusVerifiedDate": "2024-07",
+        "overallStatus": "RECRUITING",
+        "expandedAccessInfo": {
+            "hasExpandedAccess": false
+        },
+        "startDateStruct": {
+            "date": "2023-07-18",
+            "type": "ACTUAL"
+        },
+        "primaryCompletionDateStruct": {
+            "date": "2025-12-31",
+            "type": "ESTIMATED"
+        },
+        "completionDateStruct": {
+            "date": "2025-12-31",
+            "type": "ESTIMATED"
+        },
+        "studyFirstSubmitDate": "2021-11-10",
+        "studyFirstSubmitQcDate": "2022-05-10",
+        "studyFirstPostDateStruct": {
+            "date": "2022-05-16",
+            "type": "ACTUAL"
+        },
+        "lastUpdateSubmitDate": "2024-07-26",
+        "lastUpdatePostDateStruct": {
+            "date": "2024-07-30",
+            "type": "ACTUAL"
+        }
+        },
+        "sponsorCollaboratorsModule": {
+        "responsibleParty": {
+            "type": "PRINCIPAL_INVESTIGATOR",
+            "investigatorFullName": "Siobhan M Phillips",
+            "investigatorTitle": "Principal Investigator",
+            "investigatorAffiliation": "Northwestern University"
+        },
+        "leadSponsor": {
+            "name": "Northwestern University",
+            "class": "OTHER"
+        },
+        "collaborators": [
+            {
+            "name": "National Cancer Institute (NCI)",
+            "class": "NIH"
+            },
+            {
+            "name": "Wake Forest University Health Sciences",
+            "class": "OTHER"
+            }
+        ]
+        },
+        "oversightModule": {
+        "oversightHasDmc": true,
+        "isFdaRegulatedDrug": false,
+        "isFdaRegulatedDevice": false
+        },
+        "descriptionModule": {
+        "briefSummary": "The purpose of the present study is to utilize Multiphase Optimization Strategy (MOST)1 to test four social support and mindfulness components (e-coaching, buddy, general mindfulness training, and MVPA-specific mindfulness training) in a 12-week mHealth moderate to vigorous intensity physical activity (MVPA) intervention in a sample of young adult cancer survivors (YACS), to improve quality of life (QOL) and decrease adverse effects and symptom burden.\n\nPRIMARY AIM To identify which components from four mHealth components under consideration for inclusion meaningfully contribute to improvements in MVPA at 12 and 24 weeks\n\nSECONDARY AIM To examine how changes in MVPA, as a result of Opt2Move components, may influence additional health behaviors and outcomes including: a) symptom burden (i.e. fatigue, depression, anxiety); b) time spent in other activity intensities (i.e. light, sedentary time); and c) sleep duration and quality\n\nTHIRD AIM To examine potential mediators (i.e. adherence, psychosocial factors such as post-traumatic growth, self-compassion, self-efficacy, and goal setting) and moderators (cancer type, age, gender) of the four intervention components on MVPA.",
+        "detailedDescription": "The purpose of the present study is to utilize Multiphase Optimization Strategy (MOST)1 to test four social support and mindfulness components (e-coaching, buddy, general mindfulness training, and MVPA-specific mindfulness training) in a 12-week mHealth moderate to vigorous intensity physical activity (MVPA) intervention in a sample of young adult cancer survivors (YACS), to improve quality of life (QOL) and decrease adverse effects and symptom burden.\n\nPRIMARY AIM To identify which components from four mHealth components under consideration for inclusion meaningfully contribute to improvements in MVPA at 12 and 24 weeks\n\nSECONDARY AIM To examine how changes in MVPA, as a result of Opt2Move components, may influence additional health behaviors and outcomes including: a) symptom burden (i.e. fatigue, depression, anxiety); b) time spent in other activity intensities (i.e. light, sedentary time); and c) sleep duration and quality\n\nTHIRD AIM To examine potential mediators (i.e. adherence, psychosocial factors such as post-traumatic growth, self-compassion, self-efficacy, and goal setting) and moderators (cancer type, age, gender) of the four intervention components on MVPA.\n\nResearch participants will be identified and recruited at Robert H. Lurie Cancer Center (RHLCC) at Northwestern University (NU) and at the Wake Forest Baptist Comprehensive Cancer Center (WFBCCC) at Wake Forest University (WFU). All YACS and Buddies will complete an initial 10-15 minute eligibility screening online, over the phone, or in-person. The study RA will obtain informed consent and HIPAA authorization from eligible participants according to IRB approved procedures. After consent is received, all additional study procedures (i.e. assessments, orientation, intervention delivery, etc.) will be handled by the coordinating center (NU) to ensure all procedures are implemented consistently and improve efficiency.\n\nAssessments. After informed consent completion, the NU study team will send participants an email with an individual, secure link to study questionnaires and notification that an ActiGraph accelerometer packet has been mailed. Participants will be asked to complete the questionnaire within 1 week of receipt. YACS will be provided with detailed written instructions for how to wear the ActiGraph.\n\nRandomization and Study Orientation. After completing baseline assessments, YACS (n=304) will be randomized to each group using computer-generated randomly permuted blocks. After randomization, the NU study team will send the participant an intervention packet which will include the Fitbit, Fitbit instructions, instructions and a QR code to download the Opt2Move app, and instructions specific to each condition to which they are assigned. The participant will also be scheduled for an orientation phone or web call with study staff to go over the contents of the intervention packet and expectations of participation for each component in greater detail.\n\nIntervention Components\n\nCore Intervention (Fitbit + Opt2Move App). All participants will receive a low-resource self-monitoring intervention consisting of the Fitbit AltaHR (or similar) and the Opt2Move self-monitoring app. Participants will be asked to download the Fitbit app and wear the Fitbit 24/7 throughout the 24-week study period. The core OPTIMAL AYAO app will support YACS to increase their MVPA. Participants will be provided with a weekly MVPA goal to build efficacy and ensure safe progression towards the overall goal of 150 minutes per week. Participants will be instructed to self-monitor progress towards these goals via feedback on Fitbit Alta HR and the daily, weekly and monthly progress information provided in the Opt2Move app.\n\nBuddy. Participants assigned to this condition will select a buddy of their choice (i.e. friend, co-worker, caregiver or family member) that is ≥ 18 years of age and willing to share their Fitbit data with the study team. The study team will reach out to the buddy via an email containing a description of the expectations of the buddy and a link to complete online screening. The buddy will be mailed a Fitbit, share their Fitbit data with the study team, and be provided with access to, and instructions for, all of the Opt2Move app modules the participant has access to for their assigned condition. The buddy will be expected to attend a 15-30 minute group orientation call and listen to four 10-15 minute podcasts (one every 3 weeks) during the 12 week intervention. Each podcast will provide social support training and peer discussion of challenges and successes in providing YACS with MVPA support.\n\nE-coaching. Participants assigned to this condition will receive a weekly scheduled text message from their coach. Text messages will focus on building self-efficacy and self-regulation skills, setting realistic outcome expectations, overcoming barriers, and problem-solving and will directly support the participant's engagement in the intervention. The coach will provide a brief overview of the participant's recent progress and goals, ask if they are having any barriers and help them troubleshoot and set specific goals for the next week. In addition to the scheduled messaging, participants will also be instructed to reach out to their coach with any questions or for additional assistance. The coach will respond within 24 hours (weekdays) to 48 hours (weekends), maximum.\n\nGeneral Mindfulness Training. Participants assigned to this condition will be instructed to watch 1 (1-2 mins), mindfulness education videos each week which lay the foundation for what mindfulness is and how it can be an important health behavior. Each week participants will also be asked to listen to general guided mindfulness audio files ≥5 days/ week. The length of recordings will gradually increase each week from 3-5 to 25-30 minutes. All videos and recording will be available via the Opt2Move app.\n\nMVPA-Specific Mindfulness Training. Participants assigned to the MVPA-specific mindfulness training component will be instructed to watch 1-2 brief (1-2 minute), mindfulness education videos each week which lay the foundation for what mindfulness is and the importance of linking mindful awareness with MVPA. Each week participants will be provided access to MVPA-specific guided mindfulness audio files (e.g., 10-minute treadmill walking meditation, 20-minute bicycling meditation) that they will be asked to listen to during ≥3 MVPA sessions/week. The length and intensity of these audio files will correspond to their progression in the program. All videos and recording will be accessed via the Opt2Move app.\n\nFollow-up. Participants will be instructed to maintain their MVPA during the 12-week follow-up period. They will have access to all materials to which they were assigned to less any direct contact from the study team."
+        },
+        "conditionsModule": {
+        "conditions": [
+            "Cancer"
+        ],
+        "keywords": [
+            "YACS",
+            "cancer",
+            "eHealth",
+            "physical activity",
+            "mindfulness"
+        ]
+        },
+        "designModule": {
+        "studyType": "INTERVENTIONAL",
+        "phases": [
+            "NA"
+        ],
+        "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "FACTORIAL",
+            "interventionModelDescription": "The four Intervention components that are candidates for inclusion in the optimized intervention, each with 2 possible levels, will be tested in a 12-week intervention with a 12-week follow-up using a MOST approach. The effects of the four individual intervention components and their combinations will be examined via a full factorial experiment. The investigators chose a factorial experimental design because these designs have two characteristics essential to the success of MOST. They: a) separate component effects enabling the estimation of the main effect of each candidate component and interactions between components and b) are more economical compared to alternative designs because they often require substantially fewer subjects to achieve the same power and use less resources. The investigators are using a full factorial experiment with 2\\^4=16 experimental conditions.",
+            "primaryPurpose": "SUPPORTIVE_CARE",
+            "maskingInfo": {
+            "masking": "NONE"
+            }
+        },
+        "enrollmentInfo": {
+            "count": 304,
+            "type": "ESTIMATED"
+        }
+        },
+        "armsInterventionsModule": {
+        "armGroups": [
+            {
+            "label": "Exp Condition 1",
+            "type": "EXPERIMENTAL",
+            "description": "Research participant receives the Core Intervention + E-Coach + General Mindfulness Training + MVPA Specific Mindfulness Training + Buddy",
+            "interventionNames": [
+                "Behavioral: Core Intervention",
+                "Behavioral: E-Coach",
+                "Behavioral: General Mindfulness Training",
+                "Behavioral: MVPA-Specific Mindfulness Training",
+                "Behavioral: Buddy"
+            ]
+            },
+            {
+            "label": "Exp Condition 2",
+            "type": "ACTIVE_COMPARATOR",
+            "description": "Research participant receives the Core Intervention + E-Coach + General Mindfulness Training + MVPA Specific Mindfulness Training",
+            "interventionNames": [
+                "Behavioral: Core Intervention",
+                "Behavioral: E-Coach",
+                "Behavioral: General Mindfulness Training",
+                "Behavioral: MVPA-Specific Mindfulness Training"
+            ]
+            },
+            {
+            "label": "Exp Condition 3",
+            "type": "ACTIVE_COMPARATOR",
+            "description": "Research participant receives the Core Intervention + E-Coach + Buddy",
+            "interventionNames": [
+                "Behavioral: Core Intervention",
+                "Behavioral: E-Coach",
+                "Behavioral: Buddy"
+            ]
+            },
+            {
+            "label": "Exp Condition 4",
+            "type": "ACTIVE_COMPARATOR",
+            "description": "Research participant receives the Core Intervention + E-Coach",
+            "interventionNames": [
+                "Behavioral: Core Intervention",
+                "Behavioral: E-Coach"
+            ]
+            },
+            {
+            "label": "Exp Condition 5",
+            "type": "ACTIVE_COMPARATOR",
+            "description": "Research participant receives the Core Intervention + E-Coach + General Mindfulness Training + Buddy",
+            "interventionNames": [
+                "Behavioral: Core Intervention",
+                "Behavioral: E-Coach",
+                "Behavioral: General Mindfulness Training",
+                "Behavioral: Buddy"
+            ]
+            },
+            {
+            "label": "Exp Condition 6",
+            "type": "ACTIVE_COMPARATOR",
+            "description": "Research participant receives the Core Intervention + E-Coach + General Mindfulness Training",
+            "interventionNames": [
+                "Behavioral: Core Intervention",
+                "Behavioral: E-Coach",
+                "Behavioral: General Mindfulness Training"
+            ]
+            },
+            {
+            "label": "Exp Condition 7",
+            "type": "ACTIVE_COMPARATOR",
+            "description": "Research participant receives the Core Intervention + E-Coach + MVPA Specific Mindfulness Training + Buddy",
+            "interventionNames": [
+                "Behavioral: Core Intervention",
+                "Behavioral: E-Coach",
+                "Behavioral: MVPA-Specific Mindfulness Training",
+                "Behavioral: Buddy"
+            ]
+            },
+            {
+            "label": "Exp Condition 8",
+            "type": "ACTIVE_COMPARATOR",
+            "description": "Research participant receives the Core Intervention + E-Coach + MVPA Specific Mindfulness Training",
+            "interventionNames": [
+                "Behavioral: Core Intervention",
+                "Behavioral: E-Coach",
+                "Behavioral: MVPA-Specific Mindfulness Training"
+            ]
+            },
+            {
+            "label": "Exp Condition 9",
+            "type": "ACTIVE_COMPARATOR",
+            "description": "Research participant receives the Core Intervention + General Mindfulness Training + Buddy",
+            "interventionNames": [
+                "Behavioral: Core Intervention",
+                "Behavioral: General Mindfulness Training",
+                "Behavioral: Buddy"
+            ]
+            },
+            {
+            "label": "Exp Condition 10",
+            "type": "ACTIVE_COMPARATOR",
+            "description": "Research participant receives the Core Intervention + General Mindfulness Training",
+            "interventionNames": [
+                "Behavioral: Core Intervention",
+                "Behavioral: General Mindfulness Training"
+            ]
+            },
+            {
+            "label": "Exp Condition 11",
+            "type": "ACTIVE_COMPARATOR",
+            "description": "Research participant receives the Core Intervention + MVPA Specific Mindfulness Training + Buddy",
+            "interventionNames": [
+                "Behavioral: Core Intervention",
+                "Behavioral: MVPA-Specific Mindfulness Training",
+                "Behavioral: Buddy"
+            ]
+            },
+            {
+            "label": "Exp Condition 12",
+            "type": "ACTIVE_COMPARATOR",
+            "description": "Research participant receives the Core Intervention + MVPA Specific Mindfulness Training",
+            "interventionNames": [
+                "Behavioral: Core Intervention",
+                "Behavioral: MVPA-Specific Mindfulness Training"
+            ]
+            },
+            {
+            "label": "Exp Condition 13",
+            "type": "ACTIVE_COMPARATOR",
+            "description": "Research participant receives the Core Intervention + General Mindfulness Training + MVPA Specific Mindfulness Training + Buddy",
+            "interventionNames": [
+                "Behavioral: Core Intervention",
+                "Behavioral: General Mindfulness Training",
+                "Behavioral: MVPA-Specific Mindfulness Training",
+                "Behavioral: Buddy"
+            ]
+            },
+            {
+            "label": "Exp Condition 14",
+            "type": "ACTIVE_COMPARATOR",
+            "description": "Research participant receives the Core Intervention + General Mindfulness Training + MVPA Specific Mindfulness Training",
+            "interventionNames": [
+                "Behavioral: Core Intervention",
+                "Behavioral: General Mindfulness Training",
+                "Behavioral: MVPA-Specific Mindfulness Training"
+            ]
+            },
+            {
+            "label": "Exp Condition 15",
+            "type": "ACTIVE_COMPARATOR",
+            "description": "Research participant receives the Core Intervention + Buddy",
+            "interventionNames": [
+                "Behavioral: Core Intervention",
+                "Behavioral: Buddy"
+            ]
+            },
+            {
+            "label": "Exp Condition 16",
+            "type": "ACTIVE_COMPARATOR",
+            "description": "Research participant receives the Core Intervention",
+            "interventionNames": [
+                "Behavioral: Core Intervention"
+            ]
+            }
+        ],
+        "interventions": [
+            {
+            "type": "BEHAVIORAL",
+            "name": "Core Intervention",
+            "description": "All participants will receive a low-resource self-monitoring intervention consisting of the Fitbit Alta HR (or similar) and the Opt2Move self-monitoring app.\n\nParticipants will be provided with the Fitbit Alta HR. They will be asked to download the Fitbit app and wear the Fitbit 24/7 throughout the 24-week study period. The Fitbit measures PA intensity, steps, and heart rate, and it syncs directly with the Ftibit app on the smartphone which will ill automatically sync with the Opt2Move study app and provide Fitbit data to the study team in real-time.\n\nThe core Opt2Move study app will support YACS to increase their MVPA. The app will also contain educational information on MVPA and effective behavior change strategies for building self-efficacy, overcoming barriers, enhancing facilitators, setting realistic outcome expectations, and self-regulatory skill-building (i.e., reviewing progress, goal setting, action-planning and coping with disruptions).",
+            "armGroupLabels": [
+                "Exp Condition 1",
+                "Exp Condition 10",
+                "Exp Condition 11",
+                "Exp Condition 12",
+                "Exp Condition 13",
+                "Exp Condition 14",
+                "Exp Condition 15",
+                "Exp Condition 16",
+                "Exp Condition 2",
+                "Exp Condition 3",
+                "Exp Condition 4",
+                "Exp Condition 5",
+                "Exp Condition 6",
+                "Exp Condition 7",
+                "Exp Condition 8",
+                "Exp Condition 9"
+            ]
+            },
+            {
+            "type": "BEHAVIORAL",
+            "name": "E-Coach",
+            "description": "Participants assigned to this condition will receive a weekly scheduled text message from their coach. Text messages will focus on building self-efficacy and self-regulation skills, setting realistic outcome expectations, overcoming barriers, and problem-solving and will directly support the participant's engagement in the intervention. The coach will provide a brief overview of the participant's recent progress and goals, ask if they are having any barriers and help them troubleshoot and set specific goals for the next week. Text message protocols will be informed by the investigators' previous experience using telephone coaching to promote MVPA in cancer survivors. In addition to the scheduled messaging, participants will also be instructed to reach out to their coach with any questions or for additional assistance.",
+            "armGroupLabels": [
+                "Exp Condition 1",
+                "Exp Condition 2",
+                "Exp Condition 3",
+                "Exp Condition 4",
+                "Exp Condition 5",
+                "Exp Condition 6",
+                "Exp Condition 7",
+                "Exp Condition 8"
+            ]
+            },
+            {
+            "type": "BEHAVIORAL",
+            "name": "General Mindfulness Training",
+            "description": "Participants assigned to this condition will be instructed to watch 1 (1-2 mins), mindfulness education videos each week which lay the foundation for what mindfulness is and how it can be an important health behavior. Each week participants will also be asked to listen to general guided mindfulness audio files ≥5 days/ week. The length of recordings will gradually increase each week from 3-5 to 25-30 minutes. All videos and recording will be available via the Opt2Move app.",
+            "armGroupLabels": [
+                "Exp Condition 1",
+                "Exp Condition 10",
+                "Exp Condition 13",
+                "Exp Condition 14",
+                "Exp Condition 2",
+                "Exp Condition 5",
+                "Exp Condition 6",
+                "Exp Condition 9"
+            ]
+            },
+            {
+            "type": "BEHAVIORAL",
+            "name": "MVPA-Specific Mindfulness Training",
+            "description": "Participants assigned to the MVPA-specific mindfulness training component will be instructed to watch 1-2 brief (1-2 minute), mindfulness education videos each week which lay the foundation for what mindfulness is and the importance of linking mindful awareness with MVPA. Each week participants will be provided access to MVPA-specific guided mindfulness audio files (e.g., 10-minute treadmill walking meditation, 20-minute bicycling meditation) that they will be asked to listen to during ≥3 MVPA sessions/week. The length and intensity of these audio files will correspond to their progression in the program. All videos and recordings will be accessed via the Opt2Move app.",
+            "armGroupLabels": [
+                "Exp Condition 1",
+                "Exp Condition 11",
+                "Exp Condition 12",
+                "Exp Condition 13",
+                "Exp Condition 14",
+                "Exp Condition 2",
+                "Exp Condition 7",
+                "Exp Condition 8"
+            ]
+            },
+            {
+            "type": "BEHAVIORAL",
+            "name": "Buddy",
+            "description": "Participants assigned to this condition will select a buddy of their choice (i.e. friend, co-worker, caregiver or family member) that is ≥ 18 years of age and willing to share their Fitbit data with the study team. The buddy will be mailed a Fitbit, share their Fitbit data with the study team, and be provided with access to, and instructions for, all of the Opt2Move app modules the participant has access to for their assigned condition. The Opt2Move app will include a buddy module where the buddy and participant can view each other's progress. The buddy will be expected to attend a 15-30 minute group orientation call and listen to four 10-15 minute podcasts (one every 3 weeks) during the first 12 weeks of the intervention. Each podcast will provide social support training and peer discussion of challenges and successes in providing YACS with MVPA support.",
+            "armGroupLabels": [
+                "Exp Condition 1",
+                "Exp Condition 11",
+                "Exp Condition 13",
+                "Exp Condition 15",
+                "Exp Condition 3",
+                "Exp Condition 5",
+                "Exp Condition 7",
+                "Exp Condition 9"
+            ]
+            }
+        ]
+        },
+        "outcomesModule": {
+        "primaryOutcomes": [
+            {
+            "measure": "Physical Activity before and after the 12-week technology supported physical activity interventions in young adult cancer survivors",
+            "description": "Physical activity will be measured at baseline and at 12 and 24 weeks.The ActiGraph accelerometer will be used. At each time point, participants will wear the device for 7 consecutive days during all waking hours, except when bathing or swimming. Each valid minute of wear time will be classified according to intensity (counts/min) using commonly accepted cut-points: sedentary (\\<100), light activity (100-2019) and moderate/vigorous physical activity (≥2020). The Godin Leisure Time Exercise Questionnaire will also be used.",
+            "timeFrame": "24 weeks"
+            }
+        ],
+        "secondaryOutcomes": [
+            {
+            "measure": "Physical Function in young adult cancer survivors",
+            "description": "Symptom burden on physical function will be measured at baseline and 12 and 24 weeks using the PROMIS 29 Profile v2.1.\n\nThis 4-item scale uses a 5-point Likert scale (5=without any difficulty to 1=unable to do). The minimum value one can score is 4, and the maximum is 20. The higher scores represent better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Anxiety in young adult cancer survivors",
+            "description": "Symptom burden of anxiety will be measured at baseline and 12 and 24 weeks using the PROMIS 29 Profile v2.1.\n\nThis 4-item scale measures uses a 5-point Likert scale (1=never to 5=always). The minimum value one can score is 4, and the maximum is 20. The lower scores represent better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Depression in young adult cancer survivors",
+            "description": "Symptom burden of depression will be measured at baseline and 12 and 24 weeks using the PROMIS 29 Profile v2.1.\n\nThis 4-item scale uses a 5-point Likert scale (1=never to 5=always). The minimum value one can score is 4, and the maximum is 20. The lower scores represent better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Fatigue in young adult cancer survivors",
+            "description": "Symptom burden of fatigue will be measured at baseline and 12 and 24 weeks using the PROMIS 29 Profile v2.1.\n\nThis 4-item scale uses a 5-point Likert scale (1=not at all to 5=very much). The minimum value one can score is 4, and the maximum is 20. The lower scores represent better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Sleep Disturbance in young adult cancer survivors",
+            "description": "Symptom burden of sleep disturbance will be measured at baseline and 12 and 24 weeks using the PROMIS 29 Profile v2.1.\n\nThis 4-item scale uses a 5-point Likert scale (1=not at all to 5=very much). The minimum value one can score is 4, and the maximum is 20. The lower scores represent better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Sleep Impairment in young adult cancer survivors",
+            "description": "Symptom burden of sleep disturbance will be measured at baseline and 12 and 24 weeks using the PROMIS Sleep-Related Impairment - Short Form 4a.\n\nThis 4-item scale uses a 5-point Likert scale (1=not at all to 5=very much). The minimum value one can score is 4, and the maximum is 20. The lower scores represent better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Ability to participate in social roles and activities in young adult cancer survivors",
+            "description": "Ability to participate in social roles and activities will be measured at baseline and 12 and 24 weeks using the PROMIS 29 Profile v2.1.\n\nThis 4-item scale uses a 5-point Likert scale (5=never to 1=always). The minimum value one can score is 4, and the maximum is 20. The lower scores represent better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Applied Cognition Abilities in young adult cancer survivors",
+            "description": "Symptom burden on applied cognitive abilities will be measured at baseline and 12 and 24 weeks using the PROMIS Applied Cognition-Abilities-Short Form 4a.\n\nThis 4-item scale uses a 5-point Likert scale (1=not at all to 5=very much). The minimum value one can score is 4, and the maximum is 20. The higher scores represent better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Pain interference in young adult cancer survivors",
+            "description": "Pain interference will be measured at baseline and 12 and 24 weeks using the PROMIS 29 Profile v2.1.\n\nThis 4-item scale uses a 5-point Likert scale (5=never to 1=always). The minimum value one can score is 4, and the maximum is 20. The lower scores represent better outcome..",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Pain intensity in young adult cancer survivors",
+            "description": "Pain intensity will be measured at baseline and 12 and 24 weeks using the PROMIS 29 Profile v2.1.\n\nThis 1-item scale uses a 11-point Likert scale (0=no pain to 10=worst pain imaginable). The minimum value one can score is 0, and the maximum is 10. The lower score represents better outcome..",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Physical self-perception in young adult cancer survivors",
+            "description": "Physical Self-Perception will be measured at baseline and 12 and 24 weeks using the Physical Self-Perception Profile-Physical Self-worth Subscale.\n\nThis instrument used to assess self-esteem relative to several domains of physical functioning in a hierarchical, multidimensional fashion. The instrument contains a general physical self-worth scale (PSW) which subsumes four more specific scales of perceived sport competence (SPORT), physical condition (COND), attractive body (BODY), and strength (STRENGTH), with six items per scale. Participants indicated on a four-point scale the degree to which each item is characteristic or true of them. Responses range from 1 (not at all true) to 4 (completely true), with higher scores representing better outcome. The minimum value one can score is 6, and the maximum is 24.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Confidence in ability to be regularly active in young adult cancer survivors",
+            "description": "Confidence in ability to be regularly active will be measured at baseline and 12 and 24 weeks using the Exercise Self-Efficacy (EXSE).\n\nThis short form assesses the participants' beliefs in their ability to be regularly active \"for the next 12 weeks\" on a scale from 0% (not at all confident) to 100% (completely confident), with higher scores representing better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Confidence in ability to be regularly active despite common barriers in young adult cancer survivors",
+            "description": "Confidence in ability to be regularly active despite common barriers will be measured at baseline and 12 and 24 weeks using the Barries Self-Efficacy (BARSE).\n\nThis scale assesses the beliefs in ability to be regularly active despite common barriers \"for the next 12 weeks\" on a scale from 0% (not at all confident) to 100% (completely confident), with higher scores representing better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Leisure Time Physical Activity in young adult cancer survivors",
+            "description": "Leisure time physical activity will be measured at baseline and 12 and 24 weeks using the Godin Leisure Time Exercise Questionnaire Physical Activity.\n\nThis is a measure of self-reported physical activity participation. Participants report \"times per week\" they participate in strenuous (e.g., jogging), moderate (e.g., fast walking), and mild (e.g., easy walking) exercise over the past 7 days and the \"average duration each time you exercised (in minutes)\" for each of the three activity categories. Weekly minutes of total, light, moderate, and vigorous activity are calculated by multiplying the frequency and time of each activity. This value is divided by 7 to obtain daily averages. The minimum value one can score is 0, and the maximum depends on the number of self-reported minutes of physical activity. Higher scores indicate better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Sitting time in young adult cancer survivors",
+            "description": "Sitting time in young adult cancer survivors will be assessed at baseline and 12 and 24 weeks using the Sitting Time Questionnaire.\n\nThis questionnaire assesses the amount of hours and minutes spent sitting during weekdays and weekends, with lower scores representing better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Outcome expectations for exercise in young adult cancer survivors",
+            "description": "Outcome expectations for exercise in young adult cancer survivors will be assessed at baseline and 12 and 24 weeks using the Outcome Expectations for Exercise_MOEES.\n\nThis scale assesses the beliefs and expectations about the benefits of regular exercise and physical activity on a scale from 1 (strongly disagree) to 5 (strongly agree), with higher scores representing better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Self-Esteem in young adult cancer survivors",
+            "description": "Symptom burden on self-esteem will be measured at baseline and 12 and 24 weeks using the Rosenberg Self-Esteem Scale.\n\nThis scale assesses global self-esteem and consists of 10-items asking participants to indicate their level of agreement/disagreement with each statement. Sample items include: \"I feel that I'm a person of worth, at least on an equal basis with others;\" and \"I am able to things as well as most people.\" Participants respond on a 5-point Likert scale ranging from 1 (strongly agree) to 5 (strongly disagree). The minimum value one can score is 10, and the maximum is 50. Higher scores indicate a better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Emotional Support in young adult cancer survivors",
+            "description": "Symptom burden on emotional support will be measured at baseline and 12 and 24 weeks using the PROMIS Emotional Support - Short Form 4a.\n\nThis 4-item scale uses a 5-point Likert scale (1=never to 5=always). The minimum value one can score is 4, and the maximum is 20. The higher scores represent better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Social support for exercise in young adult cancer survivors",
+            "description": "Social support for exercise will be measured at baseline and 12 and 24 weeks using the Social Support for Exercise Scale.\n\nThis scale assesses support for physical activity received from the following categories: family, friends, and other cancer survivors. Statements are scored on a Likert scale of 1 (never) to 5 (very often) for each of the three categories, with higher scores representing better outcome. The minimum value one can score for each category is 10, and the maximum is 50. The minimum value of the total measure is 30, and the maximum is 150. An additional \"does not apply\" response option is provided on the measure.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Mindful Awareness in young adult cancer survivors",
+            "description": "Mindful awareness of distressing thoughts and images will be measured at baseline and 12 and 24 weeks using the Southampton Mindfulness Questionnaire (SMQ).\n\nThis 16-item scale measures mindful awareness during distressing thoughts and images. Using a 7-point Likert scale (0=strongly disagree to 6=strongly agree), items reflect the following subscales: mindful observation (4 items), letting go (4 items), non- aversion (4 items), and non-judgment (4 items). The minimum value one can score on any of the subscales is 0, and the maximum is 24. The minimum value of the total measure is 0, and the maximum is 96. The higher scores represent better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Mindful acceptance in young adult cancer survivors",
+            "description": "Mindful acceptance will be measured at baseline and 12 and 24 weeks using the Mindful Allowance - Acceptance v1.0 - Short Form 4a.\n\nThis 4-item scale measures uses a 5-point Likert scale (1=not at all to 5=very much). The minimum value one can score is 4, and the maximum is 20. The higher scores represent better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Mindful self-kindness in young adult cancer survivors",
+            "description": "Mindful self-kindness will be measured at baseline and 12 and 24 weeks using the Mindful Allowance - Self-Kindness v1.0 - Short Form 4a.\n\nThis 4-item scale measures uses a 5-point Likert scale (1=not at all to 5=very much). The minimum value one can score is 4, and the maximum is 20. The higher scores represent better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Mindful de-centering in young adult cancer survivors",
+            "description": "Mindful de-centering will be measured at baseline and 12 and 24 weeks using the Mindful Insight - Decentering v1.0 - Short Form 4a.\n\nThis 4-item scale measures uses a 5-point Likert scale (1=not at all to 5=very much). The minimum value one can score is 4, and the maximum is 20. The higher scores represent better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Mindful presence in young adult cancer survivors",
+            "description": "Mindful presence will be measured at baseline and 12 and 24 weeks using the Mindful Presence - Awareness v1.0 - Short Form 4a,Mindful Presence - Curiosity v1.0 - Short Form 4a, and Mindful Presence v1.0 - Short Form 8a.\n\nThe measures use a 5-point Likert scale (1=not at all to 5=very much). The minimum value one can score on the 4-item scales is 4, and the maximum is 20. The minimum value one can score on the 8-item scales is 8, and the maximum is 40. The higher scores represent better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Meditation experience in young adult cancer survivors",
+            "description": "Meditation experience in young adult cancer survivors will be assessed using the Meditation Experience Questionnaire, a local questionnaire developed by the study researchers.\n\nParticipants will report on their experience and familiarity with meditation concepts and practices. The measure uses Yes-No response options (1=Yes; 0=No). The minimum value one can score is 0, and the maximum is 5. The higher scores represent better outcome.",
+            "timeFrame": "baseline"
+            },
+            {
+            "measure": "Meditation practice in young adult cancer survivors",
+            "description": "Meditation practice in young adult cancer survivors will be assessed using the Meditation Experience Questionnaire, a local questionnaire developed by the study researchers.\n\nParticipants will report on meditation practice. How long participants have practiced meditation is measured on a 4-point Likert scale (1=\"not applicable, I don't practice\" to 4=\"5 or more years\"). Average weekly practice frequency is measured on a 7-point Likert scale (1=\"Not applicable, I do not meditate on a regular basis\" to 7=\"More than once a day\"). Average time spent on meditation sessions is measured on a 6-point Likert scale (1=\"Not applicable, I do not meditate on a regular basis\" to 6=\"Greater than 60 minutes\").The minimum value one can score on is 1; the maximum is 17. Higher scores represent better outcome. Significant change will be indicated by p\\<.05 on reported practice between baseline and follow up time points between interventions.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Implementation feasibility measured by enrollment rate",
+            "description": "This indicator of implementation feasibility for the interventions delivered is defined by the overall enrollment rate being \\>/= 70% (e.g., total number of individuals enrolled/total number approached). Enrollment rate will be tracked continuously during the 24 week study.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Implementation feasibility measured by retention rate",
+            "description": "This indicator of implementation feasibility for the interventions delivered is defined by the retention rate being \\>/= 70% (e.g., total number of participants who drop out/ total number randomized). Retention rate will be tracked continuously during the 24 weeks of the study and significant differences between the study interventions in the number of participant withdrawals will be tracked.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Adherence to the OPT2MOVE app + Fitbit by young adult cancer survivors",
+            "description": "Adherence to the OPT2MOVE app + Fitbit will be monitored and usage tracked continuously during the 24 week study.\n\nObjective data include Fitbit wear time, number of times app is opened each week, time spent in app each time it is opened, and for participants who receive each component, usage of general and moderate to vigorous intensity physical activity specific mindfulness videos (i.e. whether clicked, how many times and for how long), number of e-coaching exchanges, number of buddy training webinars attended, and number of buddy interactions in the app.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Acceptability of the technology supported physical activity interventions as measured by a post-intervention evaluation survey",
+            "description": "Acceptability will be measured using a brief, Likert-type survey assessing participant enjoyment, satisfaction, perceived benefit, and ease of use. Acceptability is defined as \\>/= 70% of survey responses in affirmation of this.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Change in body mass index in young adult cancer survivors",
+            "description": "Change in body mass index in young adult cancer survivors will be assessed at baseline and 12 and 24 weeks using the Health History Questionnaire, a local questionnaire developed by the study researchers.\n\nParticipants will report on the following: height and most recent weight. BMI will be calculated. Significant change will be indicated by p\\<.05 on reported health behaviors between baseline and follow up time points between study interventions.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Change in health behaviors in young adult cancer survivors",
+            "description": "Change in health behaviors in young adult cancer survivors will be assessed at baseline and 12 and 24 weeks using the Health History Questionnaire, a local questionnaire developed by the study researchers.\n\nParticipants will report on the following: weekly leisure-time physical activities; weekly consumption of fruits, vegetables, red meat, processed meat, brown rice, beans, whole grain bread, fast food/snacks, caffeine, carbonated beverages; cigarette and alcohol use. Unhealthy behaviors will be reverse scored. Higher scores represent better outcome. Significant change will be indicated by p\\<.05 on reported health behaviors between baseline and follow up time points between study interventions.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Change in treatment expectations in young adult cancer survivors",
+            "description": "Change in treatment expectations in young adult cancer survivors will be assessed at baseline and 12 and 24 weeks using the HEAL - Treatment Expectancy - Short Form, OPT2MOVE Expectancy Items, and Positive Outlook v1.0 - Short Form 6a.\n\nParticipants will report on the expectations they have about the outcomes of the study treatment. Each scale measure uses a 5-point Likert scale (1=not at all to 5=very much). The higher scores represent better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Change in life event related stress in young adult cancer survivors",
+            "description": "Change in life event related stress will be assessed at baseline and 12 and 24 weeks using the Health History Questionnaire, a local questionnaire developed by the study researchers.\n\nThis 10-item scale measures distress about life events (e.g., death of someone close; concerns about finances) on a 5-point Likert scale (0=not at all to 4=very much). The minimum value one can score is 0, and the maximum is 40. The higher scores represent better outcome.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Environmental factors in physical activity participation in young adult cancer survivors",
+            "description": "environmental factors in physical activity participation will be measured at baseline and 12 and 24 weeks using the Physical Activity Neighborhood Environment Survey.\n\nThis 17-item questionnaire assesses environmental factors in physical activity participation, such as neighborhood safety, aesthetic qualities, neighborhood infrastructure, and access to destinations. Each question is rated on a 4-point Likert scale from 1 (Strongly disagree) to 4 (Strongly agree). Higher scores indicate higher neighborhood walkability.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Change in key components of multi-purpose action control framework in young adult cancer survivors",
+            "description": "Change in key components of M-PAC framework will be measured at baseline and 12 and 24 weeks using the Multi-Process Action Control (M-PAC) questionnaire.\n\nThe following components will be measured in 5-point Likert scale: affective attitude (score:3-15), instrumental attitude(score:3-15), perceived capability (score:3-15), perceived opportunity (score:3-15), behavioral regulation (score:6-30), habit formation (score:4-20), identity formation (score:4-20); and two items for decisional intentions (score:1-12). Higher score means higher levels of reflective, regulatory, and reflexive processes that may have facilitated exercise behavior change.",
+            "timeFrame": "24 weeks"
+            },
+            {
+            "measure": "Change in executive function in young adult cancer survivors",
+            "description": "Change in executive function will be measured at baseline and 12 and 24 weeks using the Amsterdam Executive Functioning Inventory.\n\nThe 13-item inventory groups items into three dimensions: attention; self-control; and planning. Responses are scored on a 3-point Likert scale: from 1 (not true) to 3=(true). Total score of all items is calculated so that higher scores are indicative of better outcome.",
+            "timeFrame": "24 weeks"
+            }
+        ]
+        },
+        "eligibilityModule": {
+        "eligibilityCriteria": "Inclusion Criteria:\n\nFor YACS\n\n* Diagnosis of nonmetastatic cancer (except non-melanoma skin cancer) within 5 years from the time of screening / study overview session\n* Age Diagnosis of cancer between 18-39 years at time of diagnosis and at time of screening / study overview session\n* Three or more months post-completion of primary treatment (i.e., surgery, chemotherapy, and/or radiation); may still be undergoing endocrine or hormone therapies\n* Score of 0 on two of the Exercise Preparticipation Health Screening Questionnaire items or willingness to obtain medical clearance from a primary care physician or oncologist\n* Self-report engagement in \\<60 minutes total each week of MVPA at time of screening / study overview session\n* Ownership of a smartphone that is either an iPhone (version 5 or greater) or an Android (version 5.0 or greater)\n* Internet access\n* Fluency in spoken and written English\n* Willingness, at time of screening / study overview session, to find a Buddy (someone who knows about their cancer and participation in this study and who is willing to participate by supporting them during the 6-month study), if assigned to that condition\n\nFor \"Buddies\"\n\n* Friend, co-worker, caregiver or family member of a participating YACS\n* Age 18 years or older\n* Score of 0 on the Exercise Preparticipation Health Screening Questionnaire or willingness to obtain medical clearance from a primary care physician\n* Ownership of a smartphone that is either an iPhone (version 5 or greater) or an Android (version 5.0 or greater)\n* Internet access\n* Fluency in spoken and written English\n* Willingness to share their Fitbit data with the study team\n\nExclusion Criteria:\n\n* For YACS: Diagnosis of non-melanoma skin cancer\n* Absolute contraindications to exercise (i.e., acute myocardial infarction, severe orthopedic conditions), metastatic disease, or planned elective surgery\n* Currently pregnant or plans to become pregnant in the next 12 months\n* Plans to move out of the United States in next 18 months\n* For YACS: Current enrollment in another dietary or physical activity trial\n* Inability to provide informed consent\n* Prisoners or other detained individuals",
+        "healthyVolunteers": false,
+        "sex": "ALL",
+        "minimumAge": "18 Years",
+        "maximumAge": "39 Years",
+        "stdAges": [
+            "ADULT"
+        ]
+        },
+        "contactsLocationsModule": {
+        "centralContacts": [
+            {
+            "name": "Siobhan M Phillips, PhD, MPH",
+            "role": "CONTACT",
+            "phone": "312-503-4235",
+            "email": "smphillips@northwestern.edu"
+            },
+            {
+            "name": "Bruriah E Horowitz, MEd",
+            "role": "CONTACT",
+            "phone": "312-503-3465",
+            "email": "bruriah.horowitz@northwestern.edu"
+            }
+        ],
+        "overallOfficials": [
+            {
+            "name": "Siobhan M Phillips, PhD, MPH",
+            "affiliation": "Northwestern University",
+            "role": "PRINCIPAL_INVESTIGATOR"
+            },
+            {
+            "name": "David E Victorson, PhD",
+            "affiliation": "Northwestern University",
+            "role": "PRINCIPAL_INVESTIGATOR"
+            }
+        ],
+        "locations": [
+            {
+            "facility": "Northwestern University",
+            "status": "RECRUITING",
+            "city": "Chicago",
+            "state": "Illinois",
+            "zip": "60611",
+            "country": "United States",
+            "contacts": [
+                {
+                "name": "Siobhan M Phillips, PhD, MPH",
+                "role": "CONTACT",
+                "phone": "312-503-4235",
+                "email": "smphillips@northwestern.edu"
+                },
+                {
+                "name": "David E Victorson, PhD",
+                "role": "CONTACT",
+                "phone": "847-467-3060",
+                "email": "d-victorson@northwestern.edu"
+                }
+            ],
+            "geoPoint": {
+                "lat": 41.85003,
+                "lon": -87.65005
+            }
+            },
+            {
+            "facility": "Wake Forest School of Medicine",
+            "status": "NOT_YET_RECRUITING",
+            "city": "Winston-Salem",
+            "state": "North Carolina",
+            "zip": "27101",
+            "country": "United States",
+            "contacts": [
+                {
+                "name": "John M Salsman, PhD",
+                "role": "CONTACT",
+                "phone": "336-713-3613",
+                "email": "jsalsman@wakehealth.edu"
+                }
+            ],
+            "geoPoint": {
+                "lat": 36.09986,
+                "lon": -80.24422
+            }
+            }
+        ]
+        },
+        "referencesModule": {
+        "references": [
+            {
+            "pmid": "26812450",
+            "type": "BACKGROUND",
+            "citation": "Rabin C, Pinto B, Fava J. Randomized Trial of a Physical Activity and Meditation Intervention for Young Adult Cancer Survivors. J Adolesc Young Adult Oncol. 2016 Mar;5(1):41-7. doi: 10.1089/jayao.2015.0033. Epub 2015 Oct 15."
+            },
+            {
+            "pmid": "30321398",
+            "type": "BACKGROUND",
+            "citation": "Liu L, Moke DJ, Tsai KY, Hwang A, Freyer DR, Hamilton AS, Zhang J, Cockburn M, Deapen D. A Reappraisal of Sex-Specific Cancer Survival Trends Among Adolescents and Young Adults in the United States. J Natl Cancer Inst. 2019 May 1;111(5):509-518. doi: 10.1093/jnci/djy140."
+            },
+            {
+            "pmid": "27253694",
+            "type": "BACKGROUND",
+            "citation": "Miller KD, Siegel RL, Lin CC, Mariotto AB, Kramer JL, Rowland JH, Stein KD, Alteri R, Jemal A. Cancer treatment and survivorship statistics, 2016. CA Cancer J Clin. 2016 Jul;66(4):271-89. doi: 10.3322/caac.21349. Epub 2016 Jun 2."
+            },
+            {
+            "pmid": "30362237",
+            "type": "BACKGROUND",
+            "citation": "Burkart M, Sanford S, Dinner S, Sharp L, Kinahan K. Future health of AYA survivors. Pediatr Blood Cancer. 2019 Feb;66(2):e27516. doi: 10.1002/pbc.27516. Epub 2018 Oct 26."
+            },
+            {
+            "pmid": "24888335",
+            "type": "BACKGROUND",
+            "citation": "Salsman JM, Garcia SF, Yanez B, Sanford SD, Snyder MA, Victorson D. Physical, emotional, and social health differences between posttreatment young adults with cancer and matched healthy controls. Cancer. 2014 Aug 1;120(15):2247-54. doi: 10.1002/cncr.28739. Epub 2014 May 28."
+            },
+            {
+            "pmid": "25568146",
+            "type": "BACKGROUND",
+            "citation": "Nass SJ, Beaupin LK, Demark-Wahnefried W, Fasciano K, Ganz PA, Hayes-Lattin B, Hudson MM, Nevidjon B, Oeffinger KC, Rechis R, Richardson LC, Seibel NL, Smith AW. Identifying and addressing the needs of adolescents and young adults with cancer: summary of an Institute of Medicine workshop. Oncologist. 2015 Feb;20(2):186-95. doi: 10.1634/theoncologist.2014-0265. Epub 2015 Jan 7."
+            },
+            {
+            "pmid": "22294757",
+            "type": "BACKGROUND",
+            "citation": "Fong DY, Ho JW, Hui BP, Lee AM, Macfarlane DJ, Leung SS, Cerin E, Chan WY, Leung IP, Lam SH, Taylor AJ, Cheng KK. Physical activity for cancer survivors: meta-analysis of randomised controlled trials. BMJ. 2012 Jan 30;344:e70. doi: 10.1136/bmj.e70."
+            },
+            {
+            "pmid": "22570317",
+            "type": "BACKGROUND",
+            "citation": "Ballard-Barbash R, Friedenreich CM, Courneya KS, Siddiqi SM, McTiernan A, Alfano CM. Physical activity, biomarkers, and disease outcomes in cancer survivors: a systematic review. J Natl Cancer Inst. 2012 Jun 6;104(11):815-40. doi: 10.1093/jnci/djs207. Epub 2012 May 8."
+            },
+            {
+            "pmid": "15850868",
+            "type": "BACKGROUND",
+            "citation": "Coups EJ, Ostroff JS. A population-based estimate of the prevalence of behavioral risk factors among adult cancer survivors and noncancer controls. Prev Med. 2005 Jun;40(6):702-11. doi: 10.1016/j.ypmed.2004.09.011."
+            },
+            {
+            "pmid": "30571339",
+            "type": "BACKGROUND",
+            "citation": "Piercy KL, Troiano RP. Physical Activity Guidelines for Americans From the US Department of Health and Human Services. Circ Cardiovasc Qual Outcomes. 2018 Nov;11(11):e005263. doi: 10.1161/CIRCOUTCOMES.118.005263. No abstract available."
+            },
+            {
+            "pmid": "29719077",
+            "type": "BACKGROUND",
+            "citation": "Brunet J, Wurz A, Shallwani SM. A scoping review of studies exploring physical activity among adolescents and young adults diagnosed with cancer. Psychooncology. 2018 Aug;27(8):1875-1888. doi: 10.1002/pon.4743. Epub 2018 Jun 5."
+            },
+            {
+            "type": "BACKGROUND",
+            "citation": "Bélanger LJ, Mummery WK, Clark AM, Courneya KS. Effects of targeted print materials on physical activity and quality of life in young adult cancer survivors during and after treatment: an exploratory randomized controlled trial. Journal of Adolescent and Young Adult Oncology. 2014;3(2):83-91."
+            },
+            {
+            "pmid": "23532799",
+            "type": "BACKGROUND",
+            "citation": "Valle CG, Tate DF, Mayer DK, Allicock M, Cai J. A randomized trial of a Facebook-based physical activity intervention for young adult cancer survivors. J Cancer Surviv. 2013 Sep;7(3):355-68. doi: 10.1007/s11764-013-0279-5. Epub 2013 Mar 27."
+            },
+            {
+            "pmid": "22810954",
+            "type": "BACKGROUND",
+            "citation": "Rabin C, Horowitz S, Marcus B. Recruiting young adult cancer survivors for behavioral research. J Clin Psychol Med Settings. 2013 Mar;20(1):33-6. doi: 10.1007/s10880-012-9317-0."
+            },
+            {
+            "pmid": "28374211",
+            "type": "BACKGROUND",
+            "citation": "Valle CG, Tate DF. Engagement of young adult cancer survivors within a Facebook-based physical activity intervention. Transl Behav Med. 2017 Dec;7(4):667-679. doi: 10.1007/s13142-017-0483-3."
+            },
+            {
+            "pmid": "30468299",
+            "type": "BACKGROUND",
+            "citation": "Schneider J, Malinowski P, Watson PM, Lattimore P. The role of mindfulness in physical activity: a systematic review. Obes Rev. 2019 Mar;20(3):448-463. doi: 10.1111/obr.12795. Epub 2018 Nov 23."
+            },
+            {
+            "pmid": "1330274",
+            "type": "BACKGROUND",
+            "citation": "Thomas S, Reading J, Shephard RJ. Revision of the Physical Activity Readiness Questionnaire (PAR-Q). Can J Sport Sci. 1992 Dec;17(4):338-45."
+            },
+            {
+            "type": "BACKGROUND",
+            "citation": "Hedeker D, Gibbons RD, Waternaux C. Sample size estimation for longitudinal designs with attrition: comparing time-related contrasts between two groups. Journal of Educational and Behavioral Statistics. 1999;24(1):70-93."
+            },
+            {
+            "pmid": "28410158",
+            "type": "BACKGROUND",
+            "citation": "Hong YA, Goldberg D, Ory MG, Towne SD Jr, Forjuoh SN, Kellstedt D, Wang S. Efficacy of a Mobile-Enabled Web App (iCanFit) in Promoting Physical Activity Among Older Cancer Survivors: A Pilot Study. JMIR Cancer. 2015 Jun 26;1(1):e7. doi: 10.2196/cancer.4389."
+            },
+            {
+            "pmid": "9588623",
+            "type": "BACKGROUND",
+            "citation": "Freedson PS, Melanson E, Sirard J. Calibration of the Computer Science and Applications, Inc. accelerometer. Med Sci Sports Exerc. 1998 May;30(5):777-81. doi: 10.1097/00005768-199805000-00021."
+            },
+            {
+            "pmid": "17426327",
+            "type": "BACKGROUND",
+            "citation": "Welk GJ, McClain JJ, Eisenmann JC, Wickel EE. Field validation of the MTI Actigraph and BodyMedia armband monitor using the IDEEA monitor. Obesity (Silver Spring). 2007 Apr;15(4):918-28. doi: 10.1038/oby.2007.624."
+            },
+            {
+            "pmid": "4053261",
+            "type": "BACKGROUND",
+            "citation": "Godin G, Shephard RJ. A simple method to assess exercise behavior in the community. Can J Appl Sport Sci. 1985 Sep;10(3):141-6."
+            },
+            {
+            "pmid": "17991929",
+            "type": "BACKGROUND",
+            "citation": "Garcia SF, Cella D, Clauser SB, Flynn KE, Lad T, Lai JS, Reeve BB, Smith AW, Stone AA, Weinfurt K. Standardizing patient-reported outcomes assessment in cancer clinical trials: a patient-reported outcomes measurement information system initiative. J Clin Oncol. 2007 Nov 10;25(32):5106-12. doi: 10.1200/JCO.2007.12.2341. Erratum In: J Clin Oncol. 2008 Feb 20;26(6):1018. Lad, Thomas [added]."
+            },
+            {
+            "pmid": "21697139",
+            "type": "BACKGROUND",
+            "citation": "Pilkonis PA, Choi SW, Reise SP, Stover AM, Riley WT, Cella D; PROMIS Cooperative Group. Item banks for measuring emotional distress from the Patient-Reported Outcomes Measurement Information System (PROMIS(R)): depression, anxiety, and anger. Assessment. 2011 Sep;18(3):263-83. doi: 10.1177/1073191111411667. Epub 2011 Jun 21."
+            },
+            {
+            "type": "BACKGROUND",
+            "citation": "Lai J-S, Cella D, Choi S, Teresi JA, Hays RD, Stone AA. Developing a fatigue item bank for the Patient-Reported Outcomes Measurement Information System (PROMIS FIB version 1). Presented at the Meeting of the Survey Methods in Multicultural, Multinational, and Multiregional Contexts(3MC), Berlin, Germany. 2008."
+            },
+            {
+            "pmid": "20550019",
+            "type": "BACKGROUND",
+            "citation": "Buysse DJ, Yu L, Moul DE, Germain A, Stover A, Dodds NE, Johnston KL, Shablesky-Cade MA, Pilkonis PA. Development and validation of patient-reported outcome measures for sleep disturbance and sleep-related impairments. Sleep. 2010 Jun;33(6):781-92. doi: 10.1093/sleep/33.6.781."
+            },
+            {
+            "pmid": "18573227",
+            "type": "BACKGROUND",
+            "citation": "Chadwick P, Hember M, Symes J, Peters E, Kuipers E, Dagnan D. Responding mindfully to unpleasant thoughts and images: reliability and validity of the Southampton mindfulness questionnaire (SMQ). Br J Clin Psychol. 2008 Nov;47(Pt 4):451-5. doi: 10.1348/014466508X314891. Epub 2008 Jun 20."
+            },
+            {
+            "pmid": "21584907",
+            "type": "BACKGROUND",
+            "citation": "Raes F, Pommier E, Neff KD, Van Gucht D. Construction and factorial validation of a short form of the Self-Compassion Scale. Clin Psychol Psychother. 2011 May-Jun;18(3):250-5. doi: 10.1002/cpp.702. Epub 2010 Jun 8."
+            },
+            {
+            "pmid": "8827649",
+            "type": "BACKGROUND",
+            "citation": "Tedeschi RG, Calhoun LG. The Posttraumatic Growth Inventory: measuring the positive legacy of trauma. J Trauma Stress. 1996 Jul;9(3):455-71. doi: 10.1007/BF02103658."
+            },
+            {
+            "pmid": "8433355",
+            "type": "BACKGROUND",
+            "citation": "McAuley E. Self-efficacy and the maintenance of exercise participation in older adults. J Behav Med. 1993 Feb;16(1):103-13. doi: 10.1007/BF00844757."
+            },
+            {
+            "pmid": "19181688",
+            "type": "BACKGROUND",
+            "citation": "Wojcicki TR, White SM, McAuley E. Assessing outcome expectations in older adults: the multidimensional outcome expectations for exercise scale. J Gerontol B Psychol Sci Soc Sci. 2009 Jan;64(1):33-40. doi: 10.1093/geronb/gbn032. Epub 2009 Jan 29."
+            },
+            {
+            "pmid": "12054320",
+            "type": "BACKGROUND",
+            "citation": "Rovniak LS, Anderson ES, Winett RA, Stephens RS. Social cognitive determinants of physical activity in young adults: a prospective structural equation analysis. Ann Behav Med. 2002 Spring;24(2):149-56. doi: 10.1207/S15324796ABM2402_12."
+            },
+            {
+            "pmid": "3432232",
+            "type": "BACKGROUND",
+            "citation": "Sallis JF, Grossman RM, Pinski RB, Patterson TL, Nader PR. The development of scales to measure social support for diet and exercise behaviors. Prev Med. 1987 Nov;16(6):825-36. doi: 10.1016/0091-7435(87)90022-3."
+            },
+            {
+            "type": "BACKGROUND",
+            "citation": "DR H, RD G. Longitudinal data analysis. Hoboken, N.J.: Wiley-Interscience; 2006."
+            },
+            {
+            "pmid": "21132416",
+            "type": "BACKGROUND",
+            "citation": "Collins LM, Baker TB, Mermelstein RJ, Piper ME, Jorenby DE, Smith SS, Christiansen BA, Schlam TR, Cook JW, Fiore MC. The multiphase optimization strategy for engineering effective tobacco use interventions. Ann Behav Med. 2011 Apr;41(2):208-26. doi: 10.1007/s12160-010-9253-x."
+            },
+            {
+            "pmid": "16097907",
+            "type": "BACKGROUND",
+            "citation": "Collins LM, Murphy SA, Nair VN, Strecher VJ. A strategy for optimizing and evaluating behavioral interventions. Ann Behav Med. 2005 Aug;30(1):65-73. doi: 10.1207/s15324796abm3001_8."
+            },
+            {
+            "pmid": "26822111",
+            "type": "BACKGROUND",
+            "citation": "Krull JL, MacKinnon DP. Multilevel Modeling of Individual and Group Level Mediated Effects. Multivariate Behav Res. 2001 Apr 1;36(2):249-77. doi: 10.1207/S15327906MBR3602_06."
+            },
+            {
+            "type": "BACKGROUND",
+            "citation": "DiCiccio TJ, Efron B. Bootstrap confidence intervals. Statistical science. 1996:189-212."
+            },
+            {
+            "type": "BACKGROUND",
+            "citation": "Hankin VV, D.; Polster, R. Maximizing Acceptance and Enrollment in MBSR Randomized Controlled Trials with Older Men Diagnosed with Cancer. . Poster presented to the 8th Annual International Scientific Conference of Mindfulness in Medicine, Health Care, and Society. Worcester, MA. 2010."
+            },
+            {
+            "type": "BACKGROUND",
+            "citation": "Victorson D, Du H, Hankin V, et al. Mindfulness based stress reduction decreases fear of progression over time for men with prostate cancer on active surveillance: results from a randomized clinical trial. The Journal of Urology. 2012 2012;187(4S):384."
+            },
+            {
+            "pmid": "27145355",
+            "type": "BACKGROUND",
+            "citation": "Victorson D, Hankin V, Burns J, Weiland R, Maletich C, Sufrin N, Schuette S, Gutierrez B, Brendler C. Feasibility, acceptability and preliminary psychological benefits of mindfulness meditation training in a sample of men diagnosed with prostate cancer on active surveillance: results from a randomized controlled pilot trial. Psychooncology. 2017 Aug;26(8):1155-1163. doi: 10.1002/pon.4135. Epub 2016 May 3."
+            },
+            {
+            "type": "BACKGROUND",
+            "citation": "Victorson D, Maletich, C, Gutierrez, B, Schuette, S, Morgan, T, Kutikov, A, Kundu, S, Eggener, S, Brendler, C. Description of a New National Cancer Institute Funded Randomized Controlled Trial"
+            },
+            {
+            "type": "BACKGROUND",
+            "citation": "Victorson D, Garland, E, Hanley, A, Greco, C. Is Mindfulness Immeasurable? Discovery and Dialogue of Conceptual, Practical, Scientific, and Experiential Solutions. Global Advances in Health and Medicine. 2018 7(1160):13."
+            },
+            {
+            "type": "BACKGROUND",
+            "citation": "Victorson D, Maletich, C, Sufrin, N, Schuette, S, Gutierrez, B, Cordero, E, Johnson, C, Stencel, D, Bakosh, L, Ring, M. Development of a New Clinical Mindfulness Research Tool to Enhance, Deliver and Streamline Online Mindfulness Interventions. THE JOURNAL OF ALTERNATIVE AND COMPLEMENTARY MEDICINE. 2016;0(0):A21."
+            },
+            {
+            "pmid": "27435322",
+            "type": "BACKGROUND",
+            "citation": "Munoz AR, Kaiser K, Yanez B, Victorson D, Garcia SF, Snyder MA, Salsman JM. Cancer experiences and health-related quality of life among racial and ethnic minority survivors of young adult cancer: a mixed methods study. Support Care Cancer. 2016 Dec;24(12):4861-4870. doi: 10.1007/s00520-016-3340-x. Epub 2016 Jul 19."
+            },
+            {
+            "pmid": "23526093",
+            "type": "BACKGROUND",
+            "citation": "Salsman JM, Victorson D, Choi SW, Peterman AH, Heinemann AW, Nowinski C, Cella D. Development and validation of the positive affect and well-being scale for the neurology quality of life (Neuro-QOL) measurement system. Qual Life Res. 2013 Nov;22(9):2569-80. doi: 10.1007/s11136-013-0382-0. Epub 2013 Mar 23."
+            },
+            {
+            "type": "BACKGROUND",
+            "citation": "Victorson DS, J; Garcia, S; Snyder, M; Munoz, A. Identifying Challenges, Assets and Quality of Life Impacts among Young Adults with Cancer. Psychooncology. 2013;Suppl 2(P1-81):91."
+            },
+            {
+            "pmid": "30445595",
+            "type": "BACKGROUND",
+            "citation": "Lloyd GR, Hoffman SA, Welch WA, Blanch-Hartigan D, Gavin KL, Cottrell A, Cadmus-Bertram L, Spring B, Penedo F, Courneya KS, Phillips SM. Breast cancer survivors' preferences for social support features in technology-supported physical activity interventions: findings from a mixed methods evaluation. Transl Behav Med. 2020 May 20;10(2):423-434. doi: 10.1093/tbm/iby112."
+            },
+            {
+            "type": "BACKGROUND",
+            "citation": "Rosenberg, M. Society and the adolescent self-image. Princeton, NJ: Princeton UniversityPress.1965."
+            },
+            {
+            "type": "BACKGROUND",
+            "citation": "Fox, K.R., & Corbin, C.B. The physical self-perception profile: Development and preliminary validation. Journal of Sport & Exercise Psychology, 11, 408-430 1989."
+            },
+            {
+            "type": "BACKGROUND",
+            "citation": "Kendzierski D, DeCarlo KJ. Physical Activity Enjoyment Scale: Two validation studies. Journal of Sport & Exercise Psychology. 1991."
+            }
+        ]
+        },
+        "ipdSharingStatementModule": {
+        "ipdSharing": "NO"
+        }
+        }
+    },
+    "NCT05369429": {
+        "protocolSection": {
+            "identificationModule": {
+            "nctId": "NCT05369429",
+            "orgStudyIdInfo": {
+                "id": "STU00213537"
+            },
+            "secondaryIdInfos": [
+                {
+                "id": "1R37CA255875-01",
+                "type": "NIH",
+                "link": "https://reporter.nih.gov/quickSearch/1R37CA255875-01"
+                }
+            ],
+            "organization": {
+                "fullName": "Northwestern University",
+                "class": "OTHER"
+            },
+            "briefTitle": "My Wellbeing Guide: A Novel Tool for Managing Stress and Improving Quality of Life",
+            "officialTitle": "My Wellbeing Guide, Technology Facilitated Behavioral Intervention for Depression Among Diverse Patients in Ambulatory Oncology",
+            "acronym": "R37"
+            },
+            "statusModule": {
+            "statusVerifiedDate": "2024-02",
+            "overallStatus": "RECRUITING",
+            "expandedAccessInfo": {
+                "hasExpandedAccess": false
+            },
+            "startDateStruct": {
+                "date": "2022-12-02",
+                "type": "ACTUAL"
+            },
+            "primaryCompletionDateStruct": {
+                "date": "2026-06-01",
+                "type": "ESTIMATED"
+            },
+            "completionDateStruct": {
+                "date": "2028-06-01",
+                "type": "ESTIMATED"
+            },
+            "studyFirstSubmitDate": "2022-04-29",
+            "studyFirstSubmitQcDate": "2022-05-06",
+            "studyFirstPostDateStruct": {
+                "date": "2022-05-11",
+                "type": "ACTUAL"
+            },
+            "lastUpdateSubmitDate": "2024-02-14",
+            "lastUpdatePostDateStruct": {
+                "date": "2024-02-15",
+                "type": "ACTUAL"
+            }
+            },
+            "sponsorCollaboratorsModule": {
+            "responsibleParty": {
+                "type": "PRINCIPAL_INVESTIGATOR",
+                "investigatorFullName": "Betina Yanez",
+                "investigatorTitle": "Associate Professor",
+                "investigatorAffiliation": "Northwestern University"
+            },
+            "leadSponsor": {
+                "name": "Northwestern University",
+                "class": "OTHER"
+            },
+            "collaborators": [
+                {
+                "name": "University of Miami",
+                "class": "OTHER"
+                },
+                {
+                "name": "National Cancer Institute (NCI)",
+                "class": "NIH"
+                }
+            ]
+            },
+            "oversightModule": {
+            "oversightHasDmc": true,
+            "isFdaRegulatedDrug": false,
+            "isFdaRegulatedDevice": false
+            },
+            "descriptionModule": {
+            "briefSummary": "The purpose of this study is to examine the implementation and effectiveness of the psychosocial eHealth intervention, My Wellbeing Guide, on the proposed primary outcome, depressive symptoms, in patients diagnosed with cancer who receive care at Northwestern Medicine and the University of Miami Health System.\n\nThe intervention includes cognitive behavioral therapy management strategies for health-related stress in the form of animated videos, interactive activities, and written content. The intervention will be delivered via an online application over an 7-week period. Intervention participants will also complete four assessments: baseline (at the beginning of the research study), post-intervention (7 weeks after baseline), a 6-month follow-up, and a 12-month follow up.\n\nParticipants are randomized into either an intervention application (described above) or a control application (which will provide links to helpful resources for patients with cancer, such as the contact information for cancer support services at Northwestern University and the University of Miami, and the link to the National Cancer Institute website, and the American Cancer Society website.) Control participants will also complete four assessments: baseline (at the beginning of the research study), post-intervention (7 weeks after baseline), a 6-month follow-up, and a 12-month follow up.",
+            "detailedDescription": "Depression is one of the most common psychological comorbidities experienced throughout the cancer continuum. Elevated depressive symptoms in oncology patients is a major concern as unmanaged depressive symptoms in cancer patients is associated with poor health-related quality of life (HRQoL), poor adherence to cancer treatments, delayed return to work and baseline function, greater emergency department visits, and higher all-cause mortality. Behavioral interventions for the management of depression are efficacious, but scalability and implementation of these evidence-based interventions in oncology is limited. Health information technologies (HIT) provide an ideal opportunity to expedite the administration, scoring, and interpretation of depression screening with well-validated, brief and precise measurement tools that can capture actionable data to screen for depression, and deliver pragmatic and scalable evidence-based behavioral interventions that are proven to reduce depressive symptomatology across various other populations.\n\nThe study takes place across two distinct health systems in two major metropolitan areas-Chicago and Miami (Northwestern Medicine and University of Miami Health System). While across the two health systems (NM and UHealth), patients already receive EHR-delivered assessments that are linked to EPIC and real-time alerts sent to supportive oncology for patients with moderately to severely elevated symptoms, a lacking component is the integration of an evidence-based, HIT management program for elevated depressive symptoms.\n\nThe investigators will evaluate the effectiveness and the implementation of an evidence-based HIT behavioral treatment for cancer patients with elevated depressive symptoms. This HIT treatment combines systematic, electronic health record-integrated screening for depressive symptoms with an individually-tailored HIT interventions to address gaps in the treatment of depression among cancer patients. The investigators' specific aims are as follows:\n\nAim 1a. To further develop and refine My Wellbeing Guide, a web-based platform to optimize management of elevated depressive symptoms in ambulatory oncology in two large health systems.\n\nAim 1b. To establish the effectiveness of My Wellbeing Guide on depressive symptoms (i.e., primary outcome) and anxiety, HRQoL, and health services utilization (i.e. secondary outcomes), and putative mechanisms of action/mediators (e.g., self -efficacy) of My Wellbeing Guide on study outcomes compared to usual care.\n\nAim 1c. To evaluate the process of implementing My Wellbeing Guide and its impact on patient and system-level outcomes through electronic health record (EHR) extractions of Aim 1b patients, and through clinician, and hospital administrator interviews.\n\nAim 2. To identify facilitators and barriers to wide-scale implementation and expansion of My Wellbeing Guide through interviews and focus groups with stakeholders (clinicians, hospital administrators, and patients who participated in My Wellbeing Guide)."
+            },
+            "conditionsModule": {
+            "conditions": [
+                "Cancer",
+                "Anxiety",
+                "Depressive Symptoms"
+            ],
+            "keywords": [
+                "eHealth",
+                "Wellbeing"
+            ]
+            },
+            "designModule": {
+            "studyType": "INTERVENTIONAL",
+            "phases": [
+                "NA"
+            ],
+            "designInfo": {
+                "allocation": "RANDOMIZED",
+                "interventionModel": "PARALLEL",
+                "primaryPurpose": "SUPPORTIVE_CARE",
+                "maskingInfo": {
+                "masking": "SINGLE",
+                "whoMasked": [
+                    "PARTICIPANT"
+                ]
+                }
+            },
+            "enrollmentInfo": {
+                "count": 6516,
+                "type": "ESTIMATED"
+            }
+            },
+            "armsInterventionsModule": {
+            "armGroups": [
+                {
+                "label": "Intervention",
+                "type": "EXPERIMENTAL",
+                "description": "The intervention includes cognitive behavioral therapy management strategies for health-related stress in the form of animated videos, interactive activities, and written content. The intervention will be delivered via an online application over an 7-week period. Intervention participants will also complete four assessments: baseline (at the beginning of the research study), post-intervention (7 weeks after baseline), a 6-month follow-up, and a 12-month follow up.",
+                "interventionNames": [
+                    "Behavioral: My Wellbeing Guide"
+                ]
+                },
+                {
+                "label": "Control",
+                "type": "NO_INTERVENTION",
+                "description": "The control application will provide links to helpful resources for patients with cancer, such as the contact information for cancer support services at Northwestern University and the University of Miami, and the link to the National Cancer Institute website, and the American Cancer Society website. Control participants will also complete four assessments: baseline (at the beginning of the research study), post-intervention (7 weeks after baseline), a 6-month follow-up, and a 12-month follow up."
+                }
+            ],
+            "interventions": [
+                {
+                "type": "BEHAVIORAL",
+                "name": "My Wellbeing Guide",
+                "description": "The intervention includes cognitive behavioral therapy management strategies for health-related stress in the form of animated videos, interactive activities, and written content. The intervention will be delivered via an online application over an 7-week period. Intervention participants will also complete four assessments: baseline (at the beginning of the research study), post-intervention (7 weeks after baseline), a 6-month follow-up, and a 12-month follow up.",
+                "armGroupLabels": [
+                    "Intervention"
+                ]
+                }
+            ]
+            },
+            "outcomesModule": {
+            "primaryOutcomes": [
+                {
+                "measure": "Change in depressive symptoms will be evaluated with the Patient-Reported Outcomes Measurement Information System Depression",
+                "description": "The Patient-Reported Outcomes Measurement Information System (PROMIS) Depression questionnaire is a previously validated patient-report measure of depressive symptoms in the last seven days. Scores generally range from 20 - 80, with higher scores indicating a patient is reporting more severe levels of depression.",
+                "timeFrame": "T1 (prior to starting intervention), T2 (7 weeks post intervention), T3 (6 months post-intervention), T4 (12 months post-intervention)"
+                }
+            ],
+            "secondaryOutcomes": [
+                {
+                "measure": "Change in anxiety will be evaluated with the Patient-Reported Outcomes Measurement Information System Anxiety",
+                "description": "The Patient-Reported Outcomes Measurement Information System (PROMIS) Anxiety questionnaire is a previously validated patient-report measure of symptoms of anxiety in the last seven days. Scores generally range from 20 - 80, with higher scores indicating a patient is reporting more severe levels of anxiety.",
+                "timeFrame": "T1 (prior to starting intervention), T2 (7 weeks post intervention), T3 (6 months post-intervention), T4 (12 months post-intervention)"
+                },
+                {
+                "measure": "Change in Health Related Quality of Life will be evaluated with The Functional Assessment of Cancer Therapy - General - 7 item version (FACT-G7)",
+                "description": "The Functional Assessment of Cancer Therapy - General - 7 item version (FACT-G7) has been used extensively to measure Health Related Quality of Life (HRQoL). The FACT-G7assesses participant's wellbeing in physical, emotional, social, and functional concerns in the last seven days using a five-point response scale. Scores range from 0-28, with higher scores indicating better quality of life.",
+                "timeFrame": "T1 (prior to starting intervention), T2 (7 weeks post intervention), T3 (6 months post-intervention), T4 (12 months post-intervention)"
+                }
+            ]
+            },
+            "eligibilityModule": {
+            "eligibilityCriteria": "Inclusion Criteria:\n\n1. planned treatment and follow-up within the NM or UHealth healthcare system;\n2. ≥ 18 years of age;\n3. medical chart confirmed diagnosis of a solid or hematological malignancy;\n4. elevated depressive symptoms on the PROMIS CAT (score \\> or = 55) within the last 3 months;\n5. access to the internet;\n6. willingness to be randomized;\n7. able to read English or Spanish;\n8. patients must have signed informed consent prior to registration on study\n\nExclusion Criteria:\n\nNote: The investigators will not include any vulnerable populations in this study.",
+            "healthyVolunteers": false,
+            "sex": "ALL",
+            "minimumAge": "18 Years",
+            "stdAges": [
+                "ADULT",
+                "OLDER_ADULT"
+            ]
+            },
+            "contactsLocationsModule": {
+            "centralContacts": [
+                {
+                "name": "Diana Buitrago, MPH",
+                "role": "CONTACT",
+                "phone": "312-503-2866",
+                "email": "diana.buitrago@northwestern.edu"
+                },
+                {
+                "name": "Betina Yanez, PhD",
+                "role": "CONTACT",
+                "phone": "3125035341",
+                "email": "betina.yanez@northwestern.edu"
+                }
+            ],
+            "overallOfficials": [
+                {
+                "name": "Betina Yanez, PhD",
+                "affiliation": "Northwestern University",
+                "role": "PRINCIPAL_INVESTIGATOR"
+                }
+            ],
+            "locations": [
+                {
+                "facility": "Northwestern University",
+                "status": "RECRUITING",
+                "city": "Chicago",
+                "state": "Illinois",
+                "zip": "60611",
+                "country": "United States",
+                "contacts": [
+                    {
+                    "name": "Diana Buitrago",
+                    "role": "CONTACT",
+                    "phone": "312-503-2866",
+                    "email": "diana.buitrago@northwestern.edu"
+                    }
+                ],
+                "geoPoint": {
+                    "lat": 41.85003,
+                    "lon": -87.65005
+                }
+                }
+            ]
+            },
+            "ipdSharingStatementModule": {
+            "ipdSharing": "NO"
+            }
+        }
+    },
+    "NCT06420193": {
+        "protocolSection": {
+            "identificationModule": {
+            "nctId": "NCT06420193",
+            "orgStudyIdInfo": {
+                "id": "23-001795"
+            },
+            "secondaryIdInfos": [
+                {
+                "id": "R00CA248701",
+                "type": "NIH",
+                "link": "https://reporter.nih.gov/quickSearch/R00CA248701"
+                }
+            ],
+            "organization": {
+                "fullName": "East Carolina University",
+                "class": "OTHER"
+            },
+            "briefTitle": "Evaluating Procedures for a Study of the AYA Survivors Coping and Emotional Needs Toolkit",
+            "officialTitle": "Evaluating the Feasibility and Acceptability of Study Procedures for a Full Factorial Trial of the AYA Survivors Coping and Emotional Needs Toolkit (ASCENT)",
+            "acronym": "ASCENT"
+            },
+            "statusModule": {
+            "statusVerifiedDate": "2024-10",
+            "overallStatus": "RECRUITING",
+            "expandedAccessInfo": {
+                "hasExpandedAccess": false
+            },
+            "startDateStruct": {
+                "date": "2024-10-01",
+                "type": "ACTUAL"
+            },
+            "primaryCompletionDateStruct": {
+                "date": "2024-12",
+                "type": "ESTIMATED"
+            },
+            "completionDateStruct": {
+                "date": "2024-12",
+                "type": "ESTIMATED"
+            },
+            "studyFirstSubmitDate": "2024-05-07",
+            "studyFirstSubmitQcDate": "2024-05-16",
+            "studyFirstPostDateStruct": {
+                "date": "2024-05-17",
+                "type": "ACTUAL"
+            },
+            "lastUpdateSubmitDate": "2024-10-16",
+            "lastUpdatePostDateStruct": {
+                "date": "2024-10-18",
+                "type": "ACTUAL"
+            }
+            },
+            "sponsorCollaboratorsModule": {
+            "responsibleParty": {
+                "type": "PRINCIPAL_INVESTIGATOR",
+                "investigatorFullName": "Karly M Murphy, PhD",
+                "investigatorTitle": "Principal Investigator",
+                "investigatorAffiliation": "East Carolina University"
+            },
+            "leadSponsor": {
+                "name": "East Carolina University",
+                "class": "OTHER"
+            },
+            "collaborators": [
+                {
+                "name": "National Cancer Institute (NCI)",
+                "class": "NIH"
+                }
+            ]
+            },
+            "oversightModule": {
+            "oversightHasDmc": false,
+            "isFdaRegulatedDrug": false,
+            "isFdaRegulatedDevice": false,
+            "isUsExport": false
+            },
+            "descriptionModule": {
+            "briefSummary": "The investigators developed a digital intervention that aims to help adolescent and young adult cancer survivors (AYAs) manage symptoms of depression. This tool includes daily mood tracking, a psychoeducational module about cancer and depression, four components that are based on evidence-based interventions for depression. The goal of this study is to evaluate the acceptability of procedures for a future trial in which the investigators will test which component or combination of components meaningfully contribute to improvements in depressive symptoms among AYAs. Additionally, the investigators will evaluate study feasibility as well as intervention acceptability, satisfaction, usability, and engagement."
+            },
+            "conditionsModule": {
+            "conditions": [
+                "Depression",
+                "Cancer",
+                "Adolescent",
+                "Young Adult",
+                "Adult"
+            ]
+            },
+            "designModule": {
+            "studyType": "INTERVENTIONAL",
+            "phases": [
+                "NA"
+            ],
+            "designInfo": {
+                "allocation": "RANDOMIZED",
+                "interventionModel": "FACTORIAL",
+                "primaryPurpose": "SUPPORTIVE_CARE",
+                "maskingInfo": {
+                "masking": "SINGLE",
+                "whoMasked": [
+                    "PARTICIPANT"
+                ]
+                }
+            },
+            "enrollmentInfo": {
+                "count": 16,
+                "type": "ESTIMATED"
+            }
+            },
+            "armsInterventionsModule": {
+            "armGroups": [
+                {
+                "label": "Condition 1",
+                "type": "EXPERIMENTAL",
+                "description": "Feeling component of ASCENT (psychoeducation about AYA cancer survivorship and depression).",
+                "interventionNames": [
+                    "Behavioral: AYA Survivors Coping and Emotional Needs Toolkit (ASCENT)"
+                ]
+                },
+                {
+                "label": "Condition 2",
+                "type": "EXPERIMENTAL",
+                "description": "Feeling component of ASCENT (psychoeducation about AYA cancer survivorship and depression); Positivity component of ASCENT (an adaptation of a suite of evidence-based positive psychology interventions that aims to help AYAs savor the good things in life, use their strengths, and practice gratitude and kindness).",
+                "interventionNames": [
+                    "Behavioral: AYA Survivors Coping and Emotional Needs Toolkit (ASCENT)"
+                ]
+                },
+                {
+                "label": "Condition 3",
+                "type": "EXPERIMENTAL",
+                "description": "Feeling component of ASCENT (psychoeducation about AYA cancer survivorship and depression); Being component of ASCENT (an adaptation of mindfulness training that aims to help AYAs maintain contact with the present moment with an attitude of acceptance).",
+                "interventionNames": [
+                    "Behavioral: AYA Survivors Coping and Emotional Needs Toolkit (ASCENT)"
+                ]
+                },
+                {
+                "label": "Condition 4",
+                "type": "EXPERIMENTAL",
+                "description": "Feeling component of ASCENT (psychoeducation about AYA cancer survivorship and depression); Being component of ASCENT (an adaptation of mindfulness training that aims to help AYAs maintain contact with the present moment with an attitude of acceptance); Positivity component of ASCENT (an adaptation of a suite of evidence-based positive psychology interventions that aims to help AYAs savor the good things in life, use their strengths, and practice gratitude and kindness).",
+                "interventionNames": [
+                    "Behavioral: AYA Survivors Coping and Emotional Needs Toolkit (ASCENT)"
+                ]
+                },
+                {
+                "label": "Condition 5",
+                "type": "EXPERIMENTAL",
+                "description": "Feeling component of ASCENT (psychoeducation about AYA cancer survivorship and depression); Thinking component of ASCENT (an adaptation of cognitive restructuring that aims to help AYAs identify, evaluate, and restructure their negative automatic thoughts and core beliefs).",
+                "interventionNames": [
+                    "Behavioral: AYA Survivors Coping and Emotional Needs Toolkit (ASCENT)"
+                ]
+                },
+                {
+                "label": "Condition 6",
+                "type": "EXPERIMENTAL",
+                "description": "Feeling component of ASCENT (psychoeducation about AYA cancer survivorship and depression); Thinking component of ASCENT (an adaptation of cognitive restructuring that aims to help AYAs identify, evaluate, and restructure their negative automatic thoughts and core beliefs); Positivity component of ASCENT (an adaptation of a suite of evidence-based positive psychology interventions that aims to help AYAs savor the good things in life, use their strengths, and practice gratitude and kindness).",
+                "interventionNames": [
+                    "Behavioral: AYA Survivors Coping and Emotional Needs Toolkit (ASCENT)"
+                ]
+                },
+                {
+                "label": "Condition 7",
+                "type": "EXPERIMENTAL",
+                "description": "Feeling component of ASCENT (psychoeducation about AYA cancer survivorship and depression); Thinking component of ASCENT (an adaptation of cognitive restructuring that aims to help AYAs identify, evaluate, and restructure their negative automatic thoughts and core beliefs); Being component of ASCENT (an adaptation of mindfulness training that aims to help AYAs maintain contact with the present moment with an attitude of acceptance).",
+                "interventionNames": [
+                    "Behavioral: AYA Survivors Coping and Emotional Needs Toolkit (ASCENT)"
+                ]
+                },
+                {
+                "label": "Condition 8",
+                "type": "EXPERIMENTAL",
+                "description": "Feeling component of ASCENT (psychoeducation about AYA cancer survivorship and depression); Thinking component of ASCENT (an adaptation of cognitive restructuring that aims to help AYAs identify, evaluate, and restructure their negative automatic thoughts and core beliefs); Being component of ASCENT (an adaptation of mindfulness training that aims to help AYAs maintain contact with the present moment with an attitude of acceptance); Positivity component of ASCENT (an adaptation of a suite of evidence-based positive psychology interventions that aims to help AYAs savor the good things in life, use their strengths, and practice gratitude and kindness)",
+                "interventionNames": [
+                    "Behavioral: AYA Survivors Coping and Emotional Needs Toolkit (ASCENT)"
+                ]
+                },
+                {
+                "label": "Condition 9",
+                "type": "EXPERIMENTAL",
+                "description": "Feeling component of ASCENT (psychoeducation about AYA cancer survivorship and depression); Doing component of ASCENT (an adaptation of behavioral activation that aims to help AYAs engage in enjoyable activities, achieve their goals, and live in accordance with their values).",
+                "interventionNames": [
+                    "Behavioral: AYA Survivors Coping and Emotional Needs Toolkit (ASCENT)"
+                ]
+                },
+                {
+                "label": "Condition 10",
+                "type": "EXPERIMENTAL",
+                "description": "Feeling component of ASCENT (psychoeducation about AYA cancer survivorship and depression); Doing component of ASCENT (an adaptation of behavioral activation that aims to help AYAs engage in enjoyable activities, achieve their goals, and live in accordance with their values); Positivity component of ASCENT (an adaptation of a suite of evidence-based positive psychology interventions that aims to help AYAs savor the good things in life, use their strengths, and practice gratitude and kindness).",
+                "interventionNames": [
+                    "Behavioral: AYA Survivors Coping and Emotional Needs Toolkit (ASCENT)"
+                ]
+                },
+                {
+                "label": "Condition 11",
+                "type": "EXPERIMENTAL",
+                "description": "Feeling component of ASCENT (psychoeducation about AYA cancer survivorship and depression); Doing component of ASCENT (an adaptation of behavioral activation that aims to help AYAs engage in enjoyable activities, achieve their goals, and live in accordance with their values); Being component of ASCENT (an adaptation of mindfulness training that aims to help AYAs maintain contact with the present moment with an attitude of acceptance).",
+                "interventionNames": [
+                    "Behavioral: AYA Survivors Coping and Emotional Needs Toolkit (ASCENT)"
+                ]
+                },
+                {
+                "label": "Condition 12",
+                "type": "EXPERIMENTAL",
+                "description": "Feeling component of ASCENT (psychoeducation about AYA cancer survivorship and depression); Doing component of ASCENT (an adaptation of behavioral activation that aims to help AYAs engage in enjoyable activities, achieve their goals, and live in accordance with their values); Being component of ASCENT (an adaptation of mindfulness training that aims to help AYAs maintain contact with the present moment with an attitude of acceptance); Positivity component of ASCENT (an adaptation of a suite of evidence-based positive psychology interventions that aims to help AYAs savor the good things in life, use their strengths, and practice gratitude and kindness).",
+                "interventionNames": [
+                    "Behavioral: AYA Survivors Coping and Emotional Needs Toolkit (ASCENT)"
+                ]
+                },
+                {
+                "label": "Condition 13",
+                "type": "EXPERIMENTAL",
+                "description": "Feeling component of ASCENT (psychoeducation about AYA cancer survivorship and depression); Doing component of ASCENT (an adaptation of behavioral activation that aims to help AYAs engage in enjoyable activities, achieve their goals, and live in accordance with their values); Thinking component of ASCENT (an adaptation of cognitive restructuring that aims to help AYAs identify, evaluate, and restructure their negative automatic thoughts and core beliefs).",
+                "interventionNames": [
+                    "Behavioral: AYA Survivors Coping and Emotional Needs Toolkit (ASCENT)"
+                ]
+                },
+                {
+                "label": "Condition 14",
+                "type": "EXPERIMENTAL",
+                "description": "Feeling component of ASCENT (psychoeducation about AYA cancer survivorship and depression); Doing component of ASCENT (an adaptation of behavioral activation that aims to help AYAs engage in enjoyable activities, achieve their goals, and live in accordance with their values); Thinking component of ASCENT (an adaptation of cognitive restructuring that aims to help AYAs identify, evaluate, and restructure their negative automatic thoughts and core beliefs); Positivity component of ASCENT (an adaptation of a suite of evidence-based positive psychology interventions that aims to help AYAs savor the good things in life, use their strengths, and practice gratitude and kindness).",
+                "interventionNames": [
+                    "Behavioral: AYA Survivors Coping and Emotional Needs Toolkit (ASCENT)"
+                ]
+                },
+                {
+                "label": "Condition 15",
+                "type": "EXPERIMENTAL",
+                "description": "Feeling component of ASCENT (psychoeducation about AYA cancer survivorship and depression); Doing component of ASCENT (an adaptation of behavioral activation that aims to help AYAs engage in enjoyable activities, achieve their goals, and live in accordance with their values); Thinking component of ASCENT (an adaptation of cognitive restructuring that aims to help AYAs identify, evaluate, and restructure their negative automatic thoughts and core beliefs); Being component of ASCENT (an adaptation of mindfulness training that aims to help AYAs maintain contact with the present moment with an attitude of acceptance)",
+                "interventionNames": [
+                    "Behavioral: AYA Survivors Coping and Emotional Needs Toolkit (ASCENT)"
+                ]
+                },
+                {
+                "label": "Condition 16",
+                "type": "EXPERIMENTAL",
+                "description": "Feeling component of ASCENT (psychoeducation about AYA cancer survivorship and depression); Doing component of ASCENT (an adaptation of behavioral activation that aims to help AYAs engage in enjoyable activities, achieve their goals, and live in accordance with their values); Thinking component of ASCENT (an adaptation of cognitive restructuring that aims to help AYAs identify, evaluate, and restructure their negative automatic thoughts and core beliefs); Being component of ASCENT (an adaptation of mindfulness training that aims to help AYAs maintain contact with the present moment with an attitude of acceptance); and Positivity component of ASCENT (an adaptation of a suite of evidence-based positive psychology interventions that aims to help AYAs savor the good things in life, use their strengths, and practice gratitude and kindness)",
+                "interventionNames": [
+                    "Behavioral: AYA Survivors Coping and Emotional Needs Toolkit (ASCENT)"
+                ]
+                }
+            ],
+            "interventions": [
+                {
+                "type": "BEHAVIORAL",
+                "name": "AYA Survivors Coping and Emotional Needs Toolkit (ASCENT)",
+                "description": "Participants will receive access to a digital depression self-management tool (ASCENT), which aims to help AYAs manage symptoms of depression post-treatment. All users will have access to the core tool which includes daily mood tracking and a psychoeducational module about cancer and depression. Depending on assigned condition, participants will also receive access to up to 4 intervention modules which have been adapted from existing evidence-based treatments for digital delivery to AYAs through a rigorous user-centered design process. Within each module there are 6 micro-lessons that include an educational video, a real story from an AYA that demonstrates the topic, multiple choice questions that ask the participant to apply the educational information to the AYA story, open-ended questions that ask the participant to apply the educational information to their own experience, and a practice activity in which they are asked to try out a relevant skill.",
+                "armGroupLabels": [
+                    "Condition 1",
+                    "Condition 10",
+                    "Condition 11",
+                    "Condition 12",
+                    "Condition 13",
+                    "Condition 14",
+                    "Condition 15",
+                    "Condition 16",
+                    "Condition 2",
+                    "Condition 3",
+                    "Condition 4",
+                    "Condition 5",
+                    "Condition 6",
+                    "Condition 7",
+                    "Condition 8",
+                    "Condition 9"
+                ]
+                }
+            ]
+            },
+            "outcomesModule": {
+            "primaryOutcomes": [
+                {
+                "measure": "Acceptability of Study Procedures - Quantitative",
+                "description": "An investigator-developed survey will be used to evaluate acceptability of study procedures. Mean scale scores range from 1 to 4, with higher scores indicating greater acceptability. Descriptive statistics and exact 95% confidence intervals (CIs) will be calculated.",
+                "timeFrame": "Week 6"
+                },
+                {
+                "measure": "Acceptability of Study Procedures - Qualitative",
+                "description": "An investigator-developed semi-structured interview will be used to evaluate acceptability of study procedures. Transcriptions of semi-structured interviews will undergo rapid qualitative analysis to characterize the reasons for sub-optimal acceptability of study procedures.",
+                "timeFrame": "Weeks 6-8"
+                }
+            ],
+            "secondaryOutcomes": [
+                {
+                "measure": "Study Feasibility - Recruitment Rate",
+                "description": "Recruitment rate will be calculated as the number of participants enrolled in the study divided by the number of participants contacted.",
+                "timeFrame": "Upon enrollment of 16 participants"
+                },
+                {
+                "measure": "Study Feasibility - Retention Rate",
+                "description": "Retention will be defined as the proportion of patients who provide T1 (6 week) data. Patients who discontinue the intervention (refuse phone calls) but complete the outcome assessments will be counted in the numerator for calculating retention.",
+                "timeFrame": "Week 6"
+                },
+                {
+                "measure": "Intervention Acceptability - Quantitative",
+                "description": "An investigator-developed survey will be used to evaluate acceptability of the intervention.",
+                "timeFrame": "Week 6"
+                },
+                {
+                "measure": "Intervention Satisfaction - Quantitative",
+                "description": "An investigator-developed survey will be used to evaluate satisfaction with the intervention. Mean scale scores range from 1 to 4, with higher scores indicating greater satisfaction. Descriptive statistics and exact 95% confidence intervals (CIs) will be calculated.",
+                "timeFrame": "Week 6"
+                },
+                {
+                "measure": "Intervention Acceptability & Satisfaction - Qualitative",
+                "description": "A semi-structured interview will be used to further characterize acceptability of and satisfaction with the intervention. Transcriptions of semi-structured interviews will undergo rapid qualitative analysis to characterize the reasons for sub-optimal acceptability of and satisfaction with the intervention.",
+                "timeFrame": "Weeks 6-8"
+                },
+                {
+                "measure": "System Usability Scale",
+                "description": "The System Usability Scale (SUS) will be administered to evaluate perceived usability of ASCENT. SUS scores range from 0 to 100, with higher scores indicating greater usability. Descriptive statistics and exact 95% confidence intervals (CIs) will be calculated.",
+                "timeFrame": "Week 6"
+                },
+                {
+                "measure": "Intervention Adherence",
+                "description": "Adherence will be calculated as the percentage of pages viewed by the participant within a module divided by the total number of pages in the module as indicated by metrics from the website. Mean adherence rate and exact 95% confidence intervals (CIs) for each intervention module will be calculated.",
+                "timeFrame": "Weeks 1-6"
+                },
+                {
+                "measure": "eHealth Engagement Scale",
+                "description": "The eHealth Engagement Scale will be administered to evaluate how engaging users found ASCENT engagement. Mean scale scores range from 1 to 4, with lower scores indicating greater engagement. Descriptive statistics and exact 95% confidence intervals (CIs) will be calculated.",
+                "timeFrame": "Week 6"
+                }
+            ]
+            },
+            "eligibilityModule": {
+            "eligibilityCriteria": "Inclusion Criteria:\n\n* Age at enrollment (adolescents 15-17, emerging adults 18-25, young adults 26-39)\n* Age at diagnosis (adolescents 12-17, emerging adults 15-25, young adults 15-39)\n* Time since completion of treatment: 1 month to 5 years\n* Language: Fluent in English (spoken and written)\n* Technology: Own smart phone with data plan\n\nExclusion Criteria:\n\n* Mental Health: Current diagnosis of severe or persistent mental illness\n* Suicidality: Severe suicidal ideation (including plan and intent)",
+            "healthyVolunteers": false,
+            "sex": "ALL",
+            "minimumAge": "15 Years",
+            "maximumAge": "39 Years",
+            "stdAges": [
+                "CHILD",
+                "ADULT"
+            ]
+            },
+            "contactsLocationsModule": {
+            "centralContacts": [
+                {
+                "name": "AnneMarie Coffey",
+                "role": "CONTACT",
+                "phone": "252-328-6244",
+                "email": "coffeya23@ecu.edu"
+                },
+                {
+                "name": "Rachel Glock",
+                "role": "CONTACT",
+                "email": "glockr23@students.ecu.edu"
+                }
+            ],
+            "overallOfficials": [
+                {
+                "name": "Karly M Murphy, PhD",
+                "affiliation": "East Carolina University",
+                "role": "PRINCIPAL_INVESTIGATOR"
+                }
+            ],
+            "locations": [
+                {
+                "facility": "East Carolina University",
+                "status": "RECRUITING",
+                "city": "Greenville",
+                "state": "North Carolina",
+                "zip": "27858",
+                "country": "United States",
+                "contacts": [
+                    {
+                    "name": "AnneMarie Coffey",
+                    "role": "CONTACT",
+                    "phone": "252-328-6244",
+                    "email": "coffeya23@ecu.edu"
+                    },
+                    {
+                    "name": "Karly M Murphy, PhD",
+                    "role": "CONTACT",
+                    "phone": "252-737-4638",
+                    "email": "murphykar22@ecu.edu"
+                    },
+                    {
+                    "name": "Karly M Murphy, PhD",
+                    "role": "CONTACT"
+                    }
+                ],
+                "geoPoint": {
+                    "lat": 35.61266,
+                    "lon": -77.36635
+                }
+                }
+            ]
+            },
+            "ipdSharingStatementModule": {
+            "ipdSharing": "YES",
+            "description": "All de-identified data collected from participants in this study will be preserved and shared in alignment with best practices for open science. Data will be submitted to Dataverse, a free NIH Generalist Repository Ecosystem Initiative (https://dataverse.org/researchers).",
+            "infoTypes": [
+                "STUDY_PROTOCOL",
+                "ICF"
+            ]
+            }
+        }
+    }
+}

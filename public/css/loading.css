@@ -1,0 +1,80 @@
+.text-center {
+    width: 500px;
+}
+.progress2 {
+    border-radius: 30px;
+    background-color: #fff;
+  }
+  
+  .progress-bar2 {
+    height: 18px;
+    border-radius: 30px;
+    transition: 0.4s linear;
+    transition-property: width, background-color;
+  }
+  
+  .progress-moved .progress-bar2 {
+    background-color: #f3c623;
+    animation: progress 5s forwards;
+  }
+  
+  @keyframes progress {
+    0% {
+      width: 0%;
+      background: #231557;
+    }
+
+    25% {
+        width: 50%;
+        background: #44107a;
+      }
+
+      50% {
+        width: 50%;
+        background: #fa4616;
+      }
+  
+    100% {
+      width: 100%;
+      background: #f3c623;
+      box-shadow: 0 0 40px #f3c623;
+    }
+  }
+  
+  .loader {
+    --p: 0;
+    animation: p 3s steps(100) forwards, 
+                pcolor 3s forwards;
+    counter-reset: p var(--p);
+    font-size: 2.1em;
+    color: #f3c623;
+  }
+  
+  .loader:after {
+    content: counter(p) "%";
+  }
+  
+  @keyframes p {
+    90%,
+    100% {
+      --p: 100;
+    }
+  }
+
+  @keyframes pcolor {
+    0% {
+      color: #231557;
+    }
+
+    25% {
+        color: #44107a;
+      }
+
+      50% {
+        color: #fa4616;
+      }
+  
+    100% {
+      color: #f3c623;
+    }
+  }

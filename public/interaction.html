@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn About Clinical Trials</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/css/interaction.css">
+    <link rel="stylesheet" href="/css/loading.css">
+    <link rel="stylesheet" href="/css/slider.css">
+    <!-- Importmap for loading Three.js and other dependencies -->
+    <script type="importmap">
+        {
+            "imports": {
+              "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js/+esm",
+              "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/",
+              "talkinghead": "/avatar-modules/talkinghead.mjs"
+            }
+        }
+    </script>
+
+    <!-- Module scripts for avatar and main functionality -->
+    <script type="module" src="/js/virtualcharacter.js"></script>
+</head>
+
+<body>
+    <div id="loading-screen">
+        <div id="loading-animation">
+            <div class="loading-content">
+              <div class="header loading-header">
+                <span><h1>Alex&nbsp;</h1><h2>| Virtual Health Assistant</h2></span>
+                <br/>
+              </div>
+              <div class="loader" style="--n: 1; --f: 0;">LOADING ... </div>
+              <div id="loader-animation" class="progress2 progress-moved">
+                <div class="progress-bar2"></div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div id="pdfModal" class="modal">
+        <div class="modal-content">
+            <button id="close-pdf-modal">ⓧ Close</button>
+          <p class="info-title help" id="resource-item"></p>
+          <p>Alex used some information from the following resource from the National Cancer Institute (NCI) to generate your response.</p>
+          <iframe 
+            id="pdfViewer"
+            width="100%" 
+            height="85%"
+            src="../sources/ObservationalStudies.pdf#toolbar=0&navpanes=0"></iframe>
+        </div>
+      </div>
+      <div id="more-info-modal" class="more-info-modal">
+        <div class="more-info-modal-content" id="more-info-modal-content">
+          <button id="close-more-info-modal">ⓧ Close</button>
+          <div class="more-info-content">
+            <h1>About Cancer Clinical Research</h1>
+            <section>
+                <h3>What is cancer clinical research?</h3>
+                <p>Cancer research that involves people, or data or samples from people, is called cancer clinical research.</p>
+                <p>Studies like these have led to discoveries such as new medicines to treat cancer, new therapies to reduce the side effects of cancer or its treatment, and lifestyle changes people can make to lower chances of getting cancer.</p>
+            </section>
+    
+            <section>
+                <h3>Types of Cancer Research You Can Join</h3>
+                <p>Clinical trials and observational studies are two kinds of research studies that you can participate in. Your unique experience with or without cancer may help future generations lead longer, healthier lives.</p>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Study Type</th>
+                            <th>Who Can Join</th>
+                            <th>Study Goals</th>
+                            <th>Example Activities</th>
+                            <th>Discoveries</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Treatment Clinical Trials</td>
+                            <td>People with cancer</td>
+                            <td>Tests new medicines, surgical procedures, and combining current treatments</td>
+                            <td>Take a medicine, have surgery, get radiation</td>
+                            <td>CAR-T cell therapy to treat cancers</td>
+                        </tr>
+                        <tr>
+                            <td>Prevention Clinical Trials</td>
+                            <td>People who had cancer in the past, and healthy volunteers</td>
+                            <td>Examines how to reduce risk of getting cancer or the return of cancer</td>
+                            <td>Get a vaccine, change diet, give blood</td>
+                            <td>HPV vaccine for cervical cancer</td>
+                        </tr>
+                        <tr>
+                            <td>Screening Clinical Trials</td>
+                            <td>Healthy volunteers</td>
+                            <td>Find new ways to detect cancer before it causes symptoms and when it may be easier to treat</td>
+                            <td>Give blood, provide saliva sample, get x-rays</td>
+                            <td>National Lung Screening Trial to reduce lung cancer deaths</td>
+                        </tr>
+                        <tr>
+                            <td>Supportive Care Clinical Trials</td>
+                            <td>People with cancer</td>
+                            <td>Explores ways to improve quality of life in people who have or had cancer</td>
+                            <td>Try yoga and exercise, attend support groups, take a medicine</td>
+                            <td>Palifermin for mouth sores after cancer treatment</td>
+                        </tr>
+                        <tr>
+                            <td>Observational Studies</td>
+                            <td>People with cancer and healthy volunteers</td>
+                            <td>Follows participants over time to collect health information and analyze data; no treatment is given</td>
+                            <td>Take a survey, get a genetic test, provide saliva sample, donate tumor tissue</td>
+                            <td>Multivitamin use and risk of death in healthy people</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+    
+            <section>
+                <h2>How Do Clinical Trials Work?</h2>
+                <p>Clinical trials are designed to work in phases that follow strict guidelines, including who can participate. Learning how clinical trials work can help you decide if you want to join.</p>
+            </section>
+    
+            <section>
+                <h3>Who is Eligible for Clinical Trials?</h3>
+                <p>Every clinical trial has requirements that must be met for you to join. These requirements are called eligibility criteria.</p>
+                <p>Common eligibility criteria address things such as your:</p>
+                <ul>
+                    <li>Health</li>
+                    <li>Medical history</li>
+                    <li>Family medical history</li>
+                    <li>Risk factors</li>
+                    <li>Age</li>
+                    <li>Treatment history</li>
+                    <li>Tumor’s genetic changes</li>
+                </ul>
+            </section>
+    
+            <section>
+                <h3>Phases of Clinical Trials</h3>
+                <p>Clinical trials to test new cancer treatments involve a series of steps, called phases:</p>
+                <ul>
+                    <li><strong>Phase 1:</strong> Tests safety and side effects on a small group.</li>
+                    <li><strong>Phase 2:</strong> Tests effectiveness and short-term side effects on a larger group.</li>
+                    <li><strong>Phase 3:</strong> Compares the treatment to the current standard therapy.</li>
+                    <li><strong>Phase 4:</strong> Long-term safety and effectiveness after FDA approval.</li>
+                </ul>
+            </section>
+          </div>
+          <hr/>
+          <div class="more-info-content">
+              <h1>How Do Clinical Trials Work?</h1>
+              <section>
+                  <p>Clinical trials are designed to work in phases that follow strict guidelines, including who can participate. Learning how clinical trials work can help you decide if you want to join.</p>
+              </section>
+          
+              <section>
+                  <h3>Who is Eligible for Clinical Trials?</h3>
+                  <p>Every clinical trial has requirements that must be met for you to join. These requirements are called eligibility criteria.</p>
+                  <p>Common eligibility criteria address things such as your:</p>
+                  <ul>
+                      <li>Health</li>
+                      <li>Medical history</li>
+                      <li>Family medical history</li>
+                      <li>Risk factors</li>
+                      <li>Age</li>
+                      <li>Treatment history</li>
+                      <li>Tumor’s genetic changes</li>
+                  </ul>
+              </section>
+          
+              <section>
+                  <h3>Phases of Clinical Trials</h3>
+                  <p>Clinical trials to test new cancer treatments involve a series of steps, called phases:</p>
+                  <ul>
+                      <li><strong>Phase 1:</strong> Tests safety and side effects on a small group.</li>
+                      <li><strong>Phase 2:</strong> Tests effectiveness and short-term side effects on a larger group.</li>
+                      <li><strong>Phase 3:</strong> Compares the treatment to the current standard therapy.</li>
+                      <li><strong>Phase 4:</strong> Long-term safety and effectiveness after FDA approval.</li>
+                  </ul>
+              </section>
+          
+              <section>
+                  <h2>Randomization and Bias in Clinical Trials</h2>
+                  <p>Clinical trial randomization is the process of assigning people by chance to groups that receive different interventions or drugs in later phase trials. A computer is most often used to assign people to groups.</p>
+                  <p>Randomization helps prevent bias, ensuring that the trial's results are not affected by human choices or other factors not related to the treatment being tested.</p>
+              </section>
+          
+              <section>
+                  <h3>Placebos in Clinical Trials</h3>
+                  <p>Placebos are rarely used in cancer treatment clinical trials. In most cases, one group receives the new treatment, while another receives the already approved standard treatment. Researchers then compare the two treatments to see if the new treatment will become the new standard.</p>
+                  <p>If placebos are used, you will always be informed ahead of time, and you can ask questions before deciding to join the trial. The use of placebos will be covered in the consent form.</p>
+              </section>
+          
+              <section>
+                  <h2>Research Team Members</h2>
+                  <p>Designing and running a clinical trial requires the skills of many experts. Different sites of the same trial may set up their teams differently. Typical team members and their duties include:</p>
+                  <ul>
+                      <li><strong>Principal Investigator:</strong> Supervises all aspects of a clinical trial, including protocol submission, participant recruitment, and data analysis.</li>
+                      <li><strong>Research Nurse:</strong> Helps take care of patients, educates staff and participants, assists with study monitoring and quality assurance.</li>
+                      <li><strong>Data Manager:</strong> Manages the collection of data throughout the clinical trial and prepares summaries for interim and final data analysis.</li>
+                      <li><strong>Staff Physician or Nurse:</strong> Treats patients according to the clinical trial protocol, assesses patient responses, and works with the research team to report trends.</li>
+                  </ul>
+              </section>
+          
+              <section>
+                  <h2>Where Cancer Clinical Trials Take Place</h2>
+                  <p>Cancer clinical trials take place in cities and towns across the United States and throughout the world. They occur in various locations such as doctor's offices, cancer centers, medical centers, community hospitals, and veterans' hospitals.</p>
+              </section>
+          </div>
+          <hr/>
+          <div class="more-info-content">
+              <h1>Are Clinical Trials Safe</h1>
+      
+              <section>
+                  <p>Each clinical trial that is funded by the federal government must be reviewed by scientists from relevant fields before people can enroll.</p>
+                  <p>This expert review ensures that the trial is based on sound science. Though not required, many other clinical trial sponsors, such as drug companies, also seek expert advice on the scientific merit of their trials before opening them.</p>
+                  <p>If you take part in a clinical trial, your safety will be protected through the informed consent process, careful review and approval of the clinical trial protocol, and ongoing monitoring.</p>
+              </section>
+      
+              <section>
+                  <h2>Informed Consent in Clinical Trials</h2>
+                  <p>Informed consent is an essential process through which the research team explains the trial to you before you decide whether to take part.</p>
+                  <p>The research team explains the trial’s purpose, procedures, and possible risks and benefits. You have the right to ask questions and learn about all that is involved in the trial, including all your treatment options, details about treatment, tests, and possible risks and benefits.</p>
+                  <p>After discussing the study with you, the research team will give you an informed consent form to read. The form includes written details about the information that was discussed with you and describes the privacy of your medical records. If you agree to take part in the study, you sign the form.</p>
+                  <p>Even after you sign the consent form, you can leave the study at any time. You can always ask questions. And as new information becomes available, the research team will inform you.</p>
+              </section>
+      
+              <section>
+                  <h2>Children’s Assent</h2>
+                  <p>Children are not able to give informed consent until they turn 18. Before taking part in a clinical trial, they are asked for their assent. Assent means that they agree to take part.</p>
+                  <p>To take part in the assent process, your child must be mature enough to understand the trial and what they are required to do. Some children as young as 7 years old may be able to take part in the assent process.</p>
+                  <p>As with the informed consent process, the assent process is meant to be an ongoing conversation between your child, your family, and the research team. During the assent process:</p>
+                  <ul>
+                      <li>The research team explains the trial to you and your child.</li>
+                      <li>You give informed permission for your child to join the clinical trial.</li>
+                      <li>The research team explains the trial to your child in language they can understand.</li>
+                  </ul>
+                  <p>Both parents usually need to give permission unless certain conditions apply.</p>
+              </section>
+      
+              <section>
+                  <h2>Institutional Review Boards (IRBs)</h2>
+                  <p>IRBs review clinical trial protocols before clinical trials can accept patients. They check to see that the trial is well-designed, legal, and ethical; does not involve unneeded risks; and includes a safety plan for patients.</p>
+              </section>
+      
+              <section>
+                  <h2>Data and Safety Monitoring Boards (DSMBs)</h2>
+                  <p>Some clinical trials—especially phase 3—use a data and safety monitoring board (DSMB). Like IRBs, these boards review the progress of a clinical trial and monitor the safety of those taking part in the trial.</p>
+                  <p>A DSMB is an independent group of doctors, statisticians, and others who are experts in clinical research and clinical trials.</p>
+              </section>
+      
+              <section>
+                  <h2>Office for Human Research Protections (OHRP)</h2>
+                  <p>OHRP protects people who take part in research and provides leadership for many federal agencies that carry out research involving people.</p>
+                  <p>OHRP enforces important regulations for patient protection in clinical trials, called the Common Rule.</p>
+              </section>
+      
+              <section>
+                  <h2>Food and Drug Administration (FDA)</h2>
+                  <p>FDA protects people and ensures integrity of data from trials. They can remove researchers who do not follow safety rules. FDA approves new drugs before they can be sold to prevent fraud, ensure the drugs work as they should, and make sure drug’s health benefits outweigh their risks.</p>
+              </section>
+          </div>
+          <hr/>
+          <div class="more-info-content">
+              <h1>Who Pays for Clinical Trials?</h1>
+      
+              <section>
+                  <p>You may be wondering if clinical trials cost money and who pays for them.</p>
+                  <p>Many clinical trial costs are covered by the sponsor of the study, a patient's insurance plan if one is available, and sometimes there are out-of-pocket costs. Before you join a study, ask the study coordinator which costs are covered and which are not.</p>
+              </section>
+      
+              <section>
+                  <h2>Patient Care Costs in Clinical Trials</h2>
+                  <p>Learn about the different types of costs related to taking part in a clinical trial, and who is expected to pay for which costs.</p>
+                  <p>Patient care costs are those costs that you would pay even if you weren’t in a trial. These costs are often covered by health insurance.</p>
+                  <p>Types of patient care costs may include:</p>
+                  <ul>
+                      <li>Doctor visits</li>
+                      <li>Hospital stays</li>
+                      <li>Standard cancer treatments</li>
+                      <li>Treatments to improve symptoms of cancer or side effects from treatment</li>
+                      <li>Lab tests</li>
+                      <li>X-rays and other imaging tests</li>
+                  </ul>
+                  <p>If you need to travel to take part in a study, other costs might include travel, lodging, meals, parking, or child and elder care. Sometimes trials can help cover these extra costs, so ask the research team if the study offers financial help or know of support organizations that offer help.</p>
+              </section>
+      
+              <section>
+                  <h2>Research Costs in Clinical Trials</h2>
+                  <p>Research costs are those costs that are related to taking part in the trial. Often these costs are not covered by health insurance. But they may be covered by the trial’s sponsor.</p>
+                  <p>Examples of research costs include:</p>
+                  <ul>
+                      <li>The study drug</li>
+                      <li>Lab tests performed purely for research purposes</li>
+                      <li>Added x-rays and imaging tests performed solely for the trial</li>
+                      <li>Extra doctor visits that you would not have with usual care</li>
+                  </ul>
+                  <p>When you take part in a trial, you may have extra doctor visits that you would not have with usual care. During these visits, your doctor carefully watches for side effects and your safety in the study.</p>
+              </section>
+      
+              <section>
+                  <h2>Are Clinical Trials Covered by Insurance?</h2>
+                  <p>Before you join a trial, learn as much as you can about which costs you or your health plan need to pay and those that will be covered by the study. Talk with your doctor, the research team, and your health plan.</p>
+                  <p>Ask your doctor if there is someone on staff who can help work with your health plan. This person might be a financial counselor or research coordinator. Or they might work in the hospital's patient finance department.</p>
+                  <p>Ask the research coordinator or nurse if other people have had problems getting their health plans to cover routine patient care costs. If so, you might ask the research coordinator or nurse for help in sending information to your health plan that explains why this clinical trial might be a good fit for you. Items insurance companies may ask for include:</p>
+                  <ul>
+                      <li>Medical journal articles that show possible patient benefits from the drug or procedure that is being tested</li>
+                      <li>A letter from your doctor that explains the trial or why it is a reasonable option for you</li>
+                      <li>Support letters from patient advocacy groups</li>
+                  </ul>
+              </section>
+      
+              <section>
+                  <h2>How to Work with Health Insurance Plans</h2>
+                  <p>Call your health insurance plan. If your doctor does not have a staff person to help work with health plans, call the customer service number on the back of your insurance card. Here are important questions to ask:</p>
+                  <ul>
+                      <li>Does the health plan cover routine patient care costs for people taking part in clinical trials?</li>
+                      <li>If so, is a pre-authorization required?</li>
+                      <li>If your health plan requires a pre-authorization, what information do you need to provide?</li>
+                  </ul>
+                  <p>Understand all the costs related to the trial. Ask your doctor or the trial's contact person about the costs that must be covered by you or your health plan.</p>
+              </section>
+      
+              <section>
+                  <h2>What Happens If My Claim Is Denied?</h2>
+                  <p>If your claim is denied, contact your insurance plan's billing office for help. The billing manager may know how to appeal your health plan’s decision.</p>
+                  <p>You can also read your health insurance policy to find out what steps you can follow to make an appeal. Ask your doctor to help you. It might help if they contact the medical director of your health plan.</p>
+              </section>
+      
+              <section>
+                  <h2>Joining a Clinical Trial Without Insurance</h2>
+                  <p>If you don’t have insurance or have other financial worries that you think may prevent you from taking part in a clinical trial, there are places to go for help.</p>
+                  <p>Some screening, prevention, and quality-of-life studies take place at sites that serve people with low incomes through the NCI Community Oncology Research Program (NCORP). If you receive health care at one of these sites, you may be able to take part in a clinical trial.</p>
+                  <p>People with cancer may be able to enroll in National Clinical Trials Network (NCTN) clinical trials through NCORP as well. Check with the clinic where you receive care about studies that you might be eligible for.</p>
+              </section>
+      
+              <section>
+                  <h2>Federal Health Insurance and Programs for Clinical Trials</h2>
+                  <p>Some federal health insurance programs help pay the costs of care in clinical trials.</p>
+                  <ul>
+                      <li>Medicaid: Covers all routine patient care costs in a clinical trial.</li>
+                      <li>Medicare: May reimburse some costs related to trials of new cancer treatments.</li>
+                      <li>TRICARE: Covers medical costs related to NCI-sponsored trials for cancer prevention and treatment.</li>
+                      <li>Department of Veterans Affairs: Allows eligible veterans to take part in NCI-sponsored clinical trials.</li>
+                  </ul>
+              </section>
+          </div>
+          <hr/>
+          <div class="more-info-content">
+              <h1>Why Participate in a Clinical Trial?</h1>
+              <section>
+                  <p>Some of the benefits to joining a treatment clinical trial may include:</p>
+                  <ul>
+                      <li>The trial may help researchers learn more about cancer and help people in the future.</li>
+                      <li>You might have access to a treatment that is under study that may not be available to people outside the trial.</li>
+                      <li>The research team will watch you closely, adding an extra layer of care to your health.</li>
+                      <li>Though not common, if the treatment being studied is more effective than the standard treatment, you may be among the first to benefit.</li>
+                  </ul>
+              </section>
+          </div>
+        </div>
+      </div>
+        <div class="header">
+            <div id="progress-animation" class="progress3 progress3-moved">
+                <div class="progress-bar3"></div>
+            </div>
+        </div>
+        <div id="studies-modal">
+            <div class="studies">
+                <button id="close-ct-modal">ⓧ Close</button>
+                <br/>
+                <div class="nav">
+                    <button id="study-button-1" class="active">Study 1</button>
+                    <button id="study-button-2">Study 2</button>
+                    <button id="study-button-3">Study 3</button>
+                </div>
+                <br/>
+                <div class="study" id="study3">
+                    <h2 class="section-title">General Information</h2>
+                    <p class="subtitle">Study Title:</p>
+                    <p>Optimization of a mHealth Physical Activity Promotion Intervention With Mindful Awareness for AYAO (OPT2MOVE)</p>
+                    <p class="subtitle">Brief Summary:</p>
+                    <p>The purpose of the present study is to utilize Multiphase Optimization Strategy (MOST) to test four social support and mindfulness components (e-coaching, buddy, general mindfulness training, and MVPA-specific mindfulness training) in a 12-week mHealth moderate to vigorous intensity physical activity (MVPA) intervention in a sample of young adult cancer survivors (YACS), to improve quality of life (QOL) and decrease adverse effects and symptom burden.</p>
+                    <p>PRIMARY AIM: To identify which components from four mHealth components under consideration for inclusion meaningfully contribute to improvements in MVPA at 12 and 24 weeks</p>
+                    <p>SECONDARY AIM: To examine how changes in MVPA, as a result of Opt2Move components, may influence additional health behaviors and outcomes including: a) symptom burden (i.e., fatigue, depression, anxiety); b) time spent in other activity intensities (i.e., light, sedentary time); and c) sleep duration and quality</p>
+                    <p>THIRD AIM: To examine potential mediators (i.e., adherence, psychosocial factors such as post-traumatic growth, self-compassion, self-efficacy, and goal setting) and moderators (cancer type, age, gender) of the four intervention components on MVPA.</p>
+
+                    <h2 class="section-title">Eligibility Criteria</h2>
+                    <p class="subtitle">Sex:</p>
+                    <p>ALL</p>
+                    <p class="subtitle">Minimum Age:</p>
+                    <p>18 Years</p>
+                    <p class="subtitle">Maximum Age:</p>
+                    <p>39 Years</p>
+                    <p class="subtitle">More Eligibility Details:</p>
+                    <ul>
+                        <li>Diagnosis of nonmetastatic cancer (except non-melanoma skin cancer) within 5 years from the time of screening/study overview session.</li>
+                        <li>Age 18-39 years at time of diagnosis and at time of screening.</li>
+                        <li>Three or more months post-completion of primary treatment (i.e., surgery, chemotherapy, and/or radiation).</li>
+                        <li>Self-report engagement in less than 60 minutes total each week of moderate to vigorous physical activity at time of screening/study overview session.</li>
+                        <li>Ownership of a smartphone that is either an iPhone (version 5 or greater) or an Android (version 5.0 or greater).</li>
+                        <li>Internet access.</li>
+                        <li>Fluency in spoken and written English.</li>
+                        <li>Willingness to find a Buddy, if assigned to that condition.</li>
+                        <li>Buddy must be 18 years or older and meet other basic participation criteria.</li>
+                    </ul>
+                    <p>Exclusion Criteria:</p>
+                    <ul>
+                        <li>Diagnosis of non-melanoma skin cancer.</li>
+                        <li>Absolute contraindications to exercise (e.g., acute myocardial infarction, severe orthopedic conditions).</li>
+                        <li>Metastatic disease or planned elective surgery.</li>
+                        <li>Currently pregnant or plans to become pregnant in the next 12 months.</li>
+                        <li>Plans to move out of the United States in the next 18 months.</li>
+                        <li>Current enrollment in another dietary or physical activity trial.</li>
+                        <li>Inability to provide informed consent.</li>
+                        <li>Prisoners or other detained individuals.</li>
+                    </ul>
+                </div>
+            
+                <!-- Study 2 -->
+                <div class="study" id="study2">
+                    <h2 class="section-title">General Information</h2>
+                    <p class="subtitle">Study Title:</p>
+                    <p>My Wellbeing Guide: A Novel Tool for Managing Stress and Improving Quality of Life</p>
+                    <p class="subtitle">Brief Summary:</p>
+                    <p>The purpose of this study is to examine the implementation and effectiveness of the psychosocial eHealth intervention, My Wellbeing Guide, on the proposed primary outcome, depressive symptoms, in patients diagnosed with cancer who receive care at Northwestern Medicine and the University of Miami Health System.</p>
+                    <p>The intervention includes cognitive behavioral therapy management strategies for health-related stress in the form of animated videos, interactive activities, and written content. The intervention will be delivered via an online application over a 7-week period. Intervention participants will also complete four assessments: baseline (at the beginning of the research study), post-intervention (7 weeks after baseline), a 6-month follow-up, and a 12-month follow-up.</p>
+                    <p>Participants are randomized into either an intervention application (described above) or a control application (which will provide links to helpful resources for patients with cancer, such as the contact information for cancer support services at Northwestern University and the University of Miami, and the link to the National Cancer Institute website, and the American Cancer Society website.) Control participants will also complete four assessments: baseline (at the beginning of the research study), post-intervention (7 weeks after baseline), a 6-month follow-up, and a 12-month follow-up.</p>
+
+                    <h2 class="section-title">Eligibility Criteria</h2>
+                    <p class="subtitle">Sex:</p>
+                    <p>ALL</p>
+                    <p class="subtitle">Minimum Age:</p>
+                    <p>18 Years</p>
+                    <p class="subtitle">More Eligibility Details:</p>
+                    <ul>
+                        <li>Planned treatment and follow-up within the Northwestern Medicine (NM) or University of Miami (UHealth) healthcare system.</li>
+                        <li>18 years of age or older.</li>
+                        <li>Medical chart-confirmed diagnosis of a solid or hematological malignancy.</li>
+                        <li>Elevated depressive symptoms on the PROMIS CAT (score ≥ 55) within the last 3 months.</li>
+                        <li>Access to the internet.</li>
+                        <li>Willingness to be randomized.</li>
+                        <li>Able to read English or Spanish.</li>
+                        <li>Signed informed consent prior to registration on the study.</li>
+                    </ul>
+                    <p>Exclusion Criteria:</p>
+                    <ul>
+                        <li>No vulnerable populations will be included in this study.</li>
+                    </ul>
+                </div>
+
+                <!-- Study 3 -->
+                <div class="study" id="study1">
+                    <h2 class="section-title">General Information</h2>
+                    <p class="subtitle">Study Title:</p>
+                    <p>Evaluating Procedures for a Study of the AYA Survivors Coping and Emotional Needs Toolkit</p>
+                    <p class="subtitle">Brief Summary:</p>
+                    <p>The investigators developed a digital intervention that aims to help adolescent and young adult cancer survivors (AYAs) manage symptoms of depression. This tool includes daily mood tracking, a psychoeducational module about cancer and depression, and four components that are based on evidence-based interventions for depression. The goal of this study is to evaluate the acceptability of procedures for a future trial in which the investigators will test which component or combination of components meaningfully contribute to improvements in depressive symptoms among AYAs. Additionally, the investigators will evaluate study feasibility as well as intervention acceptability, satisfaction, usability, and engagement.</p>
+
+                    <h2 class="section-title">Eligibility Criteria</h2>
+                    <p class="subtitle">Sex:</p>
+                    <p>ALL</p>
+                    <p class="subtitle">Minimum Age:</p>
+                    <p>15 Years</p>
+                    <p class="subtitle">Maximum Age:</p>
+                    <p>39 Years</p>
+                    <p class="subtitle">More Eligibility Details:</p>
+                    <ul>
+                        <li>Age at enrollment: Adolescents (15-17), Emerging Adults (18-25), Young Adults (26-39).</li>
+                        <li>Age at diagnosis: Adolescents (12-17), Emerging Adults (15-25), Young Adults (15-39).</li>
+                        <li>Time since completion of treatment: 1 month to 5 years.</li>
+                        <li>Fluent in English (spoken and written).</li>
+                        <li>Owns a smartphone with a data plan.</li>
+                    </ul>
+                    <p>Exclusion Criteria:</p>
+                    <ul>
+                        <li>Current diagnosis of severe or persistent mental illness.</li>
+                        <li>Severe suicidal ideation (including plan and intent).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Help Icon & Modal Area Start -->
+        <button id="help-icon">&#63;</button>
+        <div id="help-modal" class="help-modal">
+            <div class="help-modal-content">
+                <div class="help-row">
+                    <div class="help-col">
+                    <p class="info-title help">About This Intervention</p>
+                    <p class="info help">The information provided by ALEX was originally published by the National Cancer Institute from <a href="https://www.cancer.gov/research/participate/about-cancer-clinical-research">Participate in Cancer Research</a>.</p>
+                    <hr/>
+                    <p class="info-title help">🫤 Having issues?</p>
+                    <p class="info help">We apologies for the inconvenience! Please <b>copy the URL for this webpage below</b> and <b>reach out to the researcher on Prolific</b> to help resolve the issue.</p>
+                    <p class="info help" id="current-link-help">Please copy the URL for this webpage and reach out to the researcher on Prolific, providing the URL.</p>
+                    <hr/>
+                    </div>
+                </div>
+                <button id="help-close">Close</button>
+            </div>
+        </div>
+        <!-- Help Icon & Modal Area End -->
+
+        <!-- Chat History & Modal Area Start -->
+        <div id="chat-container-bg"></div>
+        <div id="chat-container">
+            <button id="close-chat-history-icon">ⓧ Close</button>
+            <p class="convo-history-title">Conversation History</p>
+        </div>
+        <!-- Chat History & Modal Area End -->
+
+        <div id="interaction-area">
+        <div class="room">
+            <div class="characters">
+                <div id="virtualcharacter">
+                    <div class="name-tag alex">
+                        <p class="title">Virtual Oncologist</p>
+                        <p id="alex-name" class="name">Dr. Alex</p>
+                    </div>
+                    <div id="user-rating-area-mini-dr" class="doctor-rating">
+                        <p class="title toggle">Want this explained differently?</p>
+                        <div class="toggle-content">
+                            <p class="toggle-description">Below is the explanation I am using based on your past preferences. However, feel free to adjust it!</p>
+                            <div id="rating">
+                                <p id="1">Less technical</p>
+                                <p id="2">Original NCI</p>
+                                <p id="3">More Technical</p>
+                            </div>
+                        </div> 
+                    </div>
+                    <div id="chatbox-doctor"></div>
+                </div>
+                <div id="virtualcharacter1">
+                    <div class="name-tag skylar">
+                        <p class="title">Virtual Caregiver</p>
+                        <p id="skylar-name" class="name">Jordan</p>
+                    </div>
+                    <div id="user-rating-area-mini">
+                        <p class="title toggle">Want this explained differently?</p>
+                        <div class="toggle-content">
+                            <p class="toggle-description">Below is the explanation Dr Alex is using based on your past preferences. However, feel free to adjust it!</p>
+                            <div id="rating">
+                                <p id="1">Less technical</p>
+                                <p id="2">Original NCI</p>
+                                <p id="3">More Technical</p>
+                            </div>
+                        </div> 
+                    </div>
+                    <div id="chatbox-support"></div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="interaction" id="interaction">
+            <div id="user-rating-area">
+                <p class="title" id="question-title">Your Response</p>
+                <div id="user-input">
+                    <p class="title">Your Preference:</p>
+                    <div id="rating">
+                        <p id="1">Less technical</p>
+                        <p id="2"></p>
+                        <p id="3">More Technical</p>
+                    </div>
+                    <div class="slider-area">
+                        <input type="range" min="0" max="100" value="50" step="50" class="slider" id="myRange">
+                        <span class="slider-middle"></span> <!-- Middle dot -->
+                    </div>
+                    <div id="sliderValue" class="slider-value"></div>
+                </div> 
+                <div id="options-area"></div>
+            </div>
+        </div>
+        <p id="history">💬 Conversation History</p>
+    </div>
+    <button id="finish-btn">End Conversation</button>
+
+
+        <script type="module" src="/js/interaction.js"></script>
+
+</body>
+
+</html>

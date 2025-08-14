@@ -1,0 +1,77 @@
+:root {
+    --blue: #002657;
+    --orange: #fa4616;
+    /* --gradient: linear-gradient(90deg, #000000 0%, #014b46 50%, #19928a 100%); */
+    --gradient: linear-gradient(45deg, #231557 0%, #44107a 29%, #fa4616 67%, #f2a900 100%);
+    --small-gradient: linear-gradient(45deg, #231557 0%, #60279d 100%);
+    --gradient-bg: linear-gradient(45deg, rgba(0,38,87, 0.15) 0%, rgba(250,70,22, 0.15) 100%);
+    --gradient-light: linear-gradient(90deg, rgba(242, 169, 0,1) 0%, rgb(250,70,22,1) 100%);
+    --grey: #c7c9c8;
+    --dark: #343741;
+  }
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-size: 35px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 0px;
+    background-image: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: white;
+    -webkit-text-fill-color: transparent;
+}
+
+.selection-area {
+    display: flex;
+    flex-direction: row;
+}
+
+.character-select {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+}
+
+button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    border: 0px;
+    border-radius: 15px;
+    background-color: var(--blue);
+    color: white;
+    transition: .2s ease-in-out;
+    font-size: 15px;
+    padding: 15px;
+    margin: 25px;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-image: var(--small-gradient);
+}

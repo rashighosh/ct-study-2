@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn About Clinical Trials</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/css/select.css">
+    <!-- Importmap for loading Three.js and other dependencies -->
+    <script type="importmap">
+        {
+            "imports": {
+              "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js/+esm",
+              "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/",
+              "talkinghead": "/avatar-modules/talkinghead.mjs"
+            }
+        }
+    </script>
+
+    <!-- Module scripts for avatar and main functionality -->
+    <script type="module" src="/js/virtualcharacterselect.js"></script>
+</head>
+
+</head>
+
+<body>
+    <h1>Please select who you'd like to talk to.</h1>
+    <div class="selection-area">
+        <div class="character-select">
+            <h2>Rashi</h2>
+            <div id="rashi-glb" class="preview"></div>
+            <button id="rashi" class="select-btn">Select Rashi</button>
+        </div>
+        <div class="character-select">
+            <h2>Chris</h2>
+            <div id="chris-glb" class="preview"></div>
+            <button id="chris" class="select-btn">Select Chris</button>
+        </div>
+        <div class="character-select">
+            <h2>Roshan</h2>
+            <div id="roshan-glb" class="preview"></div>
+            <button id="roshan" class="select-btn">Select Roshan</button>
+        </div>
+        <div class="character-select">
+            <h2>YOU!</h2>  <!-- CHANGE -->
+            <div id="danish-glb" class="preview"></div>
+            <button id="danish" class="select-btn">Select YOU!</button> <!-- CHANGE -->
+        </div>
+    </div>
+
+    <script type="module" src="/js/select.js"></script>
+
+</body>
+
+</html>

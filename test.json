@@ -1,0 +1,88 @@
+{
+    "NCT05375162": 
+    {
+        "protocolSection": {
+            "identificationModule": {
+            "briefTitle": "Optimization of a mHealth Physical Activity Promotion Intervention With Mindful Awareness for AYAO (OPT2MOVE)"
+            },
+            "descriptionModule": {
+            "briefSummary": "The purpose of the present study is to utilize Multiphase Optimization Strategy (MOST)1 to test four social support and mindfulness components (e-coaching, buddy, general mindfulness training, and MVPA-specific mindfulness training) in a 12-week mHealth moderate to vigorous intensity physical activity (MVPA) intervention in a sample of young adult cancer survivors (YACS), to improve quality of life (QOL) and decrease adverse effects and symptom burden.\n\nPRIMARY AIM To identify which components from four mHealth components under consideration for inclusion meaningfully contribute to improvements in MVPA at 12 and 24 weeks\n\nSECONDARY AIM To examine how changes in MVPA, as a result of Opt2Move components, may influence additional health behaviors and outcomes including: a) symptom burden (i.e. fatigue, depression, anxiety); b) time spent in other activity intensities (i.e. light, sedentary time); and c) sleep duration and quality\n\nTHIRD AIM To examine potential mediators (i.e. adherence, psychosocial factors such as post-traumatic growth, self-compassion, self-efficacy, and goal setting) and moderators (cancer type, age, gender) of the four intervention components on MVPA."
+            },
+            "outcomesModule": {
+            "primaryOutcomes": [
+                {
+                "description": "Physical activity will be measured at baseline and at 12 and 24 weeks.The ActiGraph accelerometer will be used. At each time point, participants will wear the device for 7 consecutive days during all waking hours, except when bathing or swimming. Each valid minute of wear time will be classified according to intensity (counts/min) using commonly accepted cut-points: sedentary (\\<100), light activity (100-2019) and moderate/vigorous physical activity (≥2020). The Godin Leisure Time Exercise Questionnaire will also be used."
+                }
+            ]
+            },
+            "eligibilityModule": {
+            "eligibilityCriteria": "Inclusion Criteria:\n\nFor YACS\n\n* Diagnosis of nonmetastatic cancer (except non-melanoma skin cancer) within 5 years from the time of screening / study overview session\n* Age Diagnosis of cancer between 18-39 years at time of diagnosis and at time of screening / study overview session\n* Three or more months post-completion of primary treatment (i.e., surgery, chemotherapy, and/or radiation); may still be undergoing endocrine or hormone therapies\n* Score of 0 on two of the Exercise Preparticipation Health Screening Questionnaire items or willingness to obtain medical clearance from a primary care physician or oncologist\n* Self-report engagement in \\<60 minutes total each week of MVPA at time of screening / study overview session\n* Ownership of a smartphone that is either an iPhone (version 5 or greater) or an Android (version 5.0 or greater)\n* Internet access\n* Fluency in spoken and written English\n* Willingness, at time of screening / study overview session, to find a Buddy (someone who knows about their cancer and participation in this study and who is willing to participate by supporting them during the 6-month study), if assigned to that condition\n\nFor \"Buddies\"\n\n* Friend, co-worker, caregiver or family member of a participating YACS\n* Age 18 years or older\n* Score of 0 on the Exercise Preparticipation Health Screening Questionnaire or willingness to obtain medical clearance from a primary care physician\n* Ownership of a smartphone that is either an iPhone (version 5 or greater) or an Android (version 5.0 or greater)\n* Internet access\n* Fluency in spoken and written English\n* Willingness to share their Fitbit data with the study team\n\nExclusion Criteria:\n\n* For YACS: Diagnosis of non-melanoma skin cancer\n* Absolute contraindications to exercise (i.e., acute myocardial infarction, severe orthopedic conditions), metastatic disease, or planned elective surgery\n* Currently pregnant or plans to become pregnant in the next 12 months\n* Plans to move out of the United States in next 18 months\n* For YACS: Current enrollment in another dietary or physical activity trial\n* Inability to provide informed consent\n* Prisoners or other detained individuals",
+            "healthyVolunteers": false,
+            "sex": "ALL",
+            "minimumAge": "18 Years",
+            "maximumAge": "39 Years",
+            "stdAges": [
+                "ADULT"
+            ]
+            }
+        }
+        },
+    "NCT05369429": {
+        "protocolSection": {
+          "identificationModule": {
+            "briefTitle": "My Wellbeing Guide: A Novel Tool for Managing Stress and Improving Quality of Life"
+          },
+          "descriptionModule": {
+            "briefSummary": "The purpose of this study is to examine the implementation and effectiveness of the psychosocial eHealth intervention, My Wellbeing Guide, on the proposed primary outcome, depressive symptoms, in patients diagnosed with cancer who receive care at Northwestern Medicine and the University of Miami Health System.\n\nThe intervention includes cognitive behavioral therapy management strategies for health-related stress in the form of animated videos, interactive activities, and written content. The intervention will be delivered via an online application over an 7-week period. Intervention participants will also complete four assessments: baseline (at the beginning of the research study), post-intervention (7 weeks after baseline), a 6-month follow-up, and a 12-month follow up.\n\nParticipants are randomized into either an intervention application (described above) or a control application (which will provide links to helpful resources for patients with cancer, such as the contact information for cancer support services at Northwestern University and the University of Miami, and the link to the National Cancer Institute website, and the American Cancer Society website.) Control participants will also complete four assessments: baseline (at the beginning of the research study), post-intervention (7 weeks after baseline), a 6-month follow-up, and a 12-month follow up."
+          },
+          "outcomesModule": {
+            "primaryOutcomes": [
+              {
+                "description": "The Patient-Reported Outcomes Measurement Information System (PROMIS) Depression questionnaire is a previously validated patient-report measure of depressive symptoms in the last seven days. Scores generally range from 20 - 80, with higher scores indicating a patient is reporting more severe levels of depression."
+              }
+            ]
+          },
+          "eligibilityModule": {
+            "eligibilityCriteria": "Inclusion Criteria:\n\n1. planned treatment and follow-up within the NM or UHealth healthcare system;\n2. ≥ 18 years of age;\n3. medical chart confirmed diagnosis of a solid or hematological malignancy;\n4. elevated depressive symptoms on the PROMIS CAT (score \\> or = 55) within the last 3 months;\n5. access to the internet;\n6. willingness to be randomized;\n7. able to read English or Spanish;\n8. patients must have signed informed consent prior to registration on study\n\nExclusion Criteria:\n\nNote: The investigators will not include any vulnerable populations in this study.",
+            "healthyVolunteers": false,
+            "sex": "ALL",
+            "minimumAge": "18 Years",
+            "stdAges": [
+              "ADULT",
+              "OLDER_ADULT"
+            ]
+          }
+        }
+      },
+    "NCT06420193": {
+        "protocolSection": {
+          "identificationModule": {
+            "briefTitle": "Evaluating Procedures for a Study of the AYA Survivors Coping and Emotional Needs Toolkit"
+          },
+          "descriptionModule": {
+            "briefSummary": "The investigators developed a digital intervention that aims to help adolescent and young adult cancer survivors (AYAs) manage symptoms of depression. This tool includes daily mood tracking, a psychoeducational module about cancer and depression, four components that are based on evidence-based interventions for depression. The goal of this study is to evaluate the acceptability of procedures for a future trial in which the investigators will test which component or combination of components meaningfully contribute to improvements in depressive symptoms among AYAs. Additionally, the investigators will evaluate study feasibility as well as intervention acceptability, satisfaction, usability, and engagement."
+          },
+          "outcomesModule": {
+            "primaryOutcomes": [
+              {
+                "description": "An investigator-developed survey will be used to evaluate acceptability of study procedures. Mean scale scores range from 1 to 4, with higher scores indicating greater acceptability. Descriptive statistics and exact 95% confidence intervals (CIs) will be calculated."
+              },
+              {
+                "description": "An investigator-developed semi-structured interview will be used to evaluate acceptability of study procedures. Transcriptions of semi-structured interviews will undergo rapid qualitative analysis to characterize the reasons for sub-optimal acceptability of study procedures."
+              }
+            ]
+          },
+          "eligibilityModule": {
+            "eligibilityCriteria": "Inclusion Criteria:\n\n* Age at enrollment (adolescents 15-17, emerging adults 18-25, young adults 26-39)\n* Age at diagnosis (adolescents 12-17, emerging adults 15-25, young adults 15-39)\n* Time since completion of treatment: 1 month to 5 years\n* Language: Fluent in English (spoken and written)\n* Technology: Own smart phone with data plan\n\nExclusion Criteria:\n\n* Mental Health: Current diagnosis of severe or persistent mental illness\n* Suicidality: Severe suicidal ideation (including plan and intent)",
+            "healthyVolunteers": false,
+            "sex": "ALL",
+            "minimumAge": "15 Years",
+            "maximumAge": "39 Years",
+            "stdAges": [
+              "CHILD",
+              "ADULT"
+            ]
+          }
+        }
+      }
+}

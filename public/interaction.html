@@ -9,7 +9,6 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-
     <!-- External CSS -->
     <link rel="stylesheet" href="/css/interaction.css">
     <link rel="stylesheet" href="/css/loading.css">
@@ -30,7 +29,7 @@
 </head>
 
 <body>
-    <div id="loading-screen">
+    <!-- <div id="loading-screen">
         <div id="loading-animation">
             <div class="loading-content">
               <div class="header loading-header">
@@ -43,7 +42,7 @@
               </div>
             </div>
           </div>
-    </div>
+    </div> -->
     <div id="pdfModal" class="modal">
         <div class="modal-content">
             <button id="close-pdf-modal">ⓧ Close</button>
@@ -521,17 +520,6 @@
                         <p class="title">Virtual Oncologist</p>
                         <p id="alex-name" class="name">Dr. Alex</p>
                     </div>
-                    <div id="user-rating-area-mini-dr" class="doctor-rating">
-                        <p class="title toggle">Want this explained differently?</p>
-                        <div class="toggle-content">
-                            <p class="toggle-description">Below is the explanation I am using based on your past preferences. However, feel free to adjust it!</p>
-                            <div id="rating">
-                                <p id="1">Less technical</p>
-                                <p id="2">Original NCI</p>
-                                <p id="3">More Technical</p>
-                            </div>
-                        </div> 
-                    </div>
                     <div id="chatbox-doctor"></div>
                 </div>
                 <div id="virtualcharacter1">
@@ -539,47 +527,22 @@
                         <p class="title">Virtual Caregiver</p>
                         <p id="skylar-name" class="name">Jordan</p>
                     </div>
-                    <div id="user-rating-area-mini">
-                        <p class="title toggle">Want this explained differently?</p>
-                        <div class="toggle-content">
-                            <p class="toggle-description">Below is the explanation Dr Alex is using based on your past preferences. However, feel free to adjust it!</p>
-                            <div id="rating">
-                                <p id="1">Less technical</p>
-                                <p id="2">Original NCI</p>
-                                <p id="3">More Technical</p>
-                            </div>
-                        </div> 
-                    </div>
+                    <div id="something-to-say">Support character has something to say</div>
                     <div id="chatbox-support"></div>
                 </div>
                 
             </div>
         </div>
         <div class="interaction" id="interaction">
-            <div id="user-rating-area">
-                <p class="title" id="question-title">Your Response</p>
-                <div id="user-input">
-                    <p class="title">Your Preference:</p>
-                    <div id="rating">
-                        <p id="1">Less technical</p>
-                        <p id="2"></p>
-                        <p id="3">More Technical</p>
-                    </div>
-                    <div class="slider-area">
-                        <input type="range" min="0" max="100" value="50" step="50" class="slider" id="myRange">
-                        <span class="slider-middle"></span> <!-- Middle dot -->
-                    </div>
-                    <div id="sliderValue" class="slider-value"></div>
-                </div> 
-                <div id="options-area"></div>
-            </div>
+        <div class="user-input">
+            <textarea id="user-text-area" name="userTextArea" rows="4" cols="40"></textarea>
+            <button id="user-send">Send</button>
+        </div>
         </div>
         <p id="history">💬 Conversation History</p>
     </div>
     <button id="finish-btn">End Conversation</button>
-
-
-        <script type="module" src="/js/interaction.js"></script>
+    <script type="module" src="/js/interaction.js"></script>
 
 </body>
 

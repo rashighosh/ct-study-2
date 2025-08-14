@@ -658,7 +658,7 @@ class TalkingHead {
       '😴': { dt: [5000,5000], rescale: [0,1], vs:{ eyeBlinkLeft: [1], eyeBlinkRight: [1], bodyRotateX: [0.2], bodyRotateZ: [0.1] } },
 
       '✋': { dt: [300,2000], rescale: [0,1], vs:{ mouthSmile: [0.5], gesture: [["handup",2,true],null] } },
-      '🤚': { dt: [300,2000], rescale: [0,1], vs:{ mouthSmile: [0.5], gesture: [["handup",2],null] } },
+      '🤚': { dt: [300,2000], rescale: [0,1], vs:{ mouthSmile: [0.5], gesture: [["handup",Infinity],null] } },
       '👋': { link:  '✋' },
       '👍': { dt: [300,2000], rescale: [0,1], vs:{ mouthSmile: [0.5], gesture: [["thumbup",2],null] } },
       '👎': { dt: [300,2000], rescale: [0,1], vs:{ browDownLeft: [1], browDownRight: [1], eyesLookUp: [0.2], jawForward: [0.3], mouthFrownLeft: [1], mouthFrownRight: [1], bodyRotateX: [0.15], gesture: [["thumbdown",2],null] } },
@@ -3812,6 +3812,9 @@ class TalkingHead {
         }
       }
 
+      console.log("GESTURE IS", dur)
+      console.log("DUR IS", dur)
+      console.log("IS IT FINITE", Number.isFinite(dur) )
       // Timer
       if ( dur && Number.isFinite(dur) ) {
         this.gestureTimeout = setTimeout( this.stopGesture.bind(this,ms), 1000 * dur);

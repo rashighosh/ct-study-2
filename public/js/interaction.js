@@ -1,4 +1,4 @@
-import { characterAudio, characterAudioQueue, stopSpeaking, focusCharacter } from './virtualcharacter.js';
+import { characterAudio, characterAudioQueue, lowerHand, focusCharacter, raiseHand } from './virtualcharacter.js';
 
 var continueNode = null
 var progress = 0;
@@ -23,13 +23,15 @@ const urlParams = new URLSearchParams(queryString);
 condition = urlParams.get('c')
 condition = parseInt(condition)
 
+console.log("In interaction.js")
+
 if (condition === 1) {
     textScript = "Text_Script.json"
-    document.getElementById("user-rating-area-mini-dr").remove()
 } else if (condition === 0) {
     document.getElementById("virtualcharacter1").remove()
     document.getElementById("user-rating-area-mini-dr").id = 'user-rating-area-mini'
     textScript = "Text_Script_Control.json"
+    console.log("Condition is 0")
 }
 
 var prependItems = [
@@ -40,10 +42,6 @@ var prependItems = [
 ];
 
 let prependIndex = 0; // Track current index
-
-document.querySelector(".toggle").addEventListener("click", function() {
-    this.classList.toggle("active-toggle");
-});
 
 
 function getPrependPhrase() {
@@ -80,20 +78,6 @@ async function getQuestions() {
     questionsJSON = questions.questions
 }
 
-
-slider.addEventListener("input", function() {
-    var value = this.value;
-    // Do something with the slider value
-    // Add your custom logic here
-    if (value === "0"){
-        document.getElementById("question-item-text").innerText = explanations.plain 
-    } else if (value === "100"){
-        document.getElementById("question-item-text").innerText = explanations.highhealth
-    } else if (value === "50"){
-        document.getElementById("question-item-text").innerText = explanations.original
-    }
-})
-
 getIntroQuestions()
 getQuestions()
 
@@ -106,13 +90,8 @@ function getCurrentDateTime() {
     return localDateTime
 }
 
-var topics = JSON.parse(sessionStorage.getItem("topics"))
-topics = topics["Topics"]
-
 
 document.addEventListener('DOMContentLoaded', (event) => {  
-    
-
     document.getElementById("study-button-1").onclick = function() {
         document.getElementById("study1").style.display = 'block'
         document.getElementById("study2").style.display = 'none'
@@ -161,7 +140,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     let loadBody = { transcript: textScript }
 
-    showLoading();
+    // showLoading();
 });
 
 function currentSpeakingCharacter(agent) {
@@ -176,28 +155,6 @@ function currentSpeakingCharacter(agent) {
         document.getElementById("virtualcharacter").style.filter = "blur(.5px)"
         document.getElementById("virtualcharacter1").style.filter = "blur(.5px)"
     }
-}
-
-function findMostFrequentSmallestNumber(arr) {
-    const frequencyMap = {};
-    let maxCount = 0;
-    let smallestMostFrequent = Infinity;
-
-    // Count occurrences of each number (stored as strings)
-    for (let num of arr) {
-        frequencyMap[num] = (frequencyMap[num] || 0) + 1;
-        maxCount = Math.max(maxCount, frequencyMap[num]);
-    }
-
-    // Find the smallest number among the most frequent ones
-    for (let num in frequencyMap) {
-        if (frequencyMap[num] === maxCount) {
-            smallestMostFrequent = Math.min(smallestMostFrequent, Number(num)); // Convert to number for comparison
-        }
-    }
-    smallestMostFrequent = arr[arr.length - 1];
-
-    return smallestMostFrequent; // Convert back to string if needed
 }
 
 function showLoading() {
@@ -390,9 +347,18 @@ const toggleFunction = function() {
     document.querySelector(".toggle").classList.toggle("active-toggle");
 };
 
-async function handleUserInput(nodeId, body, prevAgent = null, specificDialogue = null) {
-    document.getElementById("user-rating-area-mini").style.display = "none";
+document.getElementById("user-send").addEventListener("click", function() {
+    handleUserInput(2);
+});
 
+document.getElementById("something-to-say").addEventListener("click", function() {
+    lowerHand();
+    handleUserInput(3);
+});
+
+async function handleUserInput(nodeId) {
+    let text = document.getElementById("user-text-area").value;
+    console.log(text)
     if (condition === 0) {
         var doctorCharacter = document.querySelector('#virtualcharacter > canvas')
         doctorCharacter.style.pointerEvents = "none"
@@ -402,9 +368,21 @@ async function handleUserInput(nodeId, body, prevAgent = null, specificDialogue 
         supportCharacter.style.pointerEvents = "none"
         supportCharacter.removeEventListener("click", toggleFunction);
     }
-    
 
-    body.script = textScript
+    var nodeId=nodeId
+
+    if (nodeId === 3) {
+        text = "Say hello";
+        document.getElementById("something-to-say").style.display = "none"
+    } else {
+        document.getElementById("chatbox-doctor").innerHTML = ''
+        document.getElementById("chatbox-support").innerHTML = ''
+    }
+    
+    var body = {
+        script: textScript,
+        userMessage: text
+    };
     console.log("AB TO CALL SERVER, BODY IS", body)
 
     const response = await fetch(`/interact/${nodeId}`, {
@@ -420,331 +398,27 @@ async function handleUserInput(nodeId, body, prevAgent = null, specificDialogue 
     const data = await response.json(); // gives ENTIRE audio at once
     console.log("RESPONSE FROM SERVER", data)
 
-    if (prevAgent === "doctor") {
-        console.log("IN KEEP QUESTIONS OR NOT", data.showQuestions)
-        if (data.showQuestions && data.showQuestions.keepLastDialogue) {
-            console.log("Keep Dr Alex's response")
-            if (condition === 0) {
-                console.log("Moving things around")
-                const chatbox = document.getElementById('chatbox-doctor');
-                var firstMessageItem = chatbox.firstChild.firstChild
-                console.log(firstMessageItem)
-                firstMessageItem.classList.add("relative")
-            }
-        } else {
-            document.getElementById("chatbox-doctor").innerHTML = ''
-        }
-    } else {
-        if (condition === 1) {
-            document.getElementById("chatbox-support").innerHTML = ''
-        }
-    }
-
     focusCharacter(data.agent)
 
-    if (data.options) {
-        if (Object.keys(topics).length === 0 && data.nodeId === 15) {
-            displayOptions([{"optionText": "Continue", "nextNode": 16}], data.agent)
-        } else {
-            displayOptions(data.options, data.agent)
-        }
-    }
-
     var characterDialogue = data.dialogue
-    if (data.showQuestions && data.showQuestions.questionList) { 
-        var jsonList
-        data.showQuestions.questionList.questionJSON === "introQuestionsJSON" ? jsonList = introQuestionsJSON : jsonList = questionsJSON
-        if (data.showQuestions.questionList.questionJSON === "questionsJSON") {
-            jsonList = questionsJSON
-            var userQuestionItem = jsonList.find(obj => obj.question === prevQuestion);
-
-            var explanationType = findMostFrequentSmallestNumber(explanationPreference)
-            var responseType
-            if (explanationType === 1) { responseType = userQuestionItem.explanations.plain }
-            if (explanationType === 50) { responseType = userQuestionItem.explanations.original }
-            if (explanationType === 100) { responseType = userQuestionItem.explanations.highhealth }
-
-            characterDialogue += getPrependPhrase() + responseType
-            explanations = userQuestionItem.explanations
-        }
+    if (data.agent === "doctor") {
+        appendMessage(characterDialogue, 'Alex', 'doctor')
+    } else {
+        appendMessage(characterDialogue, 'Support', 'support')
     }
     
-    if (data.nodeId >= 13) {
-        if (data.showQuestions && data.showQuestions.questionAdjustment) {
-            var explanationType = findMostFrequentSmallestNumber(explanationPreference)
-            if (explanationType === 1) { 
-                document.getElementById("1").classList.add("highlight") 
-                document.getElementById("2").classList.remove("highlight")
-                document.getElementById("3").classList.remove("highlight")
-            }
-            if (explanationType === 50) { 
-                document.getElementById("2").classList.add("highlight") 
-                document.getElementById("1").classList.remove("highlight")
-                document.getElementById("3").classList.remove("highlight")
-            }
-            if (explanationType === 100) { 
-                document.getElementById("3").classList.add("highlight") 
-                document.getElementById("2").classList.remove("highlight")
-                document.getElementById("1").classList.remove("highlight")
-            }
-
-            jsonList = questionsJSON
-            var userQuestionItem = jsonList.find(obj => obj.question === prevQuestion);
-            userQuestionItem.explanations.plain
-            document.getElementById("1").onclick = function() {
-                document.getElementById("user-rating-area").style.opacity = 0;
-                document.getElementById("user-rating-area").style.pointerEvents = "none";
-                document.getElementById("options-area").innerHTML = ''
-                explanationPreference.push(1)
-                resetChatBoxPosition();
-                appendMessage("Adjusted Explanation: Less Technical", 'user', null, null, null)
-                logItem("preferences", explanationPreference.toString(), "varchar")
-                handleUserInput(15, { userMessage: userQuestionItem.explanations.plain, script: textScript }, "doctor", userQuestionItem.explanations.plain)
-            };
-            document.getElementById("2").onclick = function() {
-                document.getElementById("user-rating-area").style.opacity = 0;
-                document.getElementById("user-rating-area").style.pointerEvents = "none";
-                document.getElementById("options-area").innerHTML = ''
-                explanationPreference.push(50)
-                resetChatBoxPosition();
-                appendMessage("Adjusted Explanation: Default", 'user', null, null, null)
-                logItem("preferences", explanationPreference.toString(), "varchar")
-                console.log("CLICKED NCI ORIGINAL")
-                handleUserInput(15, { userMessage: userQuestionItem.explanations.original, script: textScript }, "doctor", userQuestionItem.explanations.original)
-            };
-            document.getElementById("3").onclick = function() {
-                document.getElementById("user-rating-area").style.opacity = 0;
-                document.getElementById("user-rating-area").style.pointerEvents = "none";
-                document.getElementById("options-area").innerHTML = ''
-                explanationPreference.push(100)
-                resetChatBoxPosition();
-                appendMessage("Adjusted Explanation: More Technical", 'user', null, null, null)
-                logItem("preferences", explanationPreference.toString(), "varchar")
-                handleUserInput(15, { userMessage: userQuestionItem.explanations.highhealth, script: textScript }, "doctor", userQuestionItem.explanations.highhealth)
-            };
-        }
-    }
-
-    if (specificDialogue) { characterDialogue = specificDialogue }
 
     characterAudio(characterDialogue, null, data.agent, () => {
-        // if (Object.keys(topics).length === 0 && data.nodeId === 15) {
-        //     displayOptions([{"optionText": "Continue", "nextNode": 16}], data.agent)
-        // }
-        if (data.passOn) {
-            handleUserInput(data.input.nextNode, { userInput: "Start Introduction", script: textScript, gender: "male" }, data.agent);
-        } else {
-            focusCharacter("neither")
-        }
-        if (data.nodeId >= 14) {
-            if (data.showQuestions && data.showQuestions.questionAdjustment) {
-                document.getElementById("user-rating-area-mini").style.display = "block";
-                if (condition === 1) {
-                    var supportCharacter = document.querySelector('#virtualcharacter1 > canvas')
-                    supportCharacter.style.pointerEvents = "all"
-                    supportCharacter.addEventListener("click", toggleFunction);
-                } else if (condition === 0) {
-                    var doctorCharacter = document.querySelector('#virtualcharacter > canvas')
-                    doctorCharacter.style.pointerEvents = "all"
-                    doctorCharacter.addEventListener("click", toggleFunction);
-                }
-            }
-            if (data.showQuestions && data.showQuestions.keepLastDialogue) {
-                if (condition === 0) {
-                    console.log("Removing last question")
-                    const chatbox = document.getElementById('chatbox-doctor');
-                    const messageItems = chatbox.getElementsByClassName('message-item');
-
-                    if (messageItems.length >= 2) {
-                        messageItems[1].remove();
-                        messageItems[0].firstChild.classList.remove("relative");
-                    }
-                } else if (condition === 1 ) {
-                    document.getElementById("chatbox-support").innerHTML = ''
-                }
-            }
-        }
-
-        if (data.options && data.options.generate && data.options.generate !== false || data.options.generate === undefined || data.options.questionList) {
-            enableButtons("option-btn")
-        }
-        if (data.options.questionList) {
-            enableButtons("preference-option-btn")
+        focusCharacter("neither")
+        if (nodeId === 2) {
+            hasSomethingToSay();
         }
     });
-
-    if (data.passOn) { 
-        if (data.showQuestions && data.showQuestions.waitToShowOptions) {
-            appendMessage(characterDialogue, 'Alex',  data.agent, null, data.passOn, data.showQuestions.waitToShowOptions);
-        } else {
-            appendMessage(characterDialogue, 'Alex',  data.agent, null, data.passOn);
-        }
-    } else {
-        appendMessage(characterDialogue, 'Alex',  data.agent, data.nodeId);
-    } 
 }
 
-function checkAndRemoveTopic(item) {
-    console.log("Have a topic to check & remove")
-    console.log("ITEM:",item)
-    console.log(topics)
-    if (item in topics) {
-        console.log("ITEM IS IN TOPICS")
-        delete topics[item]
-    }
-}
-
-function getOptionText(key, value) {
-    switch(key) {
-        case 'original':
-            return '<strong>Original NCI:</strong><br/>';
-        case 'plain':
-            return '<strong>Less Technical:</strong><br/>';
-        case 'highhealth':
-            return '<strong>More Technical:</strong><br/>';
-        default:
-            return value; // fallback to the value if key is not recognized
-    }
-}
-
-function getOptionValue(key, value) {
-    switch(key) {
-        case 'original':
-            return 50;
-        case 'plain':
-            return 1;
-        case 'highhealth':
-            return 100;
-        default:
-            return value; // fallback to the value if key is not recognized
-    }
-}
-
-function displayOptions(options, agent) {
-    var prevAgent = agent
-    var optionsArray = options
-    document.getElementById("question-title").innerHTML = "Your Response:"
-    if (options.generate) {
-        if (condition === 0) {
-            document.getElementById("question-title").innerHTML = "Dr Alex's suggested questions - Please select:"
-        } else if (condition === 1) {
-            document.getElementById("question-title").innerHTML = "Jordan's suggested questions - Please select:"
-        }
-        const optionsTopics = Object.keys(topics)
-        .slice(0, 3)
-        .map(key => ({
-            optionText: key,
-            nextNode: options.nextNode,
-            getPreference: true
-        }));
-        optionsArray = optionsTopics
-        // prevAgent = "doctor"
-    }
-    if (options.questionList) {
-        if (options.question) {
-            document.getElementById("question-title").innerHTML = "Please select an Explanation for: " + options.question 
-        }
-        var tutorialOptionsTopics = Object.entries(introQuestionsJSON[options.item].explanationsBolded)
-        .map(([key, value]) => ({
-            optionText: getOptionText(key) + value,
-            optionDialogue: cleanBoldTags(value),
-            nextNode: options.nextNode,
-            getPreference: true,
-            preference: getOptionValue(key),
-        }));
-        optionsArray = tutorialOptionsTopics
-    }
-    optionsArray.forEach(option => {
-        const optionsArea = document.getElementById("options-area")
-        const button = document.createElement('button');
-        const userText = option.optionText
-        button.innerHTML = userText;
-        if (option.preference && option.preference === prevPreference) {
-            // button.classList.add("highlight-option-btn")
-            const highlightDiv = document.createElement("p");
-            if (condition === 1) {
-                highlightDiv.innerHTML = "Jordan Recommends"
-            } else if (condition === 0) {
-                highlightDiv.innerHTML = "Dr Alex Recommends"
-            }
-            highlightDiv.classList.add("highlight-div")
-            button.appendChild(highlightDiv)
-        }
-        if (options.questionList) {
-            button.classList.add("preference-option-btn")
-        } else {
-            button.classList.add("option-btn")
-        }
-        if (option.continueNode) {
-            continueNode = option.continueNode
-        }
-        if (option.optionText === "View Resource.") {
-            button.onclick = function() {
-                moreInfoModal.style.display = "flex";
-            }
-        } 
-        else if (option.optionText === "View Sample Clinical Trials.") {
-            button.onclick = function() {
-                document.getElementById("studies-modal").style.display = "flex";
-            }
-        } else if (option.link) {
-            button.addEventListener('click', () => {
-                console.log("CONTINUE TO POST SURVEY", option.link)
-                window.location.href = option.link + "?id=" + id + "&c=" + condition;
-            })
-        }
-        else {
-            button.addEventListener('click', () => {
-                document.getElementById("chatbox-doctor").innerHTML = ''
-                if (condition === 1) {
-                    document.getElementById("chatbox-support").innerHTML = ''
-                }
-                if (option.getPreference) {
-                    prevPreference = option.preference
-                    prevQuestion = option.optionText
-                    if (option.preference) {
-                        explanationPreference.push(option.preference)
-                        logItem("preferences", explanationPreference.toString(), "varchar")
-                    }
-                }
-                document.getElementById("user-rating-area").style.opacity = 0;
-                document.getElementById("user-rating-area").style.pointerEvents = "none";
-                optionsArea.innerHTML = ''
-                resetChatBoxPosition();
-                appendMessage(userText, 'user', null, null, null)
-                let messageBody = { userMessage: option.optionText, script: textScript }
-                checkAndRemoveTopic(option.optionText)
-                if (option.nextNode) {
-                    if (option.increment === true) {
-                        if (option.userInfo) {
-                            userInfo = option.userInfo
-                            document.getElementById("thinking").style.display = "flex"
-                        }
-                        if (option.value === 0 || option.value ===1) {
-                            logItem("browseChoice", option.value, "int")
-                        }
-                        incrementProgress();
-                        if (option.doubleIncrement) {
-                            incrementProgress(true);
-                        }
-                    }
-                    if (options.questionList) {
-                        handleUserInput(option.nextNode, messageBody, prevAgent, option.optionDialogue)
-                    } else {
-                        handleUserInput(option.nextNode, messageBody, prevAgent)
-                    }
-                } else {
-                    incrementProgress();
-                    handleUserInput(continueNode, messageBody, prevAgent)
-                }
-                
-                // You can add more actions here based on nextNode
-            });
-        }
-        button.disabled = true;
-        optionsArea.appendChild(button);
-    });
-    
+function hasSomethingToSay() {
+    document.getElementById("something-to-say").style.display = "block"
+    raiseHand();
 }
 
 function displaySubtitles(dialogue, divItem, passOn = null, waitToShowOptions = null) {
@@ -773,13 +447,6 @@ function displaySubtitles(dialogue, divItem, passOn = null, waitToShowOptions = 
             setTimeout(typeWriter, 30); // Adjust speed (20ms per character)
         } else {
             typewriterRunning = false; // Reset the flag when done
-            if (waitToShowOptions === null) {
-                setTimeout(() => {
-                    document.getElementById("user-rating-area").style.opacity = 1;
-                    document.getElementById("user-rating-area").style.pointerEvents = "all";
-                    moveChatBox();
-                }, 10);
-            } 
         }
         // chatBox.scrollTop = chatBox.scrollHeight; // Scroll to bottom
     }

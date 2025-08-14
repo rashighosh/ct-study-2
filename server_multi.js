@@ -484,7 +484,7 @@ app.post('/updateTranscript', (req, res) => {
       }
   
       var request = new sql.Request();
-      const queryString = `UPDATE CTStudy SET ${transcriptType} = @transcript WHERE id = @id`;
+      const queryString = `UPDATE CTStudy2 SET ${transcriptType} = @transcript WHERE id = @id`;
   
       request.input('id', sql.NVarChar, id);
       request.input('transcript', sql.NVarChar, transcript);
@@ -510,7 +510,7 @@ app.post('/updateTranscript', (req, res) => {
       }
   
       var request = new sql.Request();
-      const queryString = `UPDATE CTStudy SET ${columnName} = @value WHERE id = @id`;
+      const queryString = `UPDATE CTStudy2 SET ${columnName} = @value WHERE id = @id`;
   
       request.input('id', sql.NVarChar, id);
       request.input('value', sql.Int, value);
@@ -535,7 +535,7 @@ app.post('/updateTranscript', (req, res) => {
         }
   
         var request = new sql.Request();
-        const queryString = `SELECT * FROM CTStudy WHERE id = @id`;
+        const queryString = `SELECT * FROM CTStudy2 WHERE id = @id`;
   
         request.input('id', sql.NVarChar, id);
   
@@ -571,7 +571,7 @@ app.post('/updateTranscript', (req, res) => {
       var request = new sql.Request();
   
       // Check if ID already exists
-      let checkIfExistsQuery = `SELECT TOP 1 id FROM CTStudy WHERE id = @id`;
+      let checkIfExistsQuery = `SELECT TOP 1 id FROM CTStudy2 WHERE id = @id`;
   
       // Bind parameterized value for ID
       request.input('id', sql.NVarChar, id);
@@ -588,7 +588,7 @@ app.post('/updateTranscript', (req, res) => {
           return res.status(200).json({ message: 'Database: id already exists.' });
         } else {
           // Construct SQL query with parameterized values to insert the record
-          let insertQuery = `INSERT INTO CTStudy (id, condition, startTime) VALUES (@id, @condition, @startTime)`;
+          let insertQuery = `INSERT INTO CTStudy2 (id, condition, startTime) VALUES (@id, @condition, @startTime)`;
         
           // Bind parameterized values
           request.input('condition', sql.Int, condition);

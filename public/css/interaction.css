@@ -244,23 +244,33 @@ canvas {
   opacity: 1;
 }
 
-#question-box {
+#something-to-say {
   background-color: white;
   padding: 5px 10px;
   border-radius: 15px;
   background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)) padding-box,
             var(--gradient-light) border-box;
   border: 2px solid transparent;
+  position: absolute;
+  width: 175px;
+  text-align: center;
+  display: none;
+  z-index: 99999;
 }
 
-#question-box::after {
+#something-to-say::after {
   content: "";
   position: absolute;
-  top: 20px; /* adjust vertically */
-  left: -10px; /* place the arrow on the left */
-  border-width: 10px 10px 10px 0;
+  top: -10px; /* places arrow above box */
+  left: 50%; /* start centering */
+  transform: translateX(-50%); /* finish centering */
+  border-width: 0 10px 10px 10px; /* top=0, sides=10px, bottom=10px */
   border-style: solid;
-  border-color: transparent #f2a900 transparent transparent;
+  border-color: transparent transparent #f2a900 transparent;
+}
+
+#something-to-say:hover {
+  cursor: pointer;
 }
 
 #chatbox-doctor {
@@ -271,7 +281,7 @@ canvas {
   transform: translate(-50%, -50%);
   z-index: 99999;
   text-align: left;
-  bottom: 5%;
+  bottom: 15%;
   transition: bottom 0.3s ease;
 }
 
@@ -283,7 +293,7 @@ canvas {
   transform: translate(-50%, -50%);
   z-index: 99999;
   text-align: left;
-  bottom: 5%;
+  bottom: 15%;
   transition: bottom 0.3s ease;
 }
 
@@ -806,6 +816,29 @@ a {
   p.source-link:hover {
     color:#fa4616;
     cursor: pointer;
+  }
+
+  .user-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #user-text-area {
+    border-radius: 15px;
+    height: 50px;
+    resize: none;
+    font-family: "Poppins", sans-serif;
+    width: 550px;
+    padding: 15px;
+    font-size: 19px;
+    margin: 15px;
+  }
+
+  #user-send {
+    height: 80px;
+    margin: 15px;
   }
 
   #pdfModal {

@@ -10,9 +10,13 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 var condition = urlParams.get('c')
 condition = parseInt(condition)
+
+console.log("In virtualcharacter.js")
+
 if (condition === 0) {
-    character = "/character-models/female.glb";
-    characterBody = 'F'
+  console.log("condition is 0")
+  character = "/character-models/female.glb";
+  characterBody = 'F'
 } else {
     character = "/character-models/male.glb"
     characterBody = 'M'
@@ -20,6 +24,8 @@ if (condition === 0) {
 
 var first=true;
 var counter = 0;
+
+console.log("about to load avatar")
 
 // Load and show the avatar
 document.addEventListener('DOMContentLoaded', async function (e) {
@@ -83,13 +89,17 @@ document.addEventListener('DOMContentLoaded', async function (e) {
 });
 
 export async function thinkingPose() {
-  // head.playGesture('thinking', 60);
-  // head.playGesture('👀', 60);
+  head.playGesture('thinking', 60);
+  head.playGesture('👀', 60);
 }
 
-export async function stopThinking() {
-  // console.log("STOP THINKING")
-  // head.stopGesture();
+export async function raiseHand() {
+  head1.playGesture('🤚');
+}
+
+export async function lowerHand() {
+  console.log("LOWERING HAND")
+  head1.stopGesture();
 }
 
 export async function focusCharacter(character) {
@@ -141,7 +151,7 @@ export async function characterAudio(audio, emoji, agent, onSpeechEnd) {
   try {
       // Handle first-time gestures
       if (counter === 0) {
-          agentHead.playGesture('🤚');
+          agentHead.playGesture('👋');
           counter++;
       }
       agentHead.speakText(audio)

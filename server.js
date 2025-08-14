@@ -22,6 +22,8 @@ const rashi_openai = new OpenAI(api_key = process.env.OPENAI_API_KEY);
 const GOOGLE_API_KEY = process.env.GOOGLE_TTS_API_KEY
 app.use(bodyParser.json());
 
+var prevDialogue = ""
+
 const jsonDir = path.resolve(__dirname, './json_scripts')
 
 const config = {
@@ -134,23 +136,23 @@ function removeSpecialFormat(text) {
     return text.replace(/【\d+:\d+†[^】]+】/g, '');
 }
 
-app.post('/adjustHealthLiteracy', async (req, res, next) => {
-  var message = `MESSAGE: ${req.body.message}; ADJUSTMENT: ${req.body.adjustment}`
-  const completion = await openai.chat.completions.create({
-    model: "gpt-4o",
-    messages: [{ 
-      role: "developer", 
-      content: "You are a helpful assistant whose goal is to lower the health literacy of the user's MESSAGE based on ADJUSTMENT, which is how they want the information presented, either 0 (low health iteracy) or 100 (high health literacy). Keep the message content the same, but the lower the health literacy based on ADJUSTMENT: if 100, use more medical jargon and more technical terms. if 0, use less medical jargon, less technical terms, and less complex sentence structure, and explain any terms or phrases that are specific to healthcare. Use these websites to help guide you for 0: https://www.cms.gov/training-education/learn/find-tools-to-help-you-help-others/guidelines-for-effective-writing, https://multco.us/file/plain_language_word_list/download, https://www.plainlanguage.gov/resources/checklists/checklist/. Return only the adjusted text." 
-    }, 
-    { 
-      role: "user", 
-      content: message 
-    }],
-    store: true,
-  });
+// app.post('/adjustHealthLiteracy', async (req, res, next) => {
+//   var message = `MESSAGE: ${req.body.message}; ADJUSTMENT: ${req.body.adjustment}`
+//   const completion = await openai.chat.completions.create({
+//     model: "gpt-4o",
+//     messages: [{ 
+//       role: "developer", 
+//       content: "You are a helpful assistant whose goal is to lower the health literacy of the user's MESSAGE based on ADJUSTMENT, which is how they want the information presented, either 0 (low health iteracy) or 100 (high health literacy). Keep the message content the same, but the lower the health literacy based on ADJUSTMENT: if 100, use more medical jargon and more technical terms. if 0, use less medical jargon, less technical terms, and less complex sentence structure, and explain any terms or phrases that are specific to healthcare. Use these websites to help guide you for 0: https://www.cms.gov/training-education/learn/find-tools-to-help-you-help-others/guidelines-for-effective-writing, https://multco.us/file/plain_language_word_list/download, https://www.plainlanguage.gov/resources/checklists/checklist/. Return only the adjusted text." 
+//     }, 
+//     { 
+//       role: "user", 
+//       content: message 
+//     }],
+//     store: true,
+//   });
 
-  return res.json({ message: completion.choices[0].message.content });
-})
+//   return res.json({ message: completion.choices[0].message.content });
+// })
 
 app.get('/getQuestionsJSON', (req, res, next) => {
   var questionsJSON = JSON.parse(fs.readFileSync(path.join(jsonDir, "Questions.json")), 'utf8')
@@ -214,7 +216,7 @@ app.post('/interact/:nodeId', async (req, res, next) => {
   var gender = req.body.gender
   var script = req.body.script
   var openai_assistant = ''
-
+  console.log("IN INTERACT, MESSAGE IS", message)
   try {
       // Find node data in preloaded metadata
       var nodeData
@@ -229,46 +231,61 @@ app.post('/interact/:nodeId', async (req, res, next) => {
       }
 
       var agentDialogue = nodeData.dialogue
+      console.log("FOUND NODE")
 
       if (nodeData.response) {
-        if (nodeData.response.useAi.prependAiDialogue) {
-          console.log("need to prepend AI dialogue")
-          console.log(message)
-          const completion = await openai.chat.completions.create({
-            messages: [{ role: "developer", content: nodeData.response.useAi.prompt }, { role: "user", content: message }],
-            model: "gpt-4o",
-            store: true,
-          });
-        
-          console.log(completion)
-          console.log(completion.choices[0].message.content);
-          agentDialogue = completion.choices[0].message.content + nodeData.dialogue
-        }
+        console.log(nodeData.response)
         if (nodeData.response.useAi.modifyDialogue) {
-          console.log("MAKING CALL TO OPENAI")
-          console.log(message)
-          const openAiAssistant = 'asst_NkwHAFS69vs6Yde0IU24czgD'
-          console.log(openAiAssistant)
-          const thread = await rashi_openai.beta.threads.create();
-          await rashi_openai.beta.threads.messages.create(thread.id, {
-              role: 'user',
-              content: message
-            });
-            const run = await rashi_openai.beta.threads.runs.create(thread.id, {
-              assistant_id: openAiAssistant
-            });
-          let runStatus = await rashi_openai.beta.threads.runs.retrieve(thread.id, run.id);
-
-          while (runStatus.status !== 'completed') {
-            console.log("WAITING FOR RESPONSE ...")
-            await new Promise(resolve => setTimeout(resolve, 3000));
-            runStatus = await rashi_openai.beta.threads.runs.retrieve(thread.id, run.id);
+          var messages;
+          if (nodeId === 2) {
+            messages = [
+              { role: "system", content: "You are a virtual doctor helping raise awareness about clinical trials as an option for cancer care to a real cancer patient. Address their questions and concerns in 30 words or less." },
+              { role: "user", content: message }
+            ]
+          } else {
+            console.log(prevDialogue)
+            messages = [
+              { role: "system", content: "You are a support agent helping a real cancer patient decide whether or not a clinical trial is right for them. The following message is from a doctor, Doctor Alex. Directly address Doctor Alex and acknowledge what they said with backchannels. Then address the real cancer patient and provide useful commentary based on what Doctor Alex said. Keep your response to 30 words or less." },
+              { role: "user", content: prevDialogue }
+            ]
           }
-          console.log("GOT RESPONSE")
-          const messages = await rashi_openai.beta.threads.messages.list(thread.id);
-          var generatedDialogue = messages.data[0].content[0].text.value;
-          agentDialogue = removeSpecialFormat(generatedDialogue)
-          console.log(agentDialogue)
+          const completion = await rashi_openai.chat.completions.create({
+            model: "gpt-4o-mini", // or "gpt-4o", "gpt-3.5-turbo"
+            messages: messages,
+            temperature: 0.7 // adjust for creativity
+          });
+
+          agentDialogue = removeSpecialFormat(
+            completion.choices[0].message.content
+          );
+
+          console.log("GOT RESPONSE");
+          console.log(agentDialogue);
+          prevDialogue = agentDialogue
+          // console.log("MAKING CALL TO OPENAI")
+          // console.log(message)
+          // const openAiAssistant = 'asst_NkwHAFS69vs6Yde0IU24czgD'
+          // console.log(openAiAssistant)
+          // const thread = await rashi_openai.beta.threads.create();
+          // await rashi_openai.beta.threads.messages.create(thread.id, {
+          //     role: 'user',
+          //     content: message
+          //   });
+          //   const run = await rashi_openai.beta.threads.runs.create(thread.id, {
+          //     assistant_id: openAiAssistant
+          //   });
+          // let runStatus = await rashi_openai.beta.threads.runs.retrieve(thread.id, run.id);
+
+          // while (runStatus.status !== 'completed') {
+          //   console.log("WAITING FOR RESPONSE ...")
+          //   await new Promise(resolve => setTimeout(resolve, 3000));
+          //   runStatus = await rashi_openai.beta.threads.runs.retrieve(thread.id, run.id);
+          // }
+          // console.log("GOT RESPONSE")
+          // const messages = await rashi_openai.beta.threads.messages.list(thread.id);
+          // var generatedDialogue = messages.data[0].content[0].text.value;
+          // agentDialogue = removeSpecialFormat(generatedDialogue)
+          // console.log(agentDialogue)
         }
       }
 
@@ -281,6 +298,7 @@ app.post('/interact/:nodeId', async (req, res, next) => {
         showQuestions: nodeData.showQuestions || null,
         options: nodeData.options || []
       }
+      console.log("RETURNING TO FRONT END", responseData)
       return res.json(responseData);
   } catch (err) {
       console.error('Error during request processing:', err);
@@ -298,7 +316,7 @@ app.post('/updateTranscript', (req, res) => {
       }
   
       var request = new sql.Request();
-      const queryString = `UPDATE CTStudy SET ${transcriptType} = @transcript WHERE id = @id`;
+      const queryString = `UPDATE CTStudy2 SET ${transcriptType} = @transcript WHERE id = @id`;
   
       request.input('id', sql.NVarChar, id);
       request.input('transcript', sql.NVarChar, transcript);
@@ -324,7 +342,7 @@ app.post('/updateTranscript', (req, res) => {
       }
   
       var request = new sql.Request();
-      const queryString = `UPDATE CTStudy SET ${columnName} = @value WHERE id = @id`;
+      const queryString = `UPDATE CTStudy2 SET ${columnName} = @value WHERE id = @id`;
   
       request.input('id', sql.NVarChar, id);
       if (valueType === "int") {
@@ -354,7 +372,7 @@ app.post('/updateTranscript', (req, res) => {
         }
   
         var request = new sql.Request();
-        const queryString = `SELECT * FROM CTStudy WHERE id = @id`;
+        const queryString = `SELECT * FROM CTStudy2 WHERE id = @id`;
   
         request.input('id', sql.NVarChar, id);
   
@@ -390,7 +408,7 @@ app.post('/updateTranscript', (req, res) => {
       var request = new sql.Request();
   
       // Check if ID already exists
-      let checkIfExistsQuery = `SELECT TOP 1 id FROM CTStudy WHERE id = @id`;
+      let checkIfExistsQuery = `SELECT TOP 1 id FROM CTStudy2 WHERE id = @id`;
   
       // Bind parameterized value for ID
       request.input('id', sql.NVarChar, id);
@@ -407,7 +425,7 @@ app.post('/updateTranscript', (req, res) => {
           return res.status(200).json({ message: 'Database: id already exists.' });
         } else {
           // Construct SQL query with parameterized values to insert the record
-          let insertQuery = `INSERT INTO CTStudy (id, condition, startTime) VALUES (@id, @condition, @startTime)`;
+          let insertQuery = `INSERT INTO CTStudy2 (id, condition, startTime) VALUES (@id, @condition, @startTime)`;
         
           // Bind parameterized values
           request.input('condition', sql.Int, condition);
@@ -504,8 +522,6 @@ process.on('unhandledRejection', (reason, promise) => {
   console.error('Unhandled Rejection at:', promise, 'reason:', reason);
   // Optionally handle cleanup or decide to shut down gracefully
 });
-
-app.use('/qualtrics', require('./routes/qualtrics')); // Authentication routes
 
 // Start the server
 const PORT = process.env.PORT || 3000;

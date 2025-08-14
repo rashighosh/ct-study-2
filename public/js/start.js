@@ -1,6 +1,3 @@
-var qualtricsLoaded = false
-var fetchedTopics = false
-
 document.addEventListener('DOMContentLoaded', (event) => {    
     console.log("Start") 
     var condition
@@ -8,8 +5,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     if (urlParams.size === 0) {
-        condition = '0'
-        id = 'R_6OJi7FcmMOb3GZe'
+        condition = '1'
+        id = 'rashi_test'
     } else {
         condition = urlParams.get('c')
         id = urlParams.get('id')
@@ -19,7 +16,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     var currentDate = new Date();
     logToDatabase(id, condition, currentDate);
 
-    getQualtricsInfromation(id)
+    console.log("id is:", id)
+    console.log("condition is:", condition)
     
     if (condition === 0) {
         sessionStorage.setItem("character", "female.glb")
@@ -33,9 +31,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById("info4").src = '/images/info4_control.gif'
         document.getElementById("info5").src = '/images/info5_control.gif'
     }
-
-    console.log("id is:", id)
-    console.log("condition is:", condition)
 
     document.getElementById('back1').addEventListener('click', part1);
     document.getElementById('part1-btn').addEventListener('click', part2);
@@ -131,157 +126,9 @@ function part6() {
     document.getElementById("back4").style.display = "none"
     document.getElementById("back5").style.display = "block"
 
-    console.log("Checking fetchedTopics...");
     document.getElementById("part6").style.display = "block"
-    document.getElementById("part6").innerHTML = "You're about to start the virtual character intervention. Please give us a moment to prepare the intervention. This shouldn't take longer than 1 minute."
-    document.getElementById("loader").style.display = "block"
-
-  
-    function checkFetchedTopics() {
-        console.log("Checking fetchedTopics...");
-        if (fetchedTopics) {
-            clearInterval(intervalId);
-            console.log("fetchedTopics is true. Stopping checks.");
-            document.getElementById("loader").style.display = "none"
-            document.getElementById("part6").style.display = "block"
-            document.getElementById("part6").innerHTML = "The virtual character intervention is ready! Please click the button below when you're ready to start."
-            document.getElementById("part6-btn").style.display = "block"
-        }
-    }
-    
-    const intervalId = setInterval(checkFetchedTopics, 3000);
-
-    
-}
-
-async function getQualtricsInfromation(id) {
-    try {
-        const response = await fetch('/qualtrics/getSurveyResponses', {
-            method: 'GET',
-            headers: {'Content-Type': 'application/json'},
-        });
-
-        if (response.status === 409) {
-            const surveyData = await response.json();
-            throw new Error(surveyData.message);
-        }
-        if (!response.ok) {
-            throw new Error('Server responded with error ' + response.status);
-        }
-
-        const surveyData = await response.json();
-        console.log(surveyData);
-        
-        try {
-            const response = await fetch('/qualtrics/processSurveyResponses', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({id: id})
-            });
-    
-            if (response.status === 409) {
-                const surveyResponseData = await response.json();
-                throw new Error(surveyResponseData.message);
-            }
-            if (!response.ok) {
-                throw new Error('Server responded with error ' + response.status);
-            }
-    
-            const surveyResponseData = await response.json();
-            console.log(surveyResponseData);
-            qualtricsLoaded = true
-        } catch (error) {
-            console.error('Error:', error.message);
-            throw error; // Re-throw the error
-        }
-    } catch (error) {
-        console.error('Error:', error.message);
-        throw error; // Re-throw the error
-    }
-}
-
-
-
-async function fetchOrGenerateTopics(id) {
-    console.log("In some function, checking topics ...")
-    try {
-        const result = await checkTopics(id);
-        if (result.topics === false) {
-            console.log("Topics does not exist, generating...", result.topics)
-            getConversationTopics(id)
-            return
-        } else {
-            console.log("Topics exists!")
-            var topics = result.topics
-            console.log(topics)
-            var firstSevenTopics = {};
-            firstSevenTopics["Topics"] = Object.fromEntries(Object.entries(topics.Topics).slice(0, 7));
-            console.log(firstSevenTopics)
-            sessionStorage.setItem("topics", JSON.stringify(firstSevenTopics))
-            fetchedTopics = true
-        }
-        // Continue with the rest of your code
-    } catch (error) {
-        console.error("An error occurred:", error);
-        // Handle the error appropriately
-    }
-}
-
-async function checkTopics(id) {
-    try {
-        const response = await fetch('/qualtrics/checkTopics', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({id: id})
-        });
-
-        if (response.status === 409) {
-            const data = await response.json();
-            throw new Error(data.message);
-        }
-        if (!response.ok) {
-            throw new Error('Server responded with error ' + response.status);
-        }
-
-        const data = await response.json();
-        console.log(data);
-        return data; // Return the data
-    } catch (error) {
-        console.error('Error:', error.message);
-        throw error; // Re-throw the error
-    }
-}
-
-
-function getConversationTopics(id) {
-    fetch('/qualtrics/scoreSurveyResponses', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({id: id})
-    })
-    .then(async response => {
-        if (response.status === 409) {
-            const data = await response.json();
-            throw new Error(data.message); // Throw error with the message from server
-        }
-        if (!response.ok) {
-            throw new Error('Server responded with error ' + response.status);
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log(data.sortedTopics);
-        var sortedTopics = data.sortedTopics
-        console.log(sortedTopics)
-        var firstSevenTopics = {};
-        firstSevenTopics["Topics"] = Object.fromEntries(Object.entries(sortedTopics.Topics).slice(0, 7));
-        console.log(firstSevenTopics)
-        sessionStorage.setItem("topics", JSON.stringify(firstSevenTopics))
-        fetchedTopics = true
-    })
-    .catch(error => {
-        console.error('Error:', error.message);
-    });  
+    document.getElementById("part6").innerHTML = "The virtual character intervention is ready! Please click the button below when you're ready to start."
+    document.getElementById("part6-btn").style.display = "block" 
 }
 
 function logToDatabase(id, condition, currentDate) {
@@ -301,16 +148,7 @@ function logToDatabase(id, condition, currentDate) {
         return response.json();
     })
     .then(data => {
-        console.log(data.message);
-        function checkQualtricsLoaded() {
-            console.log("Checking if qualtrics has loaded...");
-            if (qualtricsLoaded) {
-                clearInterval(intervalId);
-                console.log("Qualtrics has loaded is true. Stopping checks. Now fetching or generating topics");
-                fetchOrGenerateTopics(id);
-            }
-        } 
-        const intervalId = setInterval(checkQualtricsLoaded, 3000);
+        console.log("Done!", data.message);
     })
     .catch(error => {
         console.error('Error:', error.message);

@@ -1,4 +1,4 @@
-import { characterAudio, characterAudioQueue, lowerHand, focusCharacter, raiseHand } from './virtualcharacter.js';
+import { characterAudio, characterAudioQueue, lowerHand, focusCharacter, raiseHand, turnCharacter, resetCharacter } from './virtualcharacter.js';
 
 var continueNode = null
 var progress = 0;
@@ -353,10 +353,13 @@ document.getElementById("user-send").addEventListener("click", function() {
 
 document.getElementById("something-to-say").addEventListener("click", function() {
     lowerHand();
+    resetCharacter("support")
     handleUserInput(3);
 });
 
 async function handleUserInput(nodeId) {
+    resetCharacter("support")
+    lowerHand();
     let text = document.getElementById("user-text-area").value;
     console.log(text)
     if (condition === 0) {
@@ -400,6 +403,12 @@ async function handleUserInput(nodeId) {
 
     focusCharacter(data.agent)
 
+    if (data.agent === "doctor") {
+        turnCharacter("support")
+    } else {
+        turnCharacter("doctor")
+    }
+
     var characterDialogue = data.dialogue
     if (data.agent === "doctor") {
         appendMessage(characterDialogue, 'Alex', 'doctor')
@@ -410,6 +419,11 @@ async function handleUserInput(nodeId) {
 
     characterAudio(characterDialogue, null, data.agent, () => {
         focusCharacter("neither")
+        if (data.agent === "doctor") {
+            resetCharacter("support")
+        } else {
+            resetCharacter("doctor")
+        }
         if (nodeId === 2) {
             hasSomethingToSay();
         }

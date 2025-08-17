@@ -245,7 +245,7 @@ app.post('/interact/:nodeId', async (req, res, next) => {
           } else {
             console.log(prevDialogue)
             messages = [
-              { role: "system", content: "You are a support agent helping a real cancer patient decide whether or not a clinical trial is right for them. The following message is from a doctor, Doctor Alex. Directly address Doctor Alex and acknowledge what they said with backchannels. Then address the real cancer patient and provide useful commentary based on what Doctor Alex said. Keep your response to 30 words or less." },
+              { role: "system", content: "You are a support agent helping a real cancer patient decide whether or not a clinical trial is right for them. The following message is from a doctor, Doctor Alex. Directly address Doctor Alex and acknowledge what they said with backchannels. Then address the real cancer patient and suggest a useful question for the patient to ask based on what Doctor Alex said. Keep your response to 30 words or less." },
               { role: "user", content: prevDialogue }
             ]
           }

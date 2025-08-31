@@ -43,7 +43,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('part5-btn').addEventListener('click', part6);
     document.getElementById('back5').addEventListener('click', part5);
     document.getElementById('part6-btn').addEventListener('click', function() {
-        window.location.href = "/interaction?id=" + id + "&c=" + condition;
+        // window.location.href = "/interaction?id=" + id + "&c=" + condition;
+        window.location.href = "/demo?id=" + id + "&c=" + condition;
     });
 });
 

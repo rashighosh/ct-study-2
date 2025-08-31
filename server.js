@@ -108,6 +108,11 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+app.get('/demo', function(req, res) {
+  console.log(req.session.params)
+  res.sendFile(path.join(__dirname, 'public', 'demo.html'));
+});
+
 app.get('/interaction', function(req, res) {
   console.log(req.session.params)
   res.sendFile(path.join(__dirname, 'public', 'interaction.html'));
@@ -135,24 +140,6 @@ process.on('unhandledRejection', (reason, promise) => {
 function removeSpecialFormat(text) {
     return text.replace(/【\d+:\d+†[^】]+】/g, '');
 }
-
-// app.post('/adjustHealthLiteracy', async (req, res, next) => {
-//   var message = `MESSAGE: ${req.body.message}; ADJUSTMENT: ${req.body.adjustment}`
-//   const completion = await openai.chat.completions.create({
-//     model: "gpt-4o",
-//     messages: [{ 
-//       role: "developer", 
-//       content: "You are a helpful assistant whose goal is to lower the health literacy of the user's MESSAGE based on ADJUSTMENT, which is how they want the information presented, either 0 (low health iteracy) or 100 (high health literacy). Keep the message content the same, but the lower the health literacy based on ADJUSTMENT: if 100, use more medical jargon and more technical terms. if 0, use less medical jargon, less technical terms, and less complex sentence structure, and explain any terms or phrases that are specific to healthcare. Use these websites to help guide you for 0: https://www.cms.gov/training-education/learn/find-tools-to-help-you-help-others/guidelines-for-effective-writing, https://multco.us/file/plain_language_word_list/download, https://www.plainlanguage.gov/resources/checklists/checklist/. Return only the adjusted text." 
-//     }, 
-//     { 
-//       role: "user", 
-//       content: message 
-//     }],
-//     store: true,
-//   });
-
-//   return res.json({ message: completion.choices[0].message.content });
-// })
 
 app.get('/getQuestionsJSON', (req, res, next) => {
   var questionsJSON = JSON.parse(fs.readFileSync(path.join(jsonDir, "Questions.json")), 'utf8')
@@ -392,7 +379,6 @@ app.post('/updateTranscript', (req, res) => {
     });
   }
   
-
   app.post('/logUser', (req, res) => {
     // Extracting data from the request body
     const { id, condition, startTime } = req.body;
@@ -523,8 +509,106 @@ process.on('unhandledRejection', (reason, promise) => {
   // Optionally handle cleanup or decide to shut down gracefully
 });
 
+// Helper to view past conversation
+async function checkConversation() {
+  if (!conversationId) return;
+  try {
+    const items = await rashi_openai.conversations.items.list(conversationId, { limit: 10 });
+    console.log(items.data);
+  } catch (err) {
+    console.error("Error listing conversation:", err);
+  }
+}
+
+function debugResponseSimple(response) {
+  console.log("=== RAW RESPONSE ===");
+  console.log(JSON.stringify(response, null, 2));
+
+  if (!response.output || response.output.length === 0) {
+    console.log("No output returned by the model.");
+    return;
+  }
+
+  const firstMessage = response.output[0];
+  if (!firstMessage.content || firstMessage.content.length === 0) {
+    console.log("Output exists but no content blocks found in the first message.");
+    return;
+  }
+
+  const firstContent = firstMessage.content[0];
+  if (firstContent.type !== "text") {
+    console.log(`First content block is type "${firstContent.type}", not text.`);
+    console.log(response.output_text)
+  } else {
+    console.log("Text returned by the model:", firstContent.text);
+  }
+}
+
+// Wrap initialization in an async IIFE so you can await
+let conversationId = null;
+
+(async () => {
+  try {
+    const conversation = await rashi_openai.conversations.create({
+      metadata: { topic: "demo" },
+      items: [
+        { type: "message", role: "user", content: "Hello!" }
+      ],
+    });
+
+    console.log("CONVERSATION CREATED", conversation);
+    conversationId = conversation.id;
+  } catch (err) {
+    console.error("Error creating conversation:", err);
+  }
+})();
+
+// Route
+app.post("/chat", async (req, res) => {
+  try {
+    const { message, assistant_role } = req.body;
+
+    var promptId
+    var historyMessage
+
+    var doctor_prompt_id = "pmpt_68b4c600a9f48193839671a35f08d9350d4129db604e02c6"
+    var support_prompt_id = "pmpt_68b4d08a5d708193ba3a3c98678bbcd108664778d782cf1d"
+
+    if (assistant_role === "Doctor") {
+      console.log("IS DOCTOR")
+      promptId = doctor_prompt_id
+      historyMessage = "Doctor: " + message
+    } else {
+      console.log("IS SUPPORT")
+      promptId = support_prompt_id
+      historyMessage = "Support: " + message
+    }
+
+    const response = await rashi_openai.responses.create({
+      model: "gpt-4-turbo",
+      conversation: conversationId, // reuse existing thread
+      prompt: {
+        id: promptId
+      },
+      input: historyMessage
+    });
+
+    const reply = response.output_text;
+    console.log("GOT REPLY", reply)
+
+    res.json({
+      reply    
+    });
+  } catch (err) {
+    console.error("Error:", err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
 // Start the server
 const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

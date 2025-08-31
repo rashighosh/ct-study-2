@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dual Assistants Demo</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    #chat { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: auto; margin-bottom: 10px; }
+    .user { color: blue; }
+    .assistant { color: green; }
+  </style>
+</head>
+<body>
+  <h1>Doctor + Support Assistants Demo</h1>
+
+  <div id="chat"></div>
+
+  <select id="assistant">
+    <option value="Doctor">Doctor</option>
+    <option value="Support">Support</option>
+  </select>
+
+  <input id="message" type="text" placeholder="Type your message" />
+  <button onclick="sendMessage()">Send</button>
+
+  <script>
+    async function sendMessage() {
+      const chatDiv = document.getElementById("chat");
+      const message = document.getElementById("message").value;
+      const assistant_role = document.getElementById("assistant").value;
+
+      if (!message) return;
+
+      // Show user message
+      chatDiv.innerHTML += `<div class="user"><b>You:</b> ${message}</div>`;
+      document.getElementById("message").value = "";
+
+      // Send to server
+      const res = await fetch("/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message, assistant_role }),
+      });
+
+      const data = await res.json();
+
+      // Show assistant reply
+      chatDiv.innerHTML += `<div class="assistant"><b>${assistant_role}:</b> ${data.reply}</div>`;
+      chatDiv.scrollTop = chatDiv.scrollHeight;
+    }
+  </script>
+</body>
+</html>

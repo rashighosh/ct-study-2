@@ -15,7 +15,7 @@ console.log("In virtualcharacter.js")
 
 if (condition === 0) {
   console.log("condition is 0")
-  character = "/character-models/female.glb";
+  character = "/character-models/doctor.glb";
   characterBody = 'F'
 } else {
     character = "/character-models/male.glb"
@@ -26,7 +26,7 @@ var first=true;
 var counter = 0;
 
 console.log("about to load avatar")
-
+console.log(document.getElementById('virtualcharacter'));
 // Load and show the avatar
 document.addEventListener('DOMContentLoaded', async function (e) {
   const nodeAvatar = document.getElementById('virtualcharacter');
@@ -35,14 +35,10 @@ document.addEventListener('DOMContentLoaded', async function (e) {
     ttsVoice: "en-US-Neural2-C",
     ttsPitch: 3,
     lipsyncModules: ["en"], // language
-    cameraY: 0,
-    cameraRotateY: 0,
     cameraView: "mid", // full, mid, upper, head
-    cameraDistance: 0, // negative is zoom in from base, postitive zoom out (in meters)
-    // interactions w 3d scene, usually disable
     cameraRotateEnable: false,
     cameraPanEnable: false,
-    cameraZoomEnable: false,
+    cameraZoomEnable: false
   });
 
   if (condition === 1) {
@@ -52,11 +48,7 @@ document.addEventListener('DOMContentLoaded', async function (e) {
       ttsVoice: "en-US-Neural2-J",
       ttsPitch: -5,
       lipsyncModules: ["en"], // language
-      cameraY: 0,
-      cameraRotateY: 0,
       cameraView: "mid", // full, mid, upper, head
-      cameraDistance: 0, // negative is zoom in from base, postitive zoom out (in meters)
-      // interactions w 3d scene, usually disable
       cameraRotateEnable: false,
       cameraPanEnable: false,
       cameraZoomEnable: false,
@@ -68,7 +60,7 @@ document.addEventListener('DOMContentLoaded', async function (e) {
   try {
     // renders avatar on screen
     await head.showAvatar({
-      url: "/character-models/female.glb",
+      url: "/character-models/doctor.glb",
       body: 'F', // either M or F, specified in charaterType
       avatarMood: 'happy', // neutral, happy, (most used, rest are there): angry, sad, fear, disgust, love, sleep
       lipsyncLang: 'en',
@@ -86,15 +78,31 @@ document.addEventListener('DOMContentLoaded', async function (e) {
     console.log(error);
   }
 
-  head.playPose('straight');
-  head1.playPose('straight');
+  // setTimeout(() => {
+  //   head.playGesture('🌹');
+  //   head1.playGesture('🌷');
+  // }, 1000);
 
+  //  setTimeout(() => {
+  //   head.stopGesture();
+  //   head.playPose('straight')
+  // }, 6000);
+
+  //    setTimeout(() => {
+  //   head1.stopGesture();
+  //   head1.playPose('straight')
+  // }, 7000);
 
 });
 
 export async function thinkingPose() {
-  head.playGesture('thinking', 60);
-  head.playGesture('👀', 60);
+  console.log("IN THINKING POSE")
+  head.playGesture('thinking', Infinity);
+}
+
+export async function stopThinking() {
+  console.log("IN THINKING POSE")
+  head.stopGesture();
 }
 
 export async function raiseHand() {
@@ -105,6 +113,10 @@ export async function raiseHand() {
 export async function lowerHand() {
   console.log("LOWERING HAND")
   head1.stopGesture();
+}
+
+export async function walkLeft() {
+  head.playAnimation("/avatar-modules/animations/walking.fbx");
 }
 
 export async function focusCharacter(character) {
@@ -162,49 +174,45 @@ export async function resetCharacter(character) {
 }
 
 // start audio for first agent audio (interrupts/disrupts any current audio)
-export async function characterAudio(audio, emoji, agent, onSpeechEnd) {
-  var agentHead = head;
-  var direction = -.7
-  if (agent === "support") {
+export function characterAudio(audio, emoji, agent) {
+  return new Promise((resolve, reject) => {
+    var agentHead = head;
+    var direction = -0.7;
+
+    if (agent === "support") {
       agentHead = head1;
-      direction = .7
-  }
-  try {
-      // Handle first-time gestures
+      direction = 0.7;
+    }
+
+    try {
       if (counter === 0) {
-          agentHead.playGesture('👋');
-          counter++;
+        agentHead.playGesture('👋');
+        counter++;
       }
-      agentHead.speakText(audio)
 
-      // agentHead.replaceAndSpeakNewAudio(audio);
-      // head1.rotateCharacter(direction)
-      // head.rotateCharacter(.7)
+      agentHead.speakText(audio);
 
-      // Wait 3 seconds, then start checking for speaking status
+      // Start checking after 3s
       setTimeout(() => {
-          const checkSpeakingStatus = setInterval(() => {
-              if (!agentHead.isSpeaking) {
-                  console.log("Character has finished speaking!");
-                  // head1.rotateCharacter(0)
-                  // head.rotateCharacter(0)
-                  clearInterval(checkSpeakingStatus); // Stop checking
+        const checkSpeakingStatus = setInterval(() => {
+          if (!agentHead.isSpeaking) {
+            console.log("Character has finished speaking!");
+            clearInterval(checkSpeakingStatus);
+            resolve(); // ✅ THIS is what lets await work
+          }
+        }, 300); // check more frequently for smoother timing
+      }, 3000);
 
-                  // **Trigger the callback when speaking finishes**
-                  if (onSpeechEnd) {
-                      onSpeechEnd();
-                  }
-              }
-          }, 1000); // Check every 1s
-      }, 3000); // Delay check start by 3s
-
-  } catch (error) {
+    } catch (error) {
       console.error('Error during speech processing:', error);
-  }
+      reject(error);
+    }
+  });
 }
 
 // for streaming audio, waits for current audio to finish
 export async function characterAudioQueue(audio, emoji) {
+  console.log("IN CHARACTER AUDIO THING")
   try {
     if (emoji) {
       head.playGesture(emoji);

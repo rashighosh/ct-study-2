@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;900&family=Handlee&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/enterprise.js?onload=onloadCallback&render=explicit" async defer></script>
+    <link href="/css/home.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/2.11.0/bundled.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <title>ALEX</title>
+    <!-- Importmap for loading Three.js and other dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+     <script type="importmap">
+        {
+            "imports": {
+              "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js/+esm",
+              "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/",
+              "talkinghead": "/avatar-modules/talkinghead.mjs"
+            }
+        }
+    </script>
+    <!-- Module scripts for avatar and main functionality -->
+    <script type="module" src="/js/virtualcharacter.js"></script>
+    <script type="module" src="/js/home.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img style="height: 50px; width: 50px" src="/images/test1.png">
+            <h1>Learn About Clinical Trials</h1>
+        </div>
+        <hr/>
+        <div class="chat-container" id="chat-container">
+            <div class="virtual-character-area">
+                <div id="virtualcharacter">
+                    <!-- <div class="name-tag alex">
+                        <p class="title">Virtual Oncologist</p>
+                        <p id="alex-name" class="name">Dr. Alex</p>
+                    </div> -->
+                </div>
+                <!-- <div id="virtualcharacter1">
+                    <div class="name-tag skylar">
+                        <p class="title">Virtual Caregiver</p>
+                        <p id="skylar-name" class="name">Jordan</p>
+                    </div>
+                </div> -->
+            </div>
+            <div class="chat-content">
+            <div class="chat-window scroll-bottom" id="chatWindow">
+                 <div class="spacer"></div> 
+            </div>
+            <button id="start-btn" class="pulse">Click here to begin!</button>
+            <div id="chat-input">
+                <textarea id="userInput" placeholder="Type a message..." rows="3"></textarea>
+                <button id="sendBtn"> 
+                    <i class="fa-solid fa-paper-plane"></i> Send
+                </button>
+            </div>
+            </div>
+        </div>
+
+         <div id="user-info">
+            <p class="user-info-title">Notes</p>
+            <div class="user-info-label">Your Information</div>
+           <div id="user-conditions" class="notes"></div>
+           <div id="user-age" class="notes"></div>
+           <div id="user-gender" class="notes"></div>
+           <div id="user-location" class="notes"></div>
+           <hr/>
+           <div class="user-info-label">Motivations</div>
+           <div id="user-motivation" class="notes"></div>
+           <hr/>
+           <div class="user-info-label">Concerns for Participating</div>
+           <div id="user-concerns" class="notes"></div>
+           <hr/>
+           <div class="user-info-label">Participation Constraints</div>
+           <div id="user-participation_constraints" class="notes"></div>
+        </div>
+        
+        <!-- <div style="position: relative; overflow: hidden; aspect-ratio: 1920/1080; height: 200px"><iframe src="https://share.synthesia.io/embeds/videos/2f46499b-5090-477f-be98-21ec3e929eb1" loading="lazy" title="Synthesia video player - transparent" allowfullscreen allow="encrypted-media; fullscreen; microphone; screen-wake-lock;" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0; overflow:hidden;"></iframe></div> -->
+    </div>
+    </body>
+</html>

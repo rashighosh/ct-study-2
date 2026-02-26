@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/css/loading.css">
     <link rel="stylesheet" href="/css/slider.css">
     <!-- Importmap for loading Three.js and other dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script type="importmap">
         {
             "imports": {
@@ -520,26 +521,26 @@
                         <p class="title">Virtual Oncologist</p>
                         <p id="alex-name" class="name">Dr. Alex</p>
                     </div>
-                    <div id="chatbox-doctor"></div>
                 </div>
                 <div id="virtualcharacter1">
                     <div class="name-tag skylar">
                         <p class="title">Virtual Caregiver</p>
                         <p id="skylar-name" class="name">Jordan</p>
                     </div>
-                    <div id="something-to-say">Support character has something to say</div>
-                    <div id="chatbox-support"></div>
                 </div>
-                
+                <div id="chatbox-area"></div>
             </div>
         </div>
         <div class="interaction" id="interaction">
         <div class="user-input">
-            <textarea id="user-text-area" name="userTextArea" rows="4" cols="40"></textarea>
-            <button id="user-send">Send</button>
+             <div class="input-wrapper">
+                <textarea id="user-text-area" name="userTextArea" placeholder="Type your message here..." rows="5" cols="40"></textarea>
+                <div id="user-send">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </div>
+            </div>
         </div>
         </div>
-        <p id="history">💬 Conversation History</p>
     </div>
     <button id="finish-btn">End Conversation</button>
     <script type="module" src="/js/interaction.js"></script>

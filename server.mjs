@@ -1,30 +1,39 @@
-const path = require('path');
-const express = require('express');
-const session = require('express-session');
-const MSSQLStore = require('connect-mssql-v2');
+import express from 'express';
+import session from 'express-session';
+import MSSQLStore from 'connect-mssql-v2';
+import OpenAI from 'openai';
+import fs from 'fs';
+import { v4 as uuidv4 } from 'uuid';
+// import ffmpegPath from '@ffmpeg-installer/ffmpeg'; // for AWS, comment out for local testing
+import ffmpeg from 'fluent-ffmpeg';
+import ffmpegPath from 'ffmpeg-static';
+import bodyParser from 'body-parser';
+import sql from 'mssql';
+import favicon from 'serve-favicon';
+import 'dotenv/config';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import qualtricsRouter from './routes/qualtrics.mjs';
+
+// Get __filename and __dirname equivalents
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Now you can use __dirname like before
+const jsonDir = path.resolve(__dirname, './json_scripts');
+
+
 const app = express();
-const {Configuration, OpenAI, OpenAIApi} = require('openai')
-const fs = require('fs');
-const { v4: uuidv4 } = require('uuid');
-// const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path; // for aws, comment out for local testing
-const ffmpeg = require('fluent-ffmpeg'); // Import ffmpeg for audio processing
-const ffmpegPath = require('ffmpeg-static'); // Path to the static binary
+
 ffmpeg.setFfmpegPath(ffmpegPath); // Set the path explicitly
-const bodyParser = require('body-parser');
-var sql = require("mssql");
-var favicon = require('serve-favicon');
 
 app.use(favicon(path.join(__dirname,'public','favicon.ico')));
 
-require('dotenv').config();
-const openai = new OpenAI(api_key = process.env.OPENAI_API_KEY);
-const rashi_openai = new OpenAI(api_key = process.env.OPENAI_API_KEY);
+const rashi_openai = new OpenAI();
 const GOOGLE_API_KEY = process.env.GOOGLE_TTS_API_KEY
 app.use(bodyParser.json());
 
 var prevDialogue = ""
-
-const jsonDir = path.resolve(__dirname, './json_scripts')
 
 const config = {
     user: 'VergAdmin',
@@ -66,6 +75,7 @@ const sessionStoreOptions = {
   autoRemoveInterval: 1000 * 60 * 60 * 24 // check to delete every 24 hours
 
 }
+
 console.log("🔍 Attempting to initialize MSSQL session store...");
 
 const sessionStore = new MSSQLStore(sessionStoreConfig, sessionStoreOptions);
@@ -118,6 +128,11 @@ app.get('/interaction', function(req, res) {
   res.sendFile(path.join(__dirname, 'public', 'interaction.html'));
 });
 
+app.get('/home', function(req, res) {
+  console.log(req.session.params)
+  res.sendFile(path.join(__dirname, 'public', 'home.html'));
+});
+
 app.get('/intro', function(req, res) {
   res.sendFile(path.join(__dirname, 'public', 'intro.html'));
 });
@@ -135,7 +150,6 @@ process.on('unhandledRejection', (reason, promise) => {
   console.error('Unhandled Rejection at:', promise, 'reason:', reason);
   // Optionally handle cleanup or decide to shut down gracefully
 });
-
 
 function removeSpecialFormat(text) {
     return text.replace(/【\d+:\d+†[^】]+】/g, '');
@@ -188,6 +202,7 @@ async function generateGoogleTTS(ssml, voice = null, pitch = null) {
 }
 
 app.post('/generateSSML', async (req, res) => {
+  console.log("IN GENERATE SSML")
   const { ssml, voice, pitch } = req.body;
   // const ssml = "Test sentence for testing purposes at test dot com"
   if (!ssml) {
@@ -226,13 +241,37 @@ app.post('/interact/:nodeId', async (req, res, next) => {
           var messages;
           if (nodeId === 2) {
             messages = [
-              { role: "system", content: "You are a virtual doctor helping raise awareness about clinical trials as an option for cancer care to a real cancer patient. Address their questions and concerns in 30 words or less." },
+              { role: "system", content: 
+                "You are a virtual doctor discussing clinical trials in general as one possible cancer care option. You will receive a patient message. Briefly acknowledge the patient's message, then directly respond with at least one concrete clarification, explanation, or example addressing barriers, processes, or decision-making in clinical trials. Do not refer to any specific trial. Respond naturally and conversationally in 30 words or less."
+              },
               { role: "user", content: message }
             ]
           } else {
             console.log(prevDialogue)
             messages = [
-              { role: "system", content: "You are a support agent helping a real cancer patient decide whether or not a clinical trial is right for them. The following message is from a doctor, Doctor Alex. Directly address Doctor Alex and acknowledge what they said with backchannels. Then address the real cancer patient and suggest a useful question for the patient to ask based on what Doctor Alex said. Keep your response to 30 words or less." },
+              {
+                role: "system",
+                content: `
+            You are simulating a patient's internal thoughts after reading a doctor's response.
+
+            The user message will contain a dialogue formatted as:
+            "Patient said: ..."
+            "Doctor said: ..."
+
+            Using that dialogue, write a short internal monologue (30 words or less) showing the patient's private thoughts after reading the doctor's most recent reply.
+
+            The internal monologue should:
+            - Reflect on what the response means personally
+            - Prioritize identifying vague or general phrases used in the doctor's response; if none, then any remaining uncertainties; if none, indicate so
+            - Consider possible follow-up questions or next steps (max 1)
+            - Sound natural and realistic (not clinical or academic)
+            - Not introduce new medical facts beyond what was stated
+            - Not continue the conversation
+
+            Write in first person (e.g., "Okay, so…"). Any follow-up questions should be directed toward Dr. Alex in the dialogue.
+            Output only the internal monologue.
+            `
+              },
               { role: "user", content: prevDialogue }
             ]
           }
@@ -248,31 +287,9 @@ app.post('/interact/:nodeId', async (req, res, next) => {
 
           console.log("GOT RESPONSE");
           console.log(agentDialogue);
-          prevDialogue = agentDialogue
-          // console.log("MAKING CALL TO OPENAI")
-          // console.log(message)
-          // const openAiAssistant = 'asst_NkwHAFS69vs6Yde0IU24czgD'
-          // console.log(openAiAssistant)
-          // const thread = await rashi_openai.beta.threads.create();
-          // await rashi_openai.beta.threads.messages.create(thread.id, {
-          //     role: 'user',
-          //     content: message
-          //   });
-          //   const run = await rashi_openai.beta.threads.runs.create(thread.id, {
-          //     assistant_id: openAiAssistant
-          //   });
-          // let runStatus = await rashi_openai.beta.threads.runs.retrieve(thread.id, run.id);
-
-          // while (runStatus.status !== 'completed') {
-          //   console.log("WAITING FOR RESPONSE ...")
-          //   await new Promise(resolve => setTimeout(resolve, 3000));
-          //   runStatus = await rashi_openai.beta.threads.runs.retrieve(thread.id, run.id);
-          // }
-          // console.log("GOT RESPONSE")
-          // const messages = await rashi_openai.beta.threads.messages.list(thread.id);
-          // var generatedDialogue = messages.data[0].content[0].text.value;
-          // agentDialogue = removeSpecialFormat(generatedDialogue)
-          // console.log(agentDialogue)
+          prevDialogue =
+          "Patient said:\n" + message + "\n\n" +
+          "Doctor said:\n" + agentDialogue
         }
       }
 
@@ -570,18 +587,24 @@ app.post("/chat", async (req, res) => {
 
     var promptId
     var historyMessage
+    var vectorStore
 
     var doctor_prompt_id = "pmpt_68b4c600a9f48193839671a35f08d9350d4129db604e02c6"
     var support_prompt_id = "pmpt_68b4d08a5d708193ba3a3c98678bbcd108664778d782cf1d"
+
+    var doctor_vector_store = "vs_68b46fbd79648191bb803803b96cc85b"
+    var support_vector_store = "vs_68b477f6bda08191a5c1a4f98d9f33ba"
 
     if (assistant_role === "Doctor") {
       console.log("IS DOCTOR")
       promptId = doctor_prompt_id
       historyMessage = "Doctor: " + message
+      vectorStore = doctor_vector_store
     } else {
       console.log("IS SUPPORT")
       promptId = support_prompt_id
       historyMessage = "Support: " + message
+      vectorStore = support_vector_store
     }
 
     const response = await rashi_openai.responses.create({
@@ -590,11 +613,27 @@ app.post("/chat", async (req, res) => {
       prompt: {
         id: promptId
       },
-      input: historyMessage
+      input: historyMessage,
+      stream: true
     });
 
     const reply = response.output_text;
+    // const reply = "Testing rn"
     console.log("GOT REPLY", reply)
+
+    console.log(vectorStore)
+
+    var list_of_stores = await rashi_openai.vector_stores.retrieve({
+        vector_store_id: "vs_68b477f6bda08191a5c1a4f98d9f33ba"
+    });
+    console.log("LIST OF VECTOR STORES", list_of_stores)
+
+    const vectorStoreResults = await rashi_openai.vectorStores.search({
+        vector_store_id: "vs_68b477f6bda08191a5c1a4f98d9f33ba",
+        query: historyMessage,
+    });
+
+    console.log("VECTOR STORE RESULTS", vectorStoreResults)
 
     res.json({
       reply    
@@ -605,6 +644,7 @@ app.post("/chat", async (req, res) => {
   }
 });
 
+app.use('/qualtrics', qualtricsRouter); 
 
 // Start the server
 const PORT = process.env.PORT || 3000;

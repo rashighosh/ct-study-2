@@ -9,78 +9,22 @@ var condition = ''
 // const textScript = "Text_Script_Audio.json"
 var textScript = "Text_Script.json"
 var incrementTotal
-var finishCounter = 0
-const slider = document.getElementById("myRange");
-var explanations = {}
-var explanationPreference = []
-var introQuestionsJSON = []
-var questionsJSON = []
-var prevPreference = -1
-var prevQuestion
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 condition = urlParams.get('c')
 condition = parseInt(condition)
+id = urlParams.get('id')
 
 console.log("In interaction.js")
+console.log("ID is:", id)
+console.log("Condition is:", condition)
 
 if (condition === 1) {
     textScript = "Text_Script.json"
 } else if (condition === 0) {
     document.getElementById("virtualcharacter1").remove()
-    document.getElementById("user-rating-area-mini-dr").id = 'user-rating-area-mini'
-    textScript = "Text_Script_Control.json"
-    console.log("Condition is 0")
 }
-
-var prependItems = [
-    "Good question. ",
-    "Let's talk about that. ",
-    "Glad you asked. ",
-    "I can answer that. "
-];
-
-let prependIndex = 0; // Track current index
-
-
-function getPrependPhrase() {
-    let phrase = prependItems[prependIndex]; // Get current phrase
-    prependIndex = (prependIndex + 1) % prependItems.length; // Move to the next, loop back if needed
-    return phrase;
-}
-
-function cleanBoldTags(text) {
-    return text.replace(/<\/?b>/g, '');
-}
-
-async function getIntroQuestions() {
-    const introQuestionsResponse = await fetch(`/getIntroQuestionsJSON`, {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-    });
-    if (!introQuestionsResponse.ok) {
-        console.error('Failed to fetch response:', introQuestionsResponse.statusText);
-    }
-    const introQuestions = await introQuestionsResponse.json(); // gives ENTIRE audio at once
-    introQuestionsJSON = introQuestions.introQuestions
-}
-
-async function getQuestions() {
-    const questionsResponse = await fetch(`/getQuestionsJSON`, {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-    });
-    if (!questionsResponse.ok) {
-        console.error('Failed to fetch response:', questionsResponse.statusText);
-    }
-    const questions = await questionsResponse.json(); // gives ENTIRE audio at once
-    questionsJSON = questions.questions
-}
-
-getIntroQuestions()
-getQuestions()
-
 
 function getCurrentDateTime() {
     var currentDate = new Date();
@@ -89,7 +33,6 @@ function getCurrentDateTime() {
     // Output the local date and time
     return localDateTime
 }
-
 
 document.addEventListener('DOMContentLoaded', (event) => {  
     document.getElementById("study-button-1").onclick = function() {
@@ -119,12 +62,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById("study-button-1").classList.remove('active')
     }
 
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    condition = urlParams.get('c')
-    id = urlParams.get('id')
-    condition = parseInt(condition)
-
     document.getElementById("history").addEventListener('click', () => {
         document.getElementById("chat-container").style.display = 'flex'
         let chatContainer = document.getElementById("chat-container")
@@ -138,24 +75,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
 
-    let loadBody = { transcript: textScript }
+    console.log(sessionStorage.getItem("topics"))
 
     // showLoading();
 });
-
-function currentSpeakingCharacter(agent) {
-    focusCharacter(agent);
-    if (agent === "support") {
-        document.getElementById("virtualcharacter").style.filter = "blur(.5px)"
-        document.getElementById("virtualcharacter1").style.filter = "blur(0px)"
-    } else if (agent === "doctor") {
-        document.getElementById("virtualcharacter").style.filter = "blur(0px)"
-        document.getElementById("virtualcharacter1").style.filter = "blur(.5px)"
-    } else {
-        document.getElementById("virtualcharacter").style.filter = "blur(.5px)"
-        document.getElementById("virtualcharacter1").style.filter = "blur(.5px)"
-    }
-}
 
 function showLoading() {
     document.getElementById('loading-animation').style.display = "block";
@@ -169,9 +92,9 @@ function showLoading() {
     const animatedElement = document.getElementById("loader-animation");
     animatedElement.onanimationend = () => {
         document.getElementById('loading-screen').classList.add("out")
-        handleUserInput(1, { userInput: "Start Introduction", script: textScript, gender: "male" });
-        informationTranscript.set("SYSTEM " + getCurrentDateTime(), "Start Introduction");
-        updateTranscript()
+        // handleUserInput(1, { userInput: "Start Introduction", script: textScript, gender: "male" });
+        // informationTranscript.set("SYSTEM " + getCurrentDateTime(), "Start Introduction");
+        // updateTranscript()
     };
 }
 
@@ -208,96 +131,52 @@ function incrementProgress(double = false) {
     }, 50); // Adjust this value to change the speed of the progress
 }
 
-function moveChatBox() {
-    console.log("MOVING CHATBOX")
-    const historyHeight = document.getElementById('history').offsetHeight;
-
-    const interactionHeight = document.getElementById('interaction').offsetHeight;
-    
-    // Get the chatbox-support element
-    if (condition === 1) {
-        document.getElementById('chatbox-support').style.bottom = `${interactionHeight + historyHeight + 45}px`;
-    } 
-    document.getElementById('chatbox-doctor').style.bottom = `${interactionHeight + historyHeight + 45}px`;
-}
-
-function resetChatBoxPosition() {
-    console.log("RESETTING CHATBOX POSITION")
-    if (condition === 1) {
-        document.getElementById('chatbox-support').style.bottom = `5%`;
-    }
-    document.getElementById('chatbox-doctor').style.bottom = `5%`;
-}
-
 function appendMessage(message, speaker, agent, nextNode = null, passOn = null, waitToShowOptions = null) {
-    var chatBox
-    agent === 'doctor' ? chatBox = document.getElementById("chatbox-doctor") : chatBox = document.getElementById("chatbox-support")
+    var chatBox = document.getElementById("chatbox-area");
     const labelText = document.createElement('div');
     const messageText = document.createElement('div');
     const messageItem = document.createElement('div');
     var agentSpeaker
-    const messageTextHistory = document.createElement('div');
-    const messageItemHistory = document.createElement('div');
 
+    console.log("speaker", speaker)
+    console.log("agent", agent)
+    console.log("message", message)
 
     labelText.className = "label-text";
 
-    if (speaker === 'user') {
+    if (agent === 'user') {
         labelText.innerText = `You`
         messageText.className = "user-chatbot-message"
-        messageTextHistory.className = "history-user-chatbot-message"
+        labelText.innerText = `You`
     } else {
         if (agent === 'doctor') {
             messageText.className = "doctor-chatbot-message"
-            messageTextHistory.className = "history-doctor-chatbot-message"
             labelText.innerText = `Dr Alex`
             agentSpeaker = 'Alex'
         } else {
             messageText.className = "support-chatbot-message"
             labelText.innerText = `Jordan`
-            messageTextHistory.className = "history-support-chatbot-message"
             agentSpeaker = 'Jordan'
         }
     }
 
-    if (speaker === 'user') {
-        if (message === 'text') {
-            message = document.getElementById('user-input').value;
-            let messageBody = { userMessage: message, gender: "male", script: textScript }
-            handleUserInput(nextNode, messageBody)
-        }
-        messageTextHistory.innerHTML = `${message}`;
-        messageItemHistory.className = "message-item"
-        messageItemHistory.appendChild(labelText);
-        messageItemHistory.appendChild(messageTextHistory);
-        document.getElementById("chat-container").appendChild(messageItemHistory)
+    if (agent === 'user') {
+        messageItem.className = "message-item"
+        messageText.appendChild(labelText)
+        messageText.innerHTML += message
+        messageItem.appendChild(messageText);
+        chatBox.appendChild(messageItem)
         informationTranscript.set("USER " + getCurrentDateTime(), message);
         updateTranscript()
     } else {
         messageItem.className = "message-item"
-        console.log("NEXT NODE IS:", nextNode)
-        console.log(nextNode)
-        if (nextNode === 14 && condition === 0) {
-            console.log("ADJUSTHING THIS ONE TO RELATIVE")
-            messageText.classList.add("relative")
-            messageText.style.marginTop = "7px"
-        }
+        messageText.appendChild(labelText)
         messageItem.appendChild(messageText);
         chatBox.appendChild(messageItem)
-
-        messageItemHistory.className = "message-item"
-        messageTextHistory.innerText = message
-        messageItemHistory.appendChild(labelText);
-        messageItemHistory.appendChild(messageTextHistory);
-        document.getElementById("chat-container").appendChild(messageItemHistory)
-
         displaySubtitles(message, messageText, passOn, waitToShowOptions)
         informationTranscript.set(agentSpeaker + " " + getCurrentDateTime(), message);
         updateTranscript()
     }
-    // if (speaker === 'user') {
-    //     document.getElementById('user-input').value = '';
-    // }
 }
 
 function appendLoadingDots() {
@@ -328,63 +207,25 @@ function enableButtons(tag) {
     }
 }
 
-async function translateHealthLiteracy(message, adjustment) {
-    var body = {message: message, adjustment: adjustment}
-    const response = await fetch(`/adjustHealthLiteracy`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-    });
-    if (!response.ok) {
-        console.error('Failed to fetch response:', response.statusText);
-        return;
-    }
-    const data = await response.json(); // gives ENTIRE audio at once
-    return data.message
-}
-
-const toggleFunction = function() {
-    document.querySelector(".toggle").classList.toggle("active-toggle");
-};
-
 document.getElementById("user-send").addEventListener("click", function() {
-    handleUserInput(2);
+    const userInput = document.getElementById("user-text-area").value
+    handleUserInput(2, userInput);
 });
 
-document.getElementById("something-to-say").addEventListener("click", function() {
-    lowerHand();
-    resetCharacter("support")
-    handleUserInput(3);
-});
-
-async function handleUserInput(nodeId) {
-    resetCharacter("support")
-    lowerHand();
-    let text = document.getElementById("user-text-area").value;
-    console.log(text)
-    if (condition === 0) {
-        var doctorCharacter = document.querySelector('#virtualcharacter > canvas')
-        doctorCharacter.style.pointerEvents = "none"
-        doctorCharacter.removeEventListener("click", toggleFunction);
-    } else if (condition === 1) {
-        var supportCharacter = document.querySelector('#virtualcharacter1 > canvas')
-        supportCharacter.style.pointerEvents = "none"
-        supportCharacter.removeEventListener("click", toggleFunction);
+async function handleUserInput(nodeId, userInput = null) {
+    if (userInput) {
+        appendMessage(userInput, 'You', 'user')
+        document.getElementById("user-text-area").value = ""
     }
+    
+    resetCharacter("support")
+    lowerHand();
 
     var nodeId=nodeId
-
-    if (nodeId === 3) {
-        text = "Say hello";
-        document.getElementById("something-to-say").style.display = "none"
-    } else {
-        document.getElementById("chatbox-doctor").innerHTML = ''
-        document.getElementById("chatbox-support").innerHTML = ''
-    }
     
     var body = {
         script: textScript,
-        userMessage: text
+        userMessage: userInput
     };
     console.log("AB TO CALL SERVER, BODY IS", body)
 
@@ -425,7 +266,7 @@ async function handleUserInput(nodeId) {
             resetCharacter("doctor")
         }
         if (nodeId === 2) {
-            hasSomethingToSay();
+            handleUserInput(3)
         }
     });
 }
@@ -436,6 +277,7 @@ function hasSomethingToSay() {
 }
 
 function displaySubtitles(dialogue, divItem, passOn = null, waitToShowOptions = null) {
+    console.log("IN DISPLAY SUBTITLES", divItem)
     const dialogueSection = divItem;
 
     // Start with the current content to avoid overwriting
